@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0071)http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Build a Simple LED Driver Circuit</title>
+<meta name="keywords" content="how to, build, LED Driver circuit, transistor, current">
+<meta name="description" content="In this article, we will show how to build a very simple LED driver circuit using 
+">
+<link href="./How to Build a Simple LED Driver Circuit_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Build a Simple LED Driver Circuit_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+	<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Rectangle Text Ad */
+google_ad_slot = "1729898602";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Build a Simple LED Driver Circuit</h1><br>
+<img style="width: 333px; height: 64px;" alt="lit LED" src="./How to Build a Simple LED Driver Circuit_files/lit-LED.png">
+
+<br><br><br>
+
+<p id="para1">In this project, we will show how to build a simple LED driver circuit. 
+
+</p><p id="para1">A LED driver circuit is a circuit which can power on and light an LED&gt;
+
+</p><p id="para1">We will simply use a transistor and a few resistors to bring about a circuit which, with minimal current, can produce enough current to drive and light an LED. 
+
+</p><p id="para1">The point of this circuit is to demonstrate that if you do not have sufficient current powerful enough to drive an LED, you can connect a transistor to the circuit 
+so that it provides
+enough current amplification to drive it. 
+
+</p><p id="para1">Of course, if you're powering an LED and you can connect the LED directly to a power source, you won't need a very sophisticated driver circuit. There will be enough power 
+from that power source to light up the LED without the need for a transistor. However, say you have a circuit that is operating off the power supplied by a chip and the chip can only output a 
+very low amount of current. This current may not be enough to drive an LED. Or you may have a chip that allows for enough current to light an LED but you may want to light several LEDs in parallel. 
+For each LED that you want to light in parallel, about 15mA of current are needed more per LED. A chip such as the Atmega168 or Atmega328 allows for about a maximum of 20mA of current output 
+per output pin. Thus, you could drive a single LED on an output pin. However, if you wanted to drive 2 LEDs in parallel, you would need a driver circuit to get more current. Thus, driver circuits 
+using transistors, are very common. 
+
+
+
+
+</p><div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+
+/* Homepage */
+google_ad_slot = "1511328022";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><p id="para1">This circuit exploits the fact that transistors can function as current amplifiers in circuits. We use the transistor to supply the amplification necessary so that the LED
+can be driven. 
+
+</p><h3>The parts we need to run this circuit are:<br><br>
+
+<p id="para6">Parts<br>
+</p><ul id="para1">
+<li>NPN 2N2222 transistor (or similar)</li>
+<li>SPST Switch</li>
+<li>LED</li>
+<li>3 AA Batteries or DC power supply</li>
+<li>330Ω Resistor</li>
+<li>1KΩ Resistor</li>
+</ul>
+<br>
+
+<p id="para1">For the transistor, we simply use an NPN transistor. This will be sufficient for providing amplification. 
+
+</p><p id="para1">To power the LED and the collector of the transistor, we provide 3 volts of power. This voltage is necessary for the transistor to work. NPN transistors always need 
+positive voltage applied to the collector in order to work. This is called reverse bias voltage so that the current in the transistor can flow from emitter to collector. This 3 volts can come 
+either from 2 AA batteries connected in series or from a DC power supply.
+
+<br>
+</p></h3><h3>LED Driver Circuit</h3>
+<p id="para1">The schematic of the LED driver circuit we will build is shown below:<br><br>
+
+<img style="width: 338px; height: 368px;" alt="LED driver circuit" src="./How to Build a Simple LED Driver Circuit_files/LED-driver-circuit.png">
+<br>
+
+</p><p id="para1">When the switch of the circuit is open, no current flows to the base of the transistor. Therefore, the transistor cannot turn on. Bipolar junction transistors need base current 
+and sufficient positive voltage to the collector in order to provide amplification. So with no current, the transistor nor the LED turns on. When the switch is closed, base current 
+flows through the transistor, turning it on. The transistor now provides amplification to the current, turning the LED on.
+
+</p><p id="para1">If the LED was just connected straight to the 10KΩ resistor, without any transistor, it would not produce sufficient current to drive the LED. The current through the LED would be 
+I=V/R= 1.5V/3KΩ= 0.5mA. This is not sufficient to drive an LED. An LED typically needs about 15mA. With the NPN transistor in the circuit, 
+amplification is usually to the degree of about 100 to 150. Therefore, 
+the current will be amplified by 100, which is 0.5mA * 100= 50mA. 50mA is now sufficient to drive and light the LED. 
+
+</p><p id="para1">So you see how the transistor allows a circuit to be an LED driver. Without it, there wouldn't be enough power to drive it. The point of this circuit is that if you have insufficient current output, you can create a driving, or amplifying, so that you can have sufficient current. LEDs are 
+current-driven devices. Therefore, an LED driver circuit is one that supplies sufficient current to drive them. This can be done with a simple transistor, as shown above. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+
+ 	<a href="http://www.learningaboutelectronics.com/Articles/How-to-vary-the-brightness-of-an-led">How to Vary the Brightness of an LED</a><br><br>
+
+	<a href="http://www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php">How to Build an LED Flasher Circuit</a><br><br>
+
+ <a href="http://www.learningaboutelectronics.com/Articles/Relay-driver-circuit.php">How to Build a Relay Driver Circuit</a><br><br>
+
+<a href="http://www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php">How to Build a Dark-activated Light Circuit</a><br><br>
+
+
+
+<br>
+<br>
+
+<!-- begin htmlcommentbox.com -->
+ </p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/LED-driver-circuit.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./How to Build a Simple LED Driver Circuit_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><div class="comment" id="comment_7022431"><span class="date">(Dec 22, 2014) </span><span class="author"><b class="author-name">OsamaYoMomma </b> said:</span> <blockquote>Current flow direction is arbitrary, you can thank Benjamen Franklin for the "conventional current" directionality of "positive to negative". Thus, when you talk about positive test charges, say for example "holes" in bipolar transistors, then free charges moves from the positive terminal of the power supply into the anode of the LED. The anode is defined by which direction a positive test charge will move into a circuit element and conversly, the cathode is defined as where a positive charge leaves a circuit element. However, since we really dealing with negative test charges, that is free electrons, the electric charge actually moves from the negative supply terminal into the emitter and out the collector of the NPN BJT and then into the cathode of the LED out the anode and finally to the supply's positive terminal. Either way, the electric current is in the same direction for both cases, positive charges moving from the positive terminal to the negative terminal and negative charges from the negative terminal to the positive terminal of the power supply constitute the same direction for "electric current." The only time this topic is even relevant is in solid-state/plasma physics or electro-chemistry where you might have ions and protons (hydrogen ions) moving around. In general electrical engineering, where you aren't dealing with material science, it doesn't really make sense to even contemplate which direction a current or test charge moves so long as you are consistent in which direction you define a current to move. Once again, the established dogma of "positive to negative" is arbitrary and isn't even correct with regards to the actual motion of free charges (electrons).
+<br>
+<br>Ref. Source: I'm a materials scientist. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('7022431')"><img src="./How to Build a Simple LED Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('7022431')"><img src="./How to Build a Simple LED Driver Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build a Simple LED Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_3629197"><span class="date">(Feb 25, 2014) </span><span class="author"><b class="author-name">David </b> said:</span> <blockquote>We are supplying current to the LED's anode, not cathode. Based on the diagram, it seems as if we are supplying current to the LED's cathode, but a transistor doesn't work like that. Once sufficient current is supplied to the transistor's base, then current is allowed to flow from the branch of the collector to emitter. Current flow will start from the top, at the voltage source, the 6V, and flow down to ground, lighting the LED. So it's really at the 
+<br>voltage source where we can say current flow begins. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('3629197')"><img src="./How to Build a Simple LED Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('3629197')"><img src="./How to Build a Simple LED Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Simple LED Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_4963831"><span class="date">(Feb 19, 2014) </span><span class="author"><b class="author-name">Shravan </b> said:</span> <blockquote>Hi..Your method of explaining is simply superb. Here in this circuit I would like to know in more detail that, why we are supplying current to cathode of LED instead of anode. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('4963831')"><img src="./How to Build a Simple LED Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('4963831')"><img src="./How to Build a Simple LED Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Simple LED Driver Circuit_files/like.png"></div></div></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FLED-driver-circuit.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./How to Build a Simple LED Driver Circuit_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+  <link rel="stylesheet" type="text/css" href="./How to Build a Simple LED Driver Circuit_files/skin.css">
+  <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ <!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+ <o:p></o:p><p></p>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

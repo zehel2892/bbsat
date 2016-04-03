@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://circuiteasy.com/temperature-display-using-lcd/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><!-- Beginning of <head> --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><title>Temperature Display Using LCD and Arduino - Microprocessor Project</title> <link rel="profile" href="http://gmpg.org/xfn/11"><link rel="pingback" href="http://circuiteasy.com/xmlrpc.php"><meta name="description" content="Awesome Project to Display current temperature on LCD. Using Arduino. It is Microprocessor Based Project. Good for Student and Hobbyist. Uses LM35 as Sensor"><link rel="canonical" href="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/Temperature Display Using LCD and Arduino - Microprocessor Project.html"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Temperature Display Using LCD and Arduino - Microprocessor Project"><meta property="og:description" content="Awesome Project to Display current temperature on LCD. Using Arduino. It is Microprocessor Based Project. Good for Student and Hobbyist. Uses LM35 as Sensor"><meta property="og:url" content="http://circuiteasy.com/temperature-display-using-lcd/"><meta property="og:site_name" content="Electronics Projects and Circuit made Easy"><meta property="article:section" content="Microprocessor Project"><meta property="article:published_time" content="2014-04-15T23:39:04+00:00"><meta property="article:modified_time" content="2014-08-10T21:55:44+00:00"><meta property="og:updated_time" content="2014-08-10T21:55:44+00:00"><meta property="og:image" content="http://circuiteasy.com/project_picture/Digital-Temperature-Display.jpg"><meta property="og:image" content="http://circuiteasy.com/circuit_diagram/Digital-Temperature-Display-Circuit.png"><link rel="alternate" type="application/rss+xml" title="Electronics Projects and Circuit made Easy » Feed" href="http://circuiteasy.com/feed/"><link rel="alternate" type="application/rss+xml" title="Electronics Projects and Circuit made Easy » Comments Feed" href="http://circuiteasy.com/comments/feed/"><link rel="alternate" type="application/rss+xml" title="Electronics Projects and Circuit made Easy » Temperature Display Using LCD Comments Feed" href="http://circuiteasy.com/temperature-display-using-lcd/feed/"><script src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/cb=gapi.loaded_1" async=""></script><script id="facebook-jssdk" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/all.js"></script><script src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/cb=gapi.loaded_0" async=""></script><script async="" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/analytics.js"></script><script type="text/javascript" async="" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/plusone.js" gapi_processed="true"></script><script id="twitter-wjs" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/widgets.js"></script><script type="text/javascript">window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/circuiteasy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.2"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/wp-emoji-release.min.js" type="text/javascript"></script> <style type="text/css">img.wp-smiley,img.emoji {display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style> <link rel="stylesheet" id="style-css" href="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/style.css" type="text/css" media="all"><link rel="stylesheet" id="purple-crunch-css" href="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/purple-crunch.css" type="text/css" media="all"><script type="text/javascript" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/jquery.js"></script><style type="text/css"></style> <script type="text/javascript" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/jquery-migrate.min.js"></script> <script type="text/javascript" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/small-menu.js"></script> <script type="text/javascript" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/social.js"></script> <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://circuiteasy.com/xmlrpc.php?rsd"><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://circuiteasy.com/wp-includes/wlwmanifest.xml"><meta name="generator" content="WordPress 4.2.2"><link rel="shortlink" href="http://circuiteasy.com/?p=336"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-11746796-1', 'circuiteasy.com');
+  ga('send', 'pageview');
+
+</script> <style>
+			/* Link color */
+			a {
+				color: #1b8be0;
+			}
+		</style> <style>
+			/* Max Width */
+			#heatmapthemead-leaderboard,
+			nav.main-navigation,
+			nav.secondary-navigation,
+			#heatmapthemead-branding-container,
+			.heatmapthemead-layout-both-sidebars #heatmapthemead-main,
+			.heatmapthemead-layout-primary-sidebar-content #heatmapthemead-main,
+			.heatmapthemead-layout-content-secondary-sidebar #heatmapthemead-main,
+			.heatmapthemead-layout-content #heatmapthemead-main
+			{
+				max-width: 1160px;
+			}
+		</style> <style>
+				#heatmapthemead-header, #heatmapthemead-footer { 
+					max-width: 1160px; 
+				} 
+			</style> <style>
+			/* Font Style */
+			h1,h2,h3,h4,h5,h6,
+			#heatmapthemead-header-text p#site-title,
+			#heatmapthemead-header-text p#site-description { font-family:  "Arial Black", Gadget, sans-serif; }
+			.heatmapthemead-menu { font-family: Arial, Helvetica, sans-serif; }
+			body, button, input, select, textarea { font-family: Arial, Helvetica, sans-serif; }
+		</style> <style type="text/css">.recentcomments a{display:inline!important;padding:0!important;margin:0!important;}</style> <style type="text/css">#site-title a,#site-description{color:#28241E!important;}</style> <!--//--><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head><!-- End of <head> --><body class="single single-post postid-336 single-format-standard heatmapthemead-layout-both-sidebars  heatmapthemead-max-width-1160 heatmapthemead-long-content"><div id="heatmapthemead-header-wipe"><div id="heatmapthemead-header"><div id="heatmapthemead-header-container"><div id="heatmapthemead-primary-menu" class="heatmapthemead-menu"><nav role="navigation" class="site-navigation main-navigation"><p class="primary-small-nav-text">Sections</p><div class="menu"><ul><li class="page_item page-item-8"><a href="http://circuiteasy.com/about-us/">About us</a></li><li class="page_item page-item-10"><a href="http://circuiteasy.com/">Electronics Projects</a></li><li class="page_item page-item-12"><a href="http://circuiteasy.com/privacy-policy/">Privacy Policy</a></li></ul></div></nav></div><div id="heatmapthemead-header-branding"><div id="heatmapthemead-branding-container"><header id="branding" role="banner"><div id="heatmapthemead-header-text"><aside><p id="site-title"><a href="http://circuiteasy.com/" title="Electronics Projects and Circuit made Easy" rel="home">Electronics Projects and Circuit made Easy</a></p><p id="site-description">Simple Mini Projects.</p></aside></div></header><div id="heatmapthemead-widget-position-header" class="heatmapthemead-widget-position heatmapthemead-homeheader widget-area heatmapthemead-static-header-widget" role="complementary"><aside class="widget"><div class="heatmapthemead-social-icons"><a id="heatmapthemead-rss-social-icon" class="heatmapthemead-social-icon" href="http://circuiteasy.com/feed/"><img src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/rss-feed.png" alt=""></a></div></aside></div></div></div><div id="heatmapthemead-secondary-menu" class="heatmapthemead-menu"><nav role="navigation" class="site-navigation secondary-navigation"><p class="secondary-small-nav-text">Categories</p><ul class="menu"><li class="cat-item cat-item-5"><a href="http://circuiteasy.com/category/audio-and-siren/">Audio and Siren</a> </li><li class="cat-item cat-item-2"><a href="http://circuiteasy.com/category/electronics-projects/">Electronics Projects</a> </li><li class="cat-item cat-item-4"><a href="http://circuiteasy.com/category/heat-sensor/">Heat Sensor</a> </li><li class="cat-item cat-item-1"><a href="http://circuiteasy.com/category/learn/">Learn Electronics</a> </li><li class="cat-item cat-item-6"><a href="http://circuiteasy.com/category/logic-gate-project/">Logic Gate Project</a> </li><li class="cat-item cat-item-7"><a href="http://circuiteasy.com/category/microprocessor-project/">Microprocessor Project</a> </li><li class="cat-item cat-item-8"><a href="http://circuiteasy.com/category/optical-project/">Optical Project</a> </li><li class="cat-item cat-item-3"><a href="http://circuiteasy.com/category/power-supply-circuit/">Power Supply Circuit</a> </li><li class="cat-item cat-item-9"><a href="http://circuiteasy.com/category/sensor-circuit/">Sensor Circuit</a> </li><li class="cat-item cat-item-10"><a href="http://circuiteasy.com/category/timer-circuit/">Timer Circuit</a> </li></ul></nav></div></div></div></div><div id="heatmapthemead-main-wipe"><div id="heatmapthemead-main"><div id="heatmapthemead-content"><div id="heatmapthemead-the-content" class="site-content"><div id="heatmapthemead-the-content-container" role="main"><article id="post-336" class="post-336 post type-post status-publish format-standard hentry category-microprocessor-project category-sensor-circuit"> <header class="entry-header"><h1 class="entry-title"><a href="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/Temperature Display Using LCD and Arduino - Microprocessor Project.html" title="Permalink to Temperature Display Using LCD" rel="bookmark">Temperature Display Using LCD</a></h1></header><div class="heatmapthemead-header-entry-meta entry-meta"><span class="heatmapthemead-post-details">Posted<span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://circuiteasy.com/author/admin/" title="View all posts by admin" rel="author">admin</a></span></span></span> <span class="comments-link"><a href="http://circuiteasy.com/temperature-display-using-lcd/#respond">Leave a comment</a></span></div><div class="entry-content"><div style="float:none;margin:10px 0 10px 0;text-align:center;"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!--//--><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7693851345982262" data-ad-slot="7036877877"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>Here is a Simple Temperature Display Circuit using LCD (Liquid Crystal Display). For Heat Sensor we have used IC LM35 (Precision Centigrade Temperature Sensors) whose Output voltage is linearly proportional to the Celsius (Centigrade) temperature. Output of LM35 IC is 10mv/degree centigrade for eg if temperature is 35 degree, then the output of sensor will be 350mv or 0.35V<br>For working with LCD it is necessary to have Microprocessor. We have used Arduino Controller Board, which is AN OPEN-SOURCE ELECTRONICS PROTOTYPING PLATFORM.<br>Output of LM35 is feed to Arduino Analog input pin 0.<br>Further Data is Processed by the C Program. Output of Micro-controller is connected to the 16X2 LCD<br><img class="aligncenter" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/Digital-Temperature-Display.jpg" alt="Digital Temperature Display using 16X2 LCD"></p><p>Picture of Digital Thermometer<br>Below is the Simple Programme which is used here :-</p><hr><p>#include &lt;LiquidCrystal.h&gt;<br>LiquidCrystal lcd(12, 11, 5, 4, 3, 2);<br>const int inPin = 0;<br>void setup()<br>{<br>lcd.begin(16, 2);<br>}<br>void loop()<br>{<br>int x = analogRead(inPin);<br>lcd.setCursor(0, 1);<br>float millivolts = (x / 1024.0) * 5000;<br>float celsius = millivolts / 10;<br>lcd.clear();<br>lcd.setCursor(0,0);<br>lcd.print(celsius);<br>lcd.print(” C”);<br>lcd.setCursor(0,1);<br>lcd.print((celsius * 9)/ 5 + 32);<br>lcd.print(” F”);<br>delay(1000);<br>}</p><hr><p><img class="aligncenter" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/Digital-Temperature-Display-Circuit.png" alt="Digital Temperature Display Circuit Diagram"></p><!--//--><div style="float:none;margin:10px 0 10px 0;text-align:center;"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!--//--><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7693851345982262" data-ad-slot="9739665479"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>Circuit Diagram of Digital Thermometer<br><strong>If you are new to Arduino, then follow below Instruction while making this Project :</strong><br>1. After Buying Arduino Controller Board. Make sure it is working correctly. You have to Install Drive and application Software. You may need to do Jumper Setting on some board to switch between USB and External Power Source. <a title="Arduino Application Software" href="http://circuiteasy.com/download/arduino-1.0.5-windows.exe" target="_blank">Download arduino 1.0.5 for windows</a><br>
+<a title="CP2102 USB to COM Port" href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">Download CP2102 USB to UART Bridge Controller Driver.</a><br>
+2. After above steps, open Arduino Software and select correct board type and COM Port (Very Imp) from Menu Tools -&gt; Board . You can identify your Arduino Board by reading main IC number.<br>
+3. To make sure above step is completed and all are functioning well, upload a simple Basic programme from the Arduino Library Examples. You have to add one resistance and LED. for eg you can do Blink Programme (&nbsp;Turns on an LED on for one second, then off for one second) or LED Fade Programme.<br>
+4. Next Connect your Arduino Kit to 16X2 LCD. Here you have to add one more part, which is 10K Variable Resistance. You will get absolutely nothing character displayed on LCD if 10K preset is not adjusted correctly. If you are not sure, then adjust it near about .5 Volt and latter it can be fine tuned for better contrast.<br>
+5. For easy connection and Preset soldering I recommend use of PCB. which is shown below. You can save this for printing on copper clad Board. You can make your own PCB by Heat Transfer method or by screen printing method otherwise use Dot Matrix Board or Bread Board. This PCB will help you in all projects which used 16X2 LCD by reducing LCD Pin from 16 to 8 for easy connection.</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Lead -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7693851345982262" data-ad-slot="7036877877"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div></div> <!-- .entry-content --><p class="heatmapthemead-like-button-text">Enjoyed this post? Share it!</p><div class="heatmapthemead-like-buttons"><ul><li><div class="fb-like fb_iframe_widget" data-href="http://circuiteasy.com/temperature-display-using-lcd/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=120&amp;font=arial&amp;href=http%3A%2F%2Fcircuiteasy.com%2Ftemperature-display-using-lcd%2F&amp;layout=button_count&amp;locale=en_GB&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 77px; height: 20px;"><iframe name="f58323a1c" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/like.html" style="border: none; visibility: visible; width: 77px; height: 20px;" class=""></iframe></span></div></li><li><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/tweet_button.9b77a1cb4bd14da06dfa5e2f65422c91.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="position: static; visibility: visible; width: 77px; height: 20px;"></iframe></li><li><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 24px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1437162830585" name="I0_1437162830585" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></li></ul></div> <!--#heatmapthemead-like-buttons --><div class="heatmapthemead-like-buttons-clear">&nbsp;</div>    
+    				<div class="heatmapthemead-footer-entry-meta">
+				<footer class="entry-meta">
+				
+										
+														<p class="heatmapthemead-cat-links">
+									Categories: <a href="http://circuiteasy.com/category/microprocessor-project/" rel="tag">Microprocessor Project</a>, <a href="http://circuiteasy.com/category/sensor-circuit/" rel="tag">Sensor Circuit</a>								</p>
+													
+							
+								
+				</footer><!-- #heatmapthemead-article-meta -->    
+			</div><!-- #footer-entry-meta --> 
+    	<div id="comments" class="comments-area">
+	
+	
+	
+	
+							<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://circuiteasy.com/temperature-display-using-lcd/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<p class="must-log-in">You must be <a href="http://circuiteasy.com/wp-login.php?redirect_to=http%3A%2F%2Fcircuiteasy.com%2Ftemperature-display-using-lcd%2F">logged in</a> to post a comment.</p>												</div><!-- #respond -->
+			
+</div><!-- #comments .comments-area -->		</article><!-- #post-336 -->        
+			<div id="heatmapthemead-post-navigation">
+            <nav role="navigation" id="nav-below" class="site-navigation post-navigation">
+        
+                    
+                <div class="nav-previous"><a href="http://circuiteasy.com/electronic-letter-box/" rel="prev"><span class="meta-nav">«</span> Electronic Letter Box</a></div>                <div class="nav-next"><a href="http://circuiteasy.com/electronic-eye/" rel="next">Electronic Eye <span class="meta-nav">»</span></a></div>        
+                    
+            </nav><!-- .site-navigation post-navigation -->
+        </div><!-- #heatmapthemead-post-navigation -->
+		</div> <!-- id="heatmapthemead-the-content-container" --> 
+</div> <!-- id="heatmapthemead-the-content" --> 
+</div> <!-- id="heatmapthemead-content" --> 
+<!-- primary sidebar -->
+<div id="heatmapthemead-primary-sidebar">
+<div id="heatmapthemead-primary-sidebar-container" role="complementary">
+<div id="heatmapthemead-widget-position-primary" class="heatmapthemead-widget-position heatmapthemead-primary" role="complementary">		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h4 class="widget-title">science exhibition</h4>		<ul>
+					<li>
+				<a href="http://circuiteasy.com/automatic-fan-controller/">Automatic Fan Controller</a>
+						</li>
+					<li>
+				<a href="http://circuiteasy.com/distance-measurement-using-ultrasound/">Distance Measurement Using Ultrasound</a>
+						</li>
+					<li>
+				<a href="http://circuiteasy.com/clap-switch/">Clap Switch</a>
+						</li>
+					<li>
+				<a href="http://circuiteasy.com/automatic-street-light/">Automatic Street Light</a>
+						</li>
+					<li>
+				<a href="http://circuiteasy.com/rain-alarm/">Rain Alarm</a>
+						</li>
+				</ul>
+		</aside></div> <!-- id="heatmapthemead-widget-position-primary" -->
+</div> <!-- id="heatmapthemead-primary-sidebar-container" -->
+</div> <!-- id="heatmapthemead-primary-sidebar" -->
+<!-- secondary sidebar -->
+<div id="heatmapthemead-secondary-sidebar">
+<div id="heatmapthemead-secondary-sidebar-container" role="complementary">
+<div id="heatmapthemead-widget-position-secondary" class="heatmapthemead-widget-position heatmapthemead-secondary widget-area" role="complementary"><aside id="search-3" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://circuiteasy.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></aside><aside id="text-2" class="widget widget_text">			<div class="textwidget"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Vertical Link Unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-7693851345982262" data-ad-slot="9188125070"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h4 class="widget-title">Experiment Using :-</h4><div class="tagcloud"><a href="http://circuiteasy.com/tag/ldr/" class="tag-link-11" title="4 topics" style="font-size: 8pt;">LDR</a>
+<a href="http://circuiteasy.com/tag/speaker/" class="tag-link-13" title="8 topics" style="font-size: 22pt;">Speaker</a></div>
+</aside></div> <!-- id="heatmapthemead-widget-position-secondary" -->
+</div> <!-- id="heatmapthemead-secondary-sidebar-container" -->
+</div> <!-- id="heatmapthemead-secondary-sidebar" -->
+</div> <!-- id="heatmapthemead-main" -->
+</div> <!-- id="heatmapthemead-main-wipe" -->
+<!-- Footer -->
+<div id="heatmapthemead-footer-wipe">
+<div id="heatmapthemead-footer">
+<div id="heatmapthemead-footer-container" role="complementary">
+				<div id="heatmapthemead-footer-menu" class="heatmapthemead-menu">
+					<nav role="navigation" class="site-navigation footer-navigation">
+						<div class="menu"><ul><li class="page_item page-item-8"><a href="http://circuiteasy.com/about-us/">About us</a></li><li class="page_item page-item-10"><a href="http://circuiteasy.com/">Electronics Projects</a></li><li class="page_item page-item-12"><a href="http://circuiteasy.com/privacy-policy/">Privacy Policy</a></li></ul></div>
+					</nav>
+				</div>
+	</div> <!-- id="heatmapthemead-footer-container" -->
+</div> <!-- id="heatmapthemead-footer" -->
+</div> <!-- id="heatmapthemead-footer-wipe" -->
+<!-- wp_footer() -->
+<script type="text/javascript" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/comment-reply.min.js"></script>
+<!-- End of wp_footer() -->
+<!-- Number of Queries:28   Seconds: 0.131-->
+<!-- heatmapthemead_end_body hook -->
+
+			<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/xRlIuTsSMoE.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/xRlIuTsSMoE(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+			<script>
+				(function(d, s, id) {
+  					var js, fjs = d.getElementsByTagName(s)[0];
+  					if (d.getElementById(id)) return;
+  					js = d.createElement(s); js.id = id;
+  					js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&status=0";
+  					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script><!-- END BODY Scripts -->
+
+
+<!-- end of heatmapthemead_end_body hook -->
+
+
+<!-- End of render.php -->
+<iframe name="oauth2relay290656243" id="oauth2relay290656243" src="./Temperature Display Using LCD and Arduino - Microprocessor Project_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

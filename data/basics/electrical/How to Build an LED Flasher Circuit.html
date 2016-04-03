@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0072)http://www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Build an LED Flasher Circuit</title>
+<meta name="keywords" content="how to, build, LED flasher circuit, 555 timer, astable mode">
+<meta name="description" content="In this project, we demonstrate how to build an LED flasher circuit with a 555 timer chip. 
+">
+<link href="./How to Build an LED Flasher Circuit_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Build an LED Flasher Circuit_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+	<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Rectangle Text Ad */
+google_ad_slot = "1729898602";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Build an LED flasher circuit</h1><br>
+<img style="width: 333px; height: 64px;" alt="lit LED" src="./How to Build an LED Flasher Circuit_files/lit-LED.png">
+
+<br><br><br>
+
+<p id="para1">In this project, we will show how to build a simple LED flasher circuit using a 555 timer chip. 
+
+</p><p id="para1">An LED flasher circuit is a circuit which flashes the LED- meaning turns it ON-OFF, ON-OFF, ON-OFF. 
+
+</p><p id="para1">The 555 timer chip is a very versatile IC, because when connected correctly, it can it can create pulses of current at specific 
+time intervals decided by the resistor-capacitor (RC)
+network. When a 555 timer creates pulses in this way, the LED doesn't stay constantly on. It only turns on at a pulse and then shuts off after the pulse has passed. And it does this in a never-ending
+cycle, which creates the flashes of light. 
+
+</p><div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large image ads */
+google_ad_slot = "3467666961";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><p id="para1">To make the 555 timer chip create pulses, it must be placed in astable mode. Astable mode simply means that the 555 timer has no stable state. It switches constantly between high and 
+low, or on and off. This is why this mode is also called oscillator mode, because it uses the 555 timer an oscillator, which creates square wave signals. 
+
+
+</p><p id="para1">To create an LED flasher circuit, the parts which we need to do so are:<br><br>
+
+</p><p id="para6">Parts</p>
+<ul id="para1">
+<li>555 timer IC</li>
+<li>9-volt Battery or DC power supply</li>
+<li>Red LED</li>
+<li>2 1KΩ Resistors</li>
+<li>10KΩ Resistor</li>
+<li>10µF electrolytic capacitor</li>
+<li>0.01µF ceramic capacitor</li>
+<li>Several jumper wires</li>
+</ul>
+<br>
+
+<p id="para1">For this circuit, you can use a 9-volt battery as the power source or if you have a DC power supply, you can just adjust so that
+it gives out 9 volts. 
+
+</p><p id="para1">For this circuit, you will need several jumper wires because to connect all the resistors and capacitors to the 555 timer chip 
+does become complicated. To simply the breadboarding of this circuit, jumper wires help to space out the circuit so that everything isn't jumbled
+on top of each other. 
+
+<br>
+</p><h3>LED Flasher Circuit</h3>
+<p id="para1">The schematic diagram of the LED flasher circuit we will build is shown below:<br><br>
+
+
+</p><div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+
+/* Homepage */
+google_ad_slot = "1511328022";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><img style="width: 559px; height: 532px;" alt="LED flasher circuit" src="./How to Build an LED Flasher Circuit_files/LED-flasher-circuit.png">
+
+<br>
+
+<p id="para1">This circuit will flash the LED on and off, on and off. 
+
+</p><p id="para1">The rate that the LED flashes is determined by the resistors R1 and R2 and the electrolytic capacitor C1. 
+
+</p><p id="para1">Again, the output of a 555 timer are square waves. There are 3 important time measurements for a square wave. There is the total length of the square wave (the time it is on 
+and off or high and low), there is the length of time it is high (T<small>high</small>), and the length of time it is low (T<small>low</small>). The total time of a square wave is equal 
+to the sum of T<small>low</small> and T<small>high</small>. The amount of time that the square wave is high is its duty cycle. So, for example, if the total time of a square wave is 1 second
+and it's high for 0.2s, it has a duty cycle of 20%, because it's on for only 20% of the cycle. 
+
+</p><p id="para1">The duty cycle is very important for an application like this LED flasher circuit. The duty cycle we choose determines how long the LED will stay on for compared to how long it is 
+off for. Again, as an example, if we set our duty cycle to be 20%, this means the LED will flash on for 20% of the cycle and be off for 80% of the cycle. If we choose a duty cycle of 80%, the LED
+will be on for 80% of the cycle and off for 20% of the cycle. Thus, our duty cycle is very important. 
+
+</p><p id="para1">The formulas to calculate these values in our circuit is:<br><br>
+
+</p><p id="para1"><b>T= 0.7 * (R1 + 2R2) * C1</b>
+
+</p><p id="para1"><b>T<small>high</small>= 0.7 * (R1 + R2) * C1</b>
+
+</p><p id="para1"><b>T<small>low</small>= 0.7 * R2 * C1</b>
+
+
+<br><br>
+</p><p id="para1">C1 charges through both R1 and R2 but discharges only through R2. That's why we must add the 2 resistor values for the T<small>high</small> calculation, but only use R2 for the 
+T<small>low</small> calculation. It's also why you must double R2 but not R1 for the total time (T) calculation. 
+
+</p><p id="para1">According to the above formulas, the larger value we use for the resistors and the capacitor, the longer the cycle will be. If we use very large values such as 100KΩ or 100µF, 
+we will have very large cycles. For example, let's say we make R1 and R2 resistors both 1MΩ resistors and C1 100µF. This would produce a total time period of 210 seconds for the cycle. Of this 210s, 
+the LED would be on for 140s and off for 70s. This is not what we want at all. This is way too long. This would not produce a LED flasher. We must choose much lower resistor and capacitor values
+in order to see a flashing or flickering effect. 
+
+</p><p id="para1">However, on the other extreme, we do not want to choose values which are too small as well. If we do, the human eye won't be able to detect that it has even turned on. For example,
+if we choose 1KΩ resistors and a 0.1µF capacitor, the time cycle and the on-off cycle would be too short. It will be as if the LED is constantly on. Therefore, we must choose a precise range of 
+values to see the flashing effect. With these values, each cycle would last just a few millionths of a second. 
+
+</p><p id="para1">For the values we must in our circuit, our duty cycle is just about 50%. With a 50% duty cycle, the LEDs are on for about the same time that they are off. 
+
+</p><p id="para1">With R1= 1KΩ and R2=10KΩ and C1= 10µF, our calculations will be:<br><br>
+
+</p><p id="para1"><b>T= 0.7 * (1KΩ + 2(10KΩ)) * 10µF= 0.147s</b>
+
+</p><p id="para1"><b>T<small>high</small>= 0.7 * (1KΩ + 10KΩ) * 10µF= 0.077s</b>
+
+</p><p id="para1"><b>T<small>low</small>= 0.7 * 10KΩ * 10µF= 0.07s</b>
+
+<br><br>
+</p><p id="para1">These values for resistors R1 and R2 and capacitor C1 allows us to see the flashing of the LED. 
+
+
+
+
+<br><br></p><hr><br>
+<h3>Flashing 2 LEDs</h3>
+<p id="para1">We can slightly modify the circuit above so that it flashes 2 LEDs. 
+
+</p><p id="para1">The LEDs will flash alternatively. As one flashes on, the other flashes off. 
+
+</p><p id="para1">This happens pretty quickly but it still can be seen with the human eye. 
+
+</p><p id="para6">Additional Parts</p>
+<ul id="para1">
+<li>1KΩ Resistor</li>
+<li>Red LED</li>
+</ul>
+
+<br>
+
+<p id="para1">We need all the parts listed for the first circuit, now with the addition of 1 more 1KΩ resistor and 1 red LED. 
+
+</p><h3>Circuit</h3>
+<p id="para1">The schematic diagram of the 2 flashing alternative LEDs is shown below:<br><br>
+
+<img style="width: 588px; height: 567px;" alt="2 LED flasher circuit" src="./How to Build an LED Flasher Circuit_files/2-LED-flasher-circuit.png">
+<br>
+
+</p><p id="para1">Again, this will create a circuit where 2 LEDs now flash, alternative, like police sirens rotating between a blue siren and a 
+red siren. 
+
+</p><p id="para1">And this is how LED flasher circuits can be built with 555 timers. 
+
+
+
+
+</p><p id="para1">To see a project of an LED flasher being built with an arduino board, see <a href="http://www.learningaboutelectronics.com/Articles/Arduino-LED-flasher-circuit.php">
+Arduino LED Flasher Circuit</a>. This same flasher can easily be built with a microcontroller like arduino.
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+	
+
+ 	<a href="http://www.learningaboutelectronics.com/Articles/How-to-vary-the-brightness-of-an-led">How to Vary the Brightness of an LED</a><br><br>
+
+
+	<a href="http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php">How to Build an LED Driver Circuit</a><br><br>
+
+
+<a href="http://www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php">How to Build a Dark-activated Light Circuit</a><br><br>
+<br>
+<br>
+
+<!-- begin htmlcommentbox.com -->
+ </p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./How to Build an LED Flasher Circuit_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><div class="comment" id="comment_2096229"><span class="date">(June 22, 2015) </span><span class="author"><b class="author-name">SHYAKA </b> said:</span> <blockquote>This is very good led circuit,i have explained it matched thank.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('2096229')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('2096229')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_3156616"><span class="date">(May 1, 2015) </span><span class="author"><b class="author-name">Anonymous </b> said:</span> <blockquote>Engineers Rock!! </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('3156616')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('3156616')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_678766"><span class="date">(Apr 8, 2015) </span><span class="author"><b class="author-name">Malothane </b> said:</span> <blockquote>I highly apriciate the level of your help,keep making a good change in the world </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('678766')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('678766')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_4710807"><span class="date">(June 16, 2014) </span><span class="author"><b class="author-name">David </b> said:</span> <blockquote>You can place 10 LEDs in parallel. However, you will have to probably use a darlington transistor in order to get enough current to run those LEDs.  </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('4710807')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('4710807')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_2628521"><span class="date">(June 15, 2014) </span><span class="author"><b class="author-name">Damien P - Australia </b> said:</span> <blockquote>I would like to have Qty 10 LEDs flash simultaneously at 1 second intervals.
+<br>That is all are illuminated at 1 second on then 1 second off.
+<br>Can you provide a circuit diagram for this please?
+<br>This will be used as an educational tool for demonstrating illuminated Arrow Board Sign at Road Works situation. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('2628521')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('2628521')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_261001"><span class="date">(Dec 2, 2013) </span><span class="author"><b class="author-name">David </b> said:</span> <blockquote>Pete, not that I know of. If you want an LED to flash a specified number of times, your only way may be to use a microcontroller and program it in software to flash only 3 times. You could do it with a 555 timer but it would be very complex. You would have to run it in astable mode and create an RC circuit that powers it just enough so that it flashes 3 times. I don't have the actual circuit, though. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('261001')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('261001')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_8566527"><span class="date">(Dec 1, 2013) </span><span class="author"><b class="author-name">Pete </b> said:</span> <blockquote>Is there away to use a 555 timer to make an led flash 3 times only? 
+<br>
+<br>Cheers </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('8566527')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('8566527')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_6726053"><span class="date">(Nov 21, 2013) </span><span class="author"><b class="author-name">David </b> said:</span> <blockquote>If you add LEDs in parallel to any of the above LEDs, they'll all light at the same time, assuming you have sufficient current. To increase current capability you can toy around with adding a transistor to give a current boost.  </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('6726053')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('6726053')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_1585519"><span class="date">(Nov 21, 2013) </span><span class="author"><b class="author-name">Chris </b> said:</span> <blockquote>Can more than 2 LEDS be added?  Say 10? </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('1585519')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('1585519')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div><div class="comment" id="comment_8511566"><span class="date">(May 30, 2013) </span><span class="author"><b class="author-name">Les </b> said:</span> <blockquote>Very good circuits for a model train crossing signal, thanks. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('8511566')"><img src="./How to Build an LED Flasher Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('8511566')"><img src="./How to Build an LED Flasher Circuit_files/like.png"> like</a> </p><div class="likes"><span>3 </span><img src="./How to Build an LED Flasher Circuit_files/like.png"></div></div></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FLED-flasher-circuit.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./How to Build an LED Flasher Circuit_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+  <link rel="stylesheet" type="text/css" href="./How to Build an LED Flasher Circuit_files/skin.css">
+  <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ <!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+ <o:p></o:p><p></p>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

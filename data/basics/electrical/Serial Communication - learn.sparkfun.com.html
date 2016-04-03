@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile mode if small screen device -->
+    
+    <title>Serial Communication - learn.sparkfun.com</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="Serial%20Communication%20-%20learn.sparkfun.com_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="Serial%20Communication%20-%20learn.sparkfun.com_files/theme.css" type="text/css" media="screen">    <link rel="alternate" type="application/atom+xml" title="Education Blog" href="https://learn.sparkfun.com/feeds/blog">
+    <link rel="alternate" type="application/atom+xml" title="Tutorials" href="https://learn.sparkfun.com/feeds/tutorials">
+    <link rel="alternate" type="application/atom+xml" title="Education Blog Comments" href="https://learn.sparkfun.com/feeds/blog_comments">
+    <link rel="alternate" type="application/atom+xml" title="Tutorial Comments" href="https://learn.sparkfun.com/feeds/tutorial_comments">
+
+    <script src="Serial%20Communication%20-%20learn.sparkfun.com_files/analytics.js" async=""></script><script type="text/javascript">
+          var SFECONFIG = {
+      currencies: {"USD":{"code":"USD","title":"US Dollar","symbol_left":"$","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.0000"},"CAD":{"code":"CAD","title":"Canadian Dollar","symbol_left":"$","symbol_right":" CAD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.2672"},"AUD":{"code":"AUD","title":"Australian Dollar","symbol_left":"$","symbol_right":" AUD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.3441"},"GBP":{"code":"GBP","title":"British Pound","symbol_left":"&pound;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.6444"},"EUR":{"code":"EUR","title":"Euro","symbol_left":"&euro;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.8966"}},
+      dnt: false,
+      preferred_currency: 'USD',
+        http_server: 'http://www.sparkfun.com',
+        https_server: 'https://www.sparkfun.com',
+        http_static: 'https://cdn.sparkfun.com',
+        base_url: '/',
+        url: '/',
+        controller: 'tutorials',
+        action: 'view',
+        entity_id: '',
+        auth: false,
+        sparkrev: '1436549074',
+        search_key: 'qLqN6uVRKXnjHd2QapGm'      };
+      var require = {
+        paths: {
+          'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min'
+        },
+        baseUrl: '/js/',
+        urlArgs: "sparkrev=" + SFECONFIG.sparkrev,
+        deps: ['jqueryui'],
+        callback: function() {
+          $('#learn').learn();
+          $('#learn').sfeutil();
+        }
+      };
+    </script>
+    <script src="Serial%20Communication%20-%20learn.sparkfun.com_files/learn-built.js"></script><script src="Serial%20Communication%20-%20learn.sparkfun.com_files/jquery-ui.js" data-requiremodule="jqueryui" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script>
+          <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3404365-1', 'auto', {'allowLinker': true});
+      ga('require', 'linker');
+      ga('linker:autoLink', ['www.sparkfun.com', 'avc.sparkfun.com'] );
+      ga('require', 'displayfeatures');
+            ga('set', 'dimension1', 'Guest');
+      ga('send', 'pageview');
+
+      </script>
+      <script src="Serial%20Communication%20-%20learn.sparkfun.com_files/tutorial.js" data-requiremodule="tutorial" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+
+  <body id="learn" class="layout-default no-type tutorials-view no-touch" ontouchstart="">
+    <div class="wrapper" itemscope="" itemtype="http://schema.org/WebSite">
+      <meta itemprop="url" content="https://www.sparkfun.com/">
+      <div class="wrapper-inner">
+
+    
+<div class="header">
+  <div class="container">
+
+<!-- Mobile Nav Button -->
+<div class="mobile-menu-container left">
+  <a id="nav_toggle" class="mobile-menu-button nav_toggle" href="#"><span>≡</span></a>
+      <a id="search_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-search"></span></a>
+  </div>
+
+<nav class="top-links">
+  &nbsp;
+</nav>
+
+<!-- Logo -->
+<div class="logo-container">
+  <a class="logo" href="https://www.sparkfun.com/">
+    <span class="sfe-icon-flame"></span>
+    <span class="sfe-icon-sparkfun" data-icon="🔥">
+      <span class="visuallyhidden">sparkfun.com</span>
+    </span>
+  </a>
+</div>
+
+<!-- Tabs -->
+<!-- also edit mobile tabs in .main-nav -->
+<nav class="tabs-container">
+  <ul>
+    <li class="shop "><a href="https://www.sparkfun.com/">Shop</a></li>
+    <li class="learn active"><a href="https://learn.sparkfun.com/">Learn</a></li>
+    <li class="avc "><a href="https://avc.sparkfun.com/"><span class="sfe-icon-avc"><span class="visuallyhidden">AVC</span></span></a></li>
+    <li class="forum "><a href="https://forum.sparkfun.com/">Forum</a></li>
+    <li class="data "><a href="https://data.sparkfun.com/">Data</a></li>
+  </ul>
+</nav>
+
+<!-- Cart & User -->
+<div class="user-container mobile-menu-container right">
+
+  <a id="account_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-user"></span></a>
+
+  
+      <div class="user">
+      <!-- login modal trigger -->
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fserial-communication" data-toggle="modal" data-target="#login_modal" data-remote="false">log in</a>
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/make">register</a>    </div>
+  
+</div>
+
+<!-- Navigation / Search -->
+<div class="main-nav-container">
+
+  <nav class="main-nav">
+    <ul>
+      <li class="tab shop ">
+        <a href="https://www.sparkfun.com/">Shop</a>      </li>
+      <li class="tab learn active">
+        <a href="https://learn.sparkfun.com/">Learn</a>      </li>
+      <li class="tab forum ">
+        <a href="https://forum.sparkfun.com/">Forum</a>
+      </li>
+      <li class="tab data ">
+        <a href="https://data.sparkfun.com/">Data</a>
+      </li>
+
+      
+<li class="start-a-project ">
+  <a href="https://learn.sparkfun.com/start_a_project">Start a Project</a></li>
+<li><a href="https://learn.sparkfun.com/blog">EDU Blog</a></li>
+<li><a href="https://learn.sparkfun.com/resources">Resources</a></li>
+<li class="active"><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+<li><a href="https://learn.sparkfun.com/events">Classes</a></li>
+<li><a href="https://learn.sparkfun.com/calendar">Calendar</a></li>
+<li><a href="https://learn.sparkfun.com/workshops">Workshops</a></li>
+<li><a href="https://learn.sparkfun.com/contact">Contact</a></li>
+
+      <li class="desktop-toggle">
+        <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fserial-communication">Desktop Site</a>      </li>
+    </ul>
+  </nav>
+
+      <form id="search_form" class="search" action="https://www.sparkfun.com/search/results" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.sparkfun.com/search/results?term={term}">
+      <div class="ui-widget">
+        <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input name="term" id="global-search" class="form-control ui-autocomplete-input" placeholder="search..." itemprop="query-input" autocomplete="off" type="text">
+      </div>
+    </form>
+  
+</div>
+
+  </div>
+</div>
+
+
+    
+    <div class="content">
+      <div class="container">
+
+        
+        <div class="main-title">
+  <ul class="breadcrumb">
+    <li><a href="https://learn.sparkfun.com/">Home</a></li>
+    <li><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+    <li>Serial Communication</li>
+      </ul>
+
+  <h1>
+    Serial Communication  </h1>
+
+</div>
+
+
+<a id="nav_toggle_pages" class="nav_toggle" href="#"><span>≡</span> Pages</a>
+
+<div id="tutorial" class="row">
+
+  <div class="col-sm-8" id="sections">
+
+    <div class="contributors">
+                      Contributors:
+                <a href="https://www.sparkfun.com/users/69916"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/f2ed505f510e392f58811e4aa03e6fe0.jpeg"> Jimb0</a>          </div>
+
+    <span class="fave_widget verbose">
+  <a href="#" class="fave_btn " title="Add to favorites" data-entity="learn_tutorials" data-entity-id="8">
+    <span class="fave_yes">
+      <span class="glyphicon glyphicon-heart"></span>
+      <span class="name">Favorited</span>
+    </span>
+    <span class="fave_no">
+      <span class="glyphicon glyphicon-heart-empty"></span>
+      <span class="name">Favorite</span>
+    </span>
+  </a>
+  <span class="fave_count">5</span>
+</span>    <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t8" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft8" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft8&amp;name=Serial+Communication" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft8" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Serial+Communication&amp;url=http%3A%2F%2Fsfe.io%2Ft8&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft8&amp;t=Serial+Communication" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft8&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F7%2Fd%2Ff%2F9%2F9%2F50d24be7ce395f1f6c000000.jpg&amp;description=Serial+Communication" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+          <div class="section tutorial-page">
+        <h2 id="serial-intro">Introduction</h2>
+        <p>Embedded electronics is all about interlinking circuits 
+(processors or other integrated circuits) to create a symbiotic system. 
+In order for those individual circuits to swap their information, they 
+must share a common communication protocol. Hundreds of communication 
+protocols have been defined to achieve this data exchange, and, in 
+general, each can be separated into one of two categories: parallel or 
+serial.</p>
+
+<h3>Parallel vs. Serial</h3>
+
+<p>Parallel interfaces transfer multiple bits at the same time. They usually require <strong>buses</strong> of data - transmitting across eight, sixteen, or more wires. Data is transferred in huge, crashing waves of 1’s and 0’s.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/a/c/3/a/50e1cca6ce395fbc27000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50e1cca6ce395fbc27000000.png" alt="Parallel Generalization"></a></p>
+
+<p style="text-align:center;"> <em>An 8-bit data bus, controlled by a clock, transmitting a byte every clock pulse. 9 wires are used.</em></p>
+
+<p>Serial interfaces stream their data, one single bit at a time. These 
+interfaces can operate on as little as one wire, usually never more than
+ four.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/e/5/4/2/a/50e1ccf1ce395f962b000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50e1ccf1ce395f962b000000.png" alt="Serial Generalization"></a></p>
+
+<p style="text-align:center;"> <em>Example of a serial interface, transmitting one bit every clock pulse. Just 2 wires required!</em></p>
+
+<p>Think of the two interfaces as a stream of cars: a parallel interface
+ would be the 8+ lane mega-highway, while a serial interface is more 
+like a two-lane rural country road. Over a set amount of time, the 
+mega-highway potentially gets more people to their destinations, but 
+that rural two-laner serves its purpose and costs a fraction of the 
+funds to build.</p>
+
+<p>Parallel communication certainly has its benefits. It’s fast, 
+straightforward, and relatively easy to implement. But it requires many 
+more input/output (I/O) lines. If you’ve ever had to move a project from
+ a basic <a href="https://www.sparkfun.com/products/11021">Arduino Uno</a> to a <a href="https://www.sparkfun.com/products/11061">Mega</a>,
+ you know that the I/O lines on a microprocessor can be precious and 
+few. So, we often opt for serial communication, sacrificing potential 
+speed for pin real estate.</p>
+
+<h3>Asynchronous Serial</h3>
+
+<p>Over the years, dozens of serial protocols have been crafted to meet particular needs of embedded systems. USB (universal <em>serial</em>
+ bus), and Ethernet, are a couple of the more well-known computing 
+serial interfaces. Other very common serial interfaces include SPI, I<sup>2</sup>C,
+ and the serial standard we’re here to talk about today. Each of these 
+serial interfaces can be sorted into one of two groups: synchronous or 
+asynchronous.</p>
+
+<p>A synchronous serial interface always pairs its data line(s) with a 
+clock signal, so all devices on a synchronous serial bus share a common 
+clock. This makes for a more straightforward, often faster serial 
+transfer, but it also requires at least one extra wire between 
+communicating devices. Examples of synchronous interfaces include SPI, 
+and I<sup>2</sup>C.</p>
+
+<p><em>Asynchronous</em> means that data is transferred <strong>without support from an external clock signal</strong>.
+ This transmission method is perfect for minimizing the required wires 
+and I/O pins, but it does mean we need to put some extra effort into 
+reliably transferring and receiving data. The serial protocol we’ll be 
+discussing in this tutorial is the most common form of asynchronous 
+transfers. It is so common, in fact, that when most folks say “serial” 
+they’re talking about this protocol (something you’ll probably notice 
+throughout this tutorial).</p>
+
+<p>The clock-less serial protocol we’ll be discussing in this tutorial 
+is widely used in embedded electronics. If you’re looking to add a GPS 
+module, Bluetooth, XBee’s, serial LCDs, or many other external devices 
+to your project, you’ll probably need to whip out some serial-fu.</p>
+
+<h3>Suggested Reading</h3>
+
+<p>This tutorial builds on a few lower-level electronics concepts, including:</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-read-a-schematic">How to read a schematic</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/analog-vs-digital">Analog vs Digital</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/logic-levels">Logic Levels</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/binary">Binary</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/hexadecimal">Hexadecimal</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ASCII">ASCII</a></li>
+</ul>
+
+
+<p>If you’re not super familiar with any of those concepts, consider checking those links out.</p>
+
+<p>Now then, let’s go on a serial journey…</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="rules-of-serial">Rules of Serial</h2>
+        <p>The asynchronous serial protocol has a number of built-in 
+rules - mechanisms that help ensure robust and error-free data 
+transfers. These mechanisms, which we get for eschewing the external 
+clock signal, are:</p>
+
+<ul>
+<li>Data bits,</li>
+<li>Synchronization bits,</li>
+<li>Parity bits,</li>
+<li>and Baud rate.</li>
+</ul>
+
+
+<p>Through the variety of these signaling mechanisms, you’ll find that 
+there’s no one way to send data serially. The protocol is highly 
+configurable.<a name="baud"></a> The critical part is making sure that <strong>both devices on a serial bus are configured to use the exact same protocols</strong>.</p>
+
+<h4>Baud Rate</h4>
+
+<p>The baud rate specifies <strong>how fast</strong> data is sent over a
+ serial line. It’s usually expressed in units of bits-per-second (bps). 
+If you invert the baud rate, you can find out just how long it takes to 
+transmit a single bit. This value determines how long the transmitter 
+holds a serial line high/low or at what period the receiving device 
+samples its line.</p>
+
+<p>Baud rates can be just about any value within reason. The only 
+requirement is that both devices operate at the same rate. One of the 
+more common baud rates, especially for simple stuff where speed isn’t 
+critical, is <strong>9600 bps</strong>. Other “standard” baud are 1200, 2400, 4800, 19200, 38400, 57600, and 115200.</p>
+
+<p>The higher a baud rate goes, the faster data is sent/received, but 
+there are limits to how fast data can be transferred. You usually won’t 
+see speeds exceeding 115200 - that’s fast for most microcontrollers. Get
+ too high, and you’ll begin to see errors on the receiving end, as 
+clocks and sampling periods just can’t keep up.</p>
+
+<h4>Framing the data</h4>
+
+<p>Each block (usually a byte) of data transmitted is actually sent in a <em>packet</em> or <em>frame</em> of bits. Frames are created by appending synchronization and parity bits to our data.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/f/9/c/0/2/50d2066fce395fc43b000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d2066fce395fc43b000000.png" alt="Serial Packet"></a></p>
+
+<p style="text-align:center;"> <em>A serial frame. Some symbols in the frame have configurable bit sizes.</em></p>
+
+<p>Let’s get into the details of each of these frame pieces.</p>
+
+<h4>Data chunk</h4>
+
+<p>The real meat of every serial packet is the data it carries. We ambiguously call this block of data a <em>chunk</em>,
+ because its size isn’t specifically stated. The amount of data in each 
+packet can be set to anything from 5 to 9 bits. Certainly, the standard 
+data size is your basic 8-bit byte, but other sizes have their uses. A 
+7-bit data chunk can be more efficient than 8, especially if you’re just
+ transferring 7-bit ASCII characters.</p>
+
+<p>After agreeing on a character-length, both serial devices also have to agree on the <strong>endianness</strong>
+ of their data. Is data sent most-significant bit (msb) to least, or 
+vice-versa? If it’s not otherwise stated, you can usually assume that 
+data is transferred <strong>least-significant bit (lsb) first</strong>.</p>
+
+<h4>Synchronization bits</h4>
+
+<p>The synchronization bits are two or three special bits transferred with each chunk of data. They are the <strong>start bit</strong> and the <strong>stop bit(s)</strong>.
+ True to their name, these bits mark the beginning and end of a packet. 
+There’s always only one start bit, but the number of stop bits is 
+configurable to either one or two (though it’s commonly left at one).</p>
+
+<p>The start bit is always indicated by an idle data line going from 1 
+to 0, while the stop bit(s) will transition back to the idle state by 
+holding the line at 1.</p>
+
+<h4>Parity bits</h4>
+
+<p>Parity is a form of very simple, low-level error checking. It comes 
+in two flavors: odd or even. To produce the parity bit, all 5-9 bits of 
+the data byte are added up, and the evenness of the sum decides whether 
+the bit is set or not. For example, assuming parity is set to even and 
+was being added to a data byte like <code>0b01011101</code>, which has an odd number of <code>1</code>’s (5), the parity bit would be set to <code>1</code>. Conversely, if the parity mode was set to odd, the parity bit would be <code>0</code>.</p>
+
+<p>Parity is <em>optional</em>, and not very widely used. It can be 
+helpful for transmitting across noisy mediums, but it’ll also slow down 
+your data transfer a bit and requires both sender and receiver to 
+implement error-handling (usually, received data that fails must be 
+re-sent).</p>
+
+<h4>9600 8N1 (an example)</h4>
+
+<p>9600 8N1 - 9600 baud, 8 data bits, no parity, and 1 stop bit - is one
+ of the more commonly used serial protocols. So, what would a packet or 
+two of 9600 8N1 data look like? Let’s have an example!</p>
+
+<p>A device transmitting the <a href="http://www.asciitable.com/">ASCII</a> characters ‘O’ and ‘K’ would have to create two packets of data. The ASCII value of <em>O</em> (that’s uppercase) is 79, which breaks down into an 8-bit binary value of <code>01001111</code>, while <em>K</em>’s binary value is <code>01001011</code>. All that’s left is appending sync bits.</p>
+
+<p>It isn’t specifically stated, but it’s assumed that data is 
+transferred least-significant bit first. Notice how each of the two 
+bytes is sent as it reads from right-to-left.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/a/0/b/7/50d2201ece395f0a15000001.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d2201ece395f0a15000001.png" alt="&quot;OK&quot; Packet"></a></p>
+
+<p>Since we’re transferring at 9600 bps, the time spent holding each of those bits high or low is 1/(9600 bps) or 104 µs per bit.</p>
+
+<p>For every byte of data transmitted, there are actually 10 bits being 
+sent: a start bit, 8 data bits, and a stop bit. So, at 9600 bps, we’re 
+actually sending 9600 bits per second or 960 (9600/10) bytes per second.</p>
+
+<hr>
+
+<p>Now that you know how to construct serial packets, we can move on to 
+the hardware section. There we’ll see how those 1’s and 0’s and the baud
+ rate are implemented at a signal level!</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="wiring-and-hardware">Wiring and Hardware</h2>
+        <p>A serial bus consists of just two wires - one for sending 
+data and another for receiving. As such, serial devices should have two 
+serial pins: the receiver, <strong>RX</strong>, and the transmitter, <strong>TX</strong>.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/2/5/c/4/5/50e1ce8bce395fb62b000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50e1ce8bce395fb62b000000.png" alt="Serial Wiring"></a></p>
+
+<p>It’s important to note that those <em>RX</em> and <em>TX</em> labels 
+are with respect to the device itself. So the RX from one device should 
+go to the TX of the other, and vice-versa. It’s weird if you’re used to 
+hooking up VCC to VCC, GND to GND, MOSI to MOSI, etc., but it makes 
+sense if you think about it. The transmitter should be talking to the 
+receiver, not to another transmitter.</p>
+
+<p>A serial interface where both devices may send and receive data is either <strong>full-duplex</strong> or <strong>half-duplex</strong>.
+ Full-duplex means both devices can send and receive simultaneously. 
+Half-duplex communication means serial devices must take turns sending 
+and receiving.</p>
+
+<p>Some serial busses might get away with just a single connection between a sending and receiving device. For example, our <a href="https://www.sparkfun.com/products/10097">Serial Enabled LCDs</a> are all ears and don’t really have any data to relay back to the controlling device. This is what’s known as <strong>simplex</strong> serial communication. All you need is a single wire from the master device’s TX to the listener’s RX line.</p>
+
+<h4>Hardware Implementation</h4>
+
+<p>We’ve covered asynchronous serial from a conceptual side. We know 
+which wires we need. But how is serial communication actually 
+implemented at a signal level? In a variety ways, actually. There are 
+all sorts of standards for serial signaling. Let’s look at a couple of 
+the more popular hardware implementations of serial: logic-level (TTL) 
+and RS-232.</p>
+
+<p>When microcontrollers and other low-level ICs communicate serially 
+they usually do so at a TTL (transistor-transistor logic) level. <strong>TTL serial</strong>
+ signals exist between a microcontroller’s voltage supply range - 
+usually 0V to 3.3V or 5V. A signal at the VCC level (3.3V, 5V, etc.) 
+indicates either an idle line, a bit of value 1, or a stop bit. A 0V 
+(GND) signal represents either a start bit or a data bit of value 0.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/1/8/d/c/1/51142c09ce395f0e7e000002.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/51142c09ce395f0e7e000002.png" alt="TTL Signal"></a></p>
+
+<p>RS-232, which can be found on some of the more ancient computers and 
+peripherals, is like TTL serial flipped on its head. RS-232 signals 
+usually range between -13V and 13V, though the spec allows for anything 
+from +/- 3V to +/- 25V.  On these signals a low voltage (-5V, -13V, 
+etc.) indicates either the idle line, a stop bit, or a data bit of value
+ 1. A high RS-232 signal means either a start bit, or a 0-value data 
+bit. That’s kind of the opposite of TTL serial.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/b/d/a/1/3/51142cacce395f877e000006.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/51142cacce395f877e000006.png" alt="RS-232 Signal"></a></p>
+
+<p>Between the two serial signal standards, TTL is much easier to 
+implement into embedded circuits. However the low voltage levels are 
+more susceptible to losses across long transmission lines. RS-232, or 
+more complex standards like RS-485, are better suited to long range 
+serial transmissions.</p>
+
+<p>When you’re connecting two serial devices together, it’s important to
+ make sure their signal voltages match up. You can’t directly interface a
+ TTL serial device with an RS-232 bus. You’ll have to <a href="http://www.sparkfun.com/tutorials/215?_ga=1.6562610.1245106948.1436432299">shift those signals</a>!</p>
+
+<hr>
+
+<p>Continuing on, we’ll explore the tool microcontrollers use to convert
+ their data on a parallel bus to and from a serial interface. UARTs!</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="uarts">UARTs</h2>
+        <p>The final piece to this serial puzzle is finding something to
+ both create the serial packets and control those physical hardware 
+lines. Enter the UART.</p>
+
+<p>A universal asynchronous receiver/transmitter (UART) is a block of 
+circuitry responsible for implementing serial communication. 
+Essentially, the UART acts as an intermediary between parallel and 
+serial interfaces. On one end of the UART is a bus of eight-or-so data 
+lines (plus some control pins), on the other is the two serial wires - 
+RX and TX.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/d/1/f/5/b/50e1cf30ce395fb227000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50e1cf30ce395fb227000000.png" alt="Simplified UART"></a></p>
+
+<p style="text-align:center;"> <em>Super-simplified UART interface. Parallel on one end, serial on the other.</em></p>
+
+<p>UARTs do exist as stand-alone ICs, but they’re more commonly found 
+inside microcontrollers. You’ll have to check your microcontroller’s 
+datasheet to see if it has any UARTs. Some have none, some have one, 
+some have many. For example, the Arduino Uno - based on the “old 
+faithful” ATmega328 - has just a single UART, while the Arduino Mega - 
+built on an ATmega2560 - has a whopping four UARTs.</p>
+
+<p>As the <em>R</em> and <em>T</em> in the acronym dictate, UARTs are 
+responsible for both sending and receiving serial data. On the transmit 
+side, a UART must create the data packet - appending sync and parity 
+bits - and send that packet out the TX line with precise timing 
+(according to the set baud rate). On the receive end, the UART has to 
+sample the RX line at rates according to the expected baud rate, pick 
+out the sync bits, and spit out the data.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/e/9/7/5/4/50d24680ce395f7172000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d24680ce395f7172000000.png" alt="UART Internal"></a></p>
+
+<p style="text-align:center;"> <em>Internal UART block diagram (courtesy of the Exar ST16C550 datasheet)</em></p>
+
+<p>More advanced UARTs may throw their received data into a <strong>buffer</strong>,
+ where it can stay until the microcontroller comes to get it. UARTs will
+ usually release their buffered data on a first-in-first-out (FIFO) 
+basis. Buffers can be as small as a few bits, or as large as thousands 
+of bytes.</p>
+
+<h4>Software UARTs</h4>
+
+<p>If a microcontroller doesn’t have a UART (or doesn’t have enough), the serial interface can be <strong>bit-banged</strong> - directly controlled by the processor. This is the approach Arduino libraries like <a href="http://arduino.cc/en/Reference/SoftwareSerial">SoftwareSerial</a> take. Bit-banging is processor-intensive, and not usually as precise as a UART, but it works in a pinch!</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="common-pitfalls">Common Pitfalls</h2>
+        <p>That’s about all there is to serial communication. I’d like 
+to leave you with a few common mistakes that are easy for an engineer of
+ any experience level to make:</p>
+
+<h4>RX-to-TX, TX-to-RX</h4>
+
+<p>Seems simple enough, but it’s a mistake I know I’ve made more than a 
+few times. As much as you want their labels to match up, always make 
+sure to cross the RX and TX lines between serial devices.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/7/d/f/9/9/50d24be7ce395f1f6c000000.jpg"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d24be7ce395f1f6c000000.jpg" alt="Real-life serial implementation"></a></p>
+
+<p style="text-align:center;"> <em><a href="https://www.sparkfun.com/products/9716">FTDI Basic</a> programming a <a href="https://www.sparkfun.com/products/11113">Pro Mini</a>. Note RX and TX’s crossed!</em></p>
+
+<p>Contrary to what the esteemed Dr. Egon Spengler would <a href="http://www.youtube.com/watch?v=jyaLZHiJJnE">warn</a>, <strong>cross the streams</strong>.</p>
+
+<h4>Baud Rate Mismatch</h4>
+
+<p>Baud rates are like the languages of serial communication. If two 
+devices aren’t speaking at the same speed, data can be either 
+misinterpreted, or completely missed. If all the receiving device sees 
+on its receive line is garbage, check to make sure the baud rates match 
+up.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/e/2/d/a/50d247c5ce395fdc6b000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d247c5ce395fdc6b000000.png" alt="Baud Mismatch"></a></p>
+
+<p style="text-align:center;"> <em>Data transmitted at 9600 bps, but received at 19200 bps. Baud mismatch = garbage.</em></p>
+
+<h4><a name="busContention"></a>Bus Contention</h4>
+
+<p>Serial communication is designed to allow just two devices to 
+communicate across one serial bus. If more than one device is trying to 
+transmit on the same serial line you could run into bus-contention. Dun 
+dun dun….</p>
+
+<p>For example, if you’re connecting a GPS module up to your Arduino, 
+you may just wire that module’s TX line up the Arduino’s RX line. But 
+that Arduino RX pin is already wired up to the TX pin of the 
+USB-to-serial converter, which is used whenever you program the Arduino 
+or use the <em>Serial Monitor</em>. This sets up the potential situation
+ where both the GPS module and FTDI chip are trying to transmit on the 
+same line at the same time.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/0/7/4/f/b/50d249a8ce395faa6f000000.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/50d249a8ce395faa6f000000.png" alt="Bus contention example"></a></p>
+
+<p style="text-align:center;"> <em>Two transmitters sending to a single receiver sets up the possibility for bus contention.</em></p>
+
+<p>Two devices trying to transmit data at the same time, on the same 
+line, is bad! At “best” neither of the devices will get to send their 
+data. At worst, both device’s transmit lines go poof (though that’s 
+rare, and usually protected against).</p>
+
+<p>It can be safe to connect multiple receiving devices to a single 
+transmitting device. Not really up to spec and probably frowned upon by a
+ hardened engineer, but it’ll work. For example, if you’re connecting a 
+serial LCD up to an Arduino, the easiest approach may be to connect the 
+LCD module’s RX line to the Arduino’s TX line. The Arduino’s TX is 
+already connected to the USB programmer’s RX line, but that still leaves
+ just one device in control of the transmission line.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/d/8/8/c/8/5114296cce395f8f7d000004.png"><img src="Serial%20Communication%20-%20learn.sparkfun.com_files/5114296cce395f8f7d000004.png" alt="Safe but iffy implementation of one transmitter/two receivers"></a></p>
+
+<p>Distributing a TX line like this can still be dangerous from a 
+firmware perspective, because you can’t pick and choose which device 
+hears what transmission. The LCD will end up receiving data not meant 
+for it, which could command it to go into an unknown state.</p>
+
+<p>In general - one serial bus, two serial devices!</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="res">Resources and Going Further</h2>
+        <p>With this shiny, new knowledge of serial communication, there are loads of new concepts, projects, and technologies to explore.</p>
+
+<p>Would you like to learn more about other communication standards? Maybe something synchronous?</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi">Serial Peripheral Interface</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/i2c">I<sup>2</sup>C</a></li>
+</ul>
+
+
+<p>Many technologies make heavy use of serial communication:</p>
+
+<ul>
+<li><a href="http://learn.sparkfun.com/tutorials/gps-basics">GPS Basics</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/exploring-xbees-and-xctu">Exploring XBees and XCTU</a></li>
+</ul>
+
+
+<p>Or maybe you’d like to see serial in action?</p>
+
+<ul>
+<li>If you need to shift the logic levels of your serial communication, check out our <a href="https://learn.sparkfun.com/tutorials/using-the-logic-level-converter">Logic Level Converter tutorial</a>.</li>
+<li><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup">Using a Serial LCD</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/terminal-basics">Serial Terminal Basics</a></li>
+<li><a href="http://learn.sparkfun.com/tutorials/wifly-shield-hookup-guide">WiFly Shield Hookup</a></li>
+</ul>
+      </div>
+    
+        <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t8" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft8" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft8&amp;name=Serial+Communication" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft8" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Serial+Communication&amp;url=http%3A%2F%2Fsfe.io%2Ft8&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft8&amp;t=Serial+Communication" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft8&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F7%2Fd%2Ff%2F9%2F9%2F50d24be7ce395f1f6c000000.jpg&amp;description=Serial+Communication" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+  </div>
+
+  <div class="col-sm-4" id="nav-pages">
+    <div id="sidebar_affix">
+
+      <div id="tutorial-pages" class="list-group">
+        <a class="list-group-item"><b>Sections</b></a>
+                          <a data-pagename="serial-intro" class="list-group-item" href="#serial-intro">
+            Introduction          </a>
+                  <a data-pagename="rules-of-serial" class="list-group-item" href="#rules-of-serial">
+            Rules of Serial          </a>
+                  <a data-pagename="wiring-and-hardware" class="list-group-item" href="#wiring-and-hardware">
+            Wiring and Hardware          </a>
+                  <a data-pagename="uarts" class="list-group-item" href="#uarts">
+            UARTs          </a>
+                  <a data-pagename="common-pitfalls" class="list-group-item" href="#common-pitfalls">
+            Common Pitfalls          </a>
+                  <a data-pagename="res" class="list-group-item" href="#res">
+            Resources and Going Further          </a>
+              </div>
+
+      <div class="list-group">
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/serial-communication/discuss">
+          Comments
+          <span class="badge">4</span>
+        </a>
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/serial-communication/serial-intro">
+          View Paginated
+        </a>
+        <a class="list-group-item" href="#" onclick="window.print(); return false;">
+          Print
+        </a>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>Tags</b></li>
+        <li class="list-group-item"><ul class="tags-list">
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/communication">Communication</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/concepts">Concepts</a>  </li>
+</ul>
+</li>
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>License</b></li>
+        <li class="list-group-item">
+          <span class="sfe-icon-cc">
+            <span class="visuallyhidden">Creative Commons</span>
+          </span>
+          <small>tutorials are <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="new">CC BY-NC-SA 3.0</a></small>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  require(['tutorial', 'jquery.imagesloaded'], function() {
+    $('#tutorial').tutorial();
+  });
+</script>
+
+      </div> <!-- /container -->
+    </div> <!-- /content -->
+
+    
+<footer>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="sharing-ingenuity">
+          <span class="sfe-icon-flame"></span>
+          <span class="text"><span class="text-top">Sharing<br></span>Ingenuity</span>
+        </div>
+        <ul class="spew">
+          <li><a href="http://www.github.com/sparkfun" target="_blank" class="sfe-icon-github"><span class="visuallyhidden">GitHub</span></a></li>
+          <li><a href="http://www.youtube.com/sparkfun" target="_blank" class="sfe-icon-youtube"><span class="visuallyhidden">YouTube</span></a></li>
+          <li><a href="http://www.vimeo.com/sparkfun" target="_blank" class="sfe-icon-vimeo"><span class="visuallyhidden">Vimeo</span></a></li>
+          <li><a href="http://www.facebook.com/SparkFun" target="_blank" class="sfe-icon-facebook"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/106084846822083498483/" target="_blank" class="sfe-icon-google-plus"><span class="visuallyhidden">Google Plus</span></a></li>
+          <li><a href="http://www.flickr.com/photos/sparkfun/" target="_blank" class="sfe-icon-flickr"><span class="visuallyhidden">Flickr</span></a></li>
+          <li><a href="https://twitter.com/#%21/sparkfun" target="_blank" class="sfe-icon-twitter"><span class="visuallyhidden">Twitter</span></a></li>
+          <li><a href="https://www.sparkfun.com/feeds" class="sfe-icon-feed"><span class="visuallyhidden">RSS</span></a></li>
+        </ul>
+        <div class="newsletter">
+          <form action="https://learn.sparkfun.com/newsletter/subscribe_email" method="post" class="form-inline" id="js-newsletter_subscribe">
+            <div class="form-group">
+              <input class="form-control" name="newsletter_email" placeholder="Email Address" type="email">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default" value="Subscribe to Education Newsletter" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end .row -->
+  </div><!-- end .container -->
+</div><!-- end .social -->
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="subfooter subfooter-about">
+      <p>
+        <b>SparkFun</b> is an online retail store that sells the bits and pieces to
+        make your electronics projects possible. Whether it's a robot that can
+        cook your breakfast or a GPS cat tracking device, our products and
+        resources are designed to make the world of electronics more accessible.
+      </p>
+      <p>
+        In addition to products, SparkFun also offers
+        classes and online tutorials to help educate
+        individuals in the wonderful world of embedded electronics.
+      </p>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>About Us</b>
+            </li><li><a href="https://www.sparkfun.com/static/about">About SparkFun</a></li>
+            <li><a href="https://learn.sparkfun.com/about">SparkFun Education</a></li>
+            <li><a title="RSS Feeds" href="https://www.sparkfun.com/feeds">Feeds <span class="sfe-icon-feed"></span></a></li>
+            <li><a href="https://www.sparkfun.com/jobs">Jobs</a></li>
+            <li><a href="https://www.sparkfun.com/static/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Help</b></li>
+            <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+            <li><a href="https://www.sparkfun.com/support#ShippingPolicy">Shipping</a></li>
+            <li><a href="https://www.sparkfun.com/returns">Return Policy</a></li>
+            <li><a href="https://www.sparkfun.com/static/faq">FAQ</a></li>
+                      </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Programs</b></li>
+            <li><a href="https://learn.sparkfun.com/educator_discount">Educator Discount</a></li>
+            <li><a href="https://www.sparkfun.com/sponsor">Partner with SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/project_calls">Tell Us About Your Project</a></li>
+            <li><a href="https://learn.sparkfun.com/tutorials/how-to-sell-your-widget-on-sparkfun">Sell Your Widget on SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/distributors/apply">Become a SparkFun Distributor</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Community</b></li>
+            <li><a href="https://forum.sparkfun.com/">Forum</a></li>
+            <li><a href="https://www.sparkfun.com/news/263">SparkFun IRC Channel</a></li>
+            <li><a href="https://www.sparkfun.com/quiz">Take the SparkFun Quiz</a></li>
+            <li><a href="https://www.kickstarter.com/pages/sparkfun">SparkFun Kickstarter Projects</a></li>
+            <li><a href="https://www.sparkfun.com/distributors">Distributors</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end .row -->
+
+    </div>
+
+    <div id="feedback" class="subfooter subfooter-woym">
+      <form id="woym_form" class="feedback" action="https://learn.sparkfun.com/feedback/mind.json" onsubmit="$(this).sfeutil('mind_feedback'); return false;" method="POST">
+        <div class="error" id="error_feedback" style="display: none"></div>
+        <input name="sparkaptcha" id="sparkaptcha" value="0" type="hidden">
+
+        <div class="form-group">
+          <label for="feedback_textarea" class="control-label">What's on your mind?</label>
+          <div class="controls">
+            <textarea id="feedback_textarea" class="form-control" name="feedback_text" required=""></textarea>
+            <div class="error" id="error_feedback_text" style="display: none"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_dest" class="control-label">For which department?</label>
+          <select name="dest" class="form-control" id="feedback_dest">
+            <option selected="selected" value="general">General</option>
+            <option value="cust">Customer Service</option>
+            <option value="tech">Tech Support</option>
+                          <option value="edu">Education Department</option>
+                      </select>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_email" class="control-label">
+            Please include your email address if you'd like us to respond to a specific question.
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input class="form-control" id="feedback_email" name="email" placeholder="email address" type="text">
+          </div>
+          <div class="error" id="error_feedback_email" style="display: none"></div>
+
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div><!-- end .row -->
+  
+  <ul class="copyleft">
+    <li>SparkFun Electronics <a href="https://www.sparkfun.com/news/300">®</a></li>
+    <li><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=6333+Dry+Creek+Parkway,+Niwot,+CO+80503">Niwot, Colorado</a></li>
+    <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+    <li><a href="https://www.sparkfun.com/sitemap">Site Map</a></li>
+    <li><a href="https://www.sparkfun.com/terms">Terms of Service</a></li>
+    <li><a href="https://www.sparkfun.com/privacy">Privacy Policy</a></li>
+    <li class="desktop-toggle">
+              <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fserial-communication">Desktop Site</a>          </li>
+  </ul>
+
+</div><!-- end .container -->
+
+</footer>
+
+    <div class="nav-account">
+  <ul class="nav nav-tabs">
+    <li class="visible-xs">
+      <a class="nav-toggle-account back" href="#">Your Account</a>
+    </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fserial-communication" data-toggle="modal" data-target="#login_modal" data-remote="false">Log In</a>
+      </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/make">Register</a>
+      </li>
+      </ul>
+</div>
+
+      </div><!-- end .wrapper-inner -->
+    </div><!-- end .wrapper -->
+
+    <!-- Login Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Log In</h4>
+        <p class="modal-header-msg"></p>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="https://www.sparkfun.com/account/login" method="post">
+          <input name="redirect" value="/learn/tutorials/serial-communication" type="hidden">
+          <div class="form-group">
+            <label for="login-username">Email</label>
+            <input tabindex="1" name="user" id="login-username" class="form-control" type="email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input tabindex="2" name="passwd" id="login-password" class="form-control" type="password">
+          </div>
+          <div class="form-group">
+            <input value="Log In" tabindex="3" class="btn btn-action" type="submit">
+          </div>
+        </form>
+        <p>
+          <a href="https://www.sparkfun.com/account/forgot_password">Forgot your password?</a>          <br>
+          No account? <a id="btn_register_account" href="https://www.sparkfun.com/account/make">Register one!</a>        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

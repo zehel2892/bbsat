@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0094)http://www.learningaboutelectronics.com/Articles/MQ-8-hydrogen-sensor-circuit-with-arduino.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino</title>
+<meta name="keywords" content="MQ-8, hydrogen gas sensor, circuit, arduino">
+<meta name="description" content="In this project, we will go over how to build 
+a hydrogen gas sensor circuit using an MQ-8 sensor and integrating it with an arduino board.">
+<link href="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+<div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino</h1>
+<img style="width: 121px; height: 166px;" alt="MQ-8 hydrogen gas sensor" src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/MQ-8-hydrogen-gas-sensor.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+<p id="para1">In this project, we will go over how to build a hydrogen gas sensor circuit with an arduino.
+
+</p><p id="para1">The hydrogen gas sensor we will use is the MQ-8 sensor. This is a sensor that is sensitive to 
+effects of hydrogen gas.
+
+</p><p id="para1">Hydrogen gas (H<sub>2</sub>), at room temperature and under standard pressure conditions, is tasteless, 
+odorless, and colorless.
+
+</p><p id="para1">Hydrogen gas is receiving very special attention now because hydrogen is being used as an alternative energy 
+source to operate certain new automobiles coming out in the auto industry now. The chemical energy of hydrogen is converted
+by a combustion method similar to current engines or in a fuel cell which produces water and electricity by reacting hydrogen with 
+oxygen. Engineers and car manufacturers are researching the possibility of using hydrogen gas as a viable car fuel. 
+
+</p><p id="para1">Hydrogen can also be a potential danger to human beings. Hydrogen can be a spark for fires when mixed with air.
+
+</p><p id="para1">For this reason, either for its beneficial and its potentially detrimental effects, hydrogen is something that
+can be very important to monitor and measure. 
+
+</p><p id="para1">If building a engine running off of hydrogen, then you definitely need to measure the amount of hydrogen gas
+input into the engine. 
+
+</p><p id="para1">If working in an environment with with the potential for great hydrogen emission and flame spark 
+capability, then hydrogen gas should be monitored and measured, for safety purposes. 
+
+</p><p id="para1">Though more precision may be needed than what an MQ-8 hydrogen sensor offers, it's a good start to get crude
+estimates for the amount of hydrogen in a given environment. 
+
+</p><p id="para1">So having this overview of hydrogen gas, we can see its importance and why we would want to measure the amount 
+of hydrogen gas that may be present. 
+
+</p><p id="para1">So we will now build our hydrogen gas sensor circuit. 
+
+
+
+
+<br><br>
+
+</p><div id="ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large vertical ad-images only */
+google_ad_slot = "6245545482";
+
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+<h3>Components Needed</h3>
+<ul id="para1">
+<li>MQ-8 Hydrogen Gas Sensor</li>
+<li>Arduino</li>
+<li>LED</li>
+</ul>
+
+<br><br>
+
+
+
+
+
+
+<p id="para1">The MQ-8 can be obtained very cheaply, just a few bucks. A good place to look for it is on ebay, which always has auctions on them for the $2-$3 range. 
+
+
+</p><p id="para1">Important, it is recommended that you do not obtain the standalone sensor but the whole MQ-8 board. This is because if you buy the standalone sensor, 
+you will have to finish building the whole schematic before you can connect it to the arduino. So that less work is required for integrating it 
+with the arduino, it is recommended that you buy the complete MQ-8 sensor circuit. This you can see below. 
+
+</p><p id="para1">If you buy the complete board, there are 4 leads which need to be connected. 
+
+<br><br>
+
+
+<img style="width: 237px; height: 267px;" alt="MQ-8 hydrogen gas sensor pinout" src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/MQ-8-hydrogen-gas-sensor-pinout.png">
+
+
+
+
+<br><br>
+
+</p><p id="para1">There 4 leads are Vcc, AOUT, DOUT, and GND. 
+
+</p><p id="para1">The Vcc and GND leads establishes power for the hydrogen sensor. 
+
+</p><p id="para1">The other 2 leads are AOUT (analog output) and DOUT (digital output).
+How the sensor works is 
+the terminal AOUT gives an
+analog voltage output in proportion to the amount of methane the sensor detects. The more methane it detects, the greater the analog voltage
+it will output. Conversely, the less CO it detects, the less analog voltage it will output. If the analog voltage 
+reaches a certain threshold, it will send the digital pin DOUT high. Once this DOUT pin goes high, the arduino will detect 
+this and will trigger the LED to turn on, signaling that the methane threshold has been reached and is now over the limit. How you can change this 
+threshold level is by adjusting the potentiometer to either
+raise or lower the level. 
+
+
+
+
+<br><br>
+</p><h3>MQ-8 Hydrogen Gas Sensor Circuit Schematic</h3>
+<p id="para1">The hydrogen gas sensor circuit we will build with an MQ-8 sensor integrated with an arduino is shown below.
+
+<br><br>
+
+
+</p><div id="ads">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Large image ads -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7591845391773873" data-ad-slot="3467666961"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<img style="width: 443px; height: 509px;" alt="MQ-8 hydrogen gas sensor circuit" src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/MQ-8-hydrogen-gas-sensor-circuit.png">
+
+
+
+<br><br>
+
+<p id="para1">The connections are pretty basic. 
+
+</p><p id="para1">To connect the sensor, there are 4 leads. 2 of them are for power. The Vcc terminal of the sensor connects into the 
+5V terminal of the arduino board. The GND terminal of the sensor connects into the GND terminal of the arduino. This establishes
+power for the sensor. 
+
+</p><p id="para1">The other 2 connections are the analog and digital output of the sensor. These connect to analog pin A0 and digital pin D8, respectively.
+
+
+
+</p><h3>Code</h3>
+<p id="para1">The code which we need to upload to the arduino so that it can measure hydrogen gas levels is shown below.
+
+</p><div id="ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large vertical ad-images only */
+google_ad_slot = "6245545482";
+
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<p id="para1">
+
+<orange>/* MQ-8 Hydrogen Gas Sensor Circuit with Arduino */</orange><br><br>
+
+const int AOUTpin=0;<orange>//the AOUT pin of the hydrogen sensor goes into analog pin A0 of the arduino</orange><br>
+const int DOUTpin=8;<orange>//the DOUT pin of the hydrogen sensor goes into digital pin D8 of the arduino</orange><br>
+const int ledPin=13;<orange>//the anode of the LED connects to digital pin D13 of the arduino</orange><br><br>
+int limit;<br>
+int value;<br><br>
+
+void setup() {<br>
+Serial.begin(115200);<orange>//sets the baud rate</orange><br>
+pinMode(DOUTpin, INPUT);<orange>//sets the pin as an input to the arduino</orange><br>
+pinMode(ledPin, OUTPUT);<orange>//sets the pin as an output of the arduino</orange><br>
+}<br><br>
+
+void loop()<br>
+{<br>
+value= analogRead(AOUTpin);<orange>//reads the analaog value from the hydrogen sensor's AOUT pin</orange><br>
+limit= digitalRead(DOUTpin);<orange>//reads the digital value from the hydrogen sensor's DOUT pin</orange><br>
+Serial.print("Hydrogen value: ");<br>
+Serial.println(value);<orange>//prints the hydrogen value</orange><br>
+Serial.print("Limit: ");<br>
+Serial.print(limit);<orange>//prints the limit reached as either LOW or HIGH (above or underneath)</orange><br>
+delay(100);<br>
+if (limit == HIGH){<br>
+digitalWrite(ledPin, HIGH);<orange>//if limit has been reached, LED turns on as status indicator</orange><br>
+}<br>
+else{<br>
+digitalWrite(ledPin, LOW);<orange>//if threshold not reached, LED remains off</orange><br>
+}<br>
+}<br>
+
+
+<br>
+
+</p><p id="para1">The first block of code defines all the pin connections of the sensor and the LED. Since the AOUTpin connects to analog pin A0, it is initialized to 0. Since the DOUTpin connects
+to digital pin D8, it is initialized to 8. Since the LED connects to digital pin D13, it is initialized to 13. 2 variables, limit and value, are also declared. These will be used to store the value
+of the 
+analog pin AOUT and digital pin DOUT.
+
+</p><p id="para1">The next block of code sets the baud rate and declares the DOUTpin as input and the ledPin as output. This is because the sensor is an input to the arduino for the arduino to 
+read and process the sensor value. And the LED is an output will serves an indicator if the sensor has detected hydrogen. 
+
+</p><p id="para1">The next block of code reads the sensor pin AOUT and stores the value in the integer <i>value</i>. It also reads the sensor pin DOUT and stores the value in the integer <i>limit</i>.
+We then print the hydrogen value, which will be a numeric value ranging from either 0 (no hydrogen detected) to 1023 (maximum level of hydrogen that can be read). We will aslo print the limit which 
+will either be HIGH or LOW. If the hydrogen detected is under the threshold level, the value of limit returned will be low. If the hydrogen detected is above the threshold, the value of limit
+returned will be HIGH. 
+
+</p><p id="para1">If the value is HIGH, the LED will turn on. If the value is low, the LED will remain off. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+    <a href="http://www.learningaboutelectronics.com/Articles/LM741-op-amp-voltage-comparator.php">How to Use the LM741 Op Amp as a Comparator</a><br><br>
+
+    <a href="http://www.learningaboutelectronics.com/Articles/LM339-quad-voltage-comparator-circuit.php">How to Build an LM339 Quad Voltage Comparator Circuit</a><br><br>
+
+<a href="http://www.learningaboutelectronics.com/Articles/Dark-activated-switch.php">How to Build a Dark-activated Switch</a><br><br>
+
+
+<a href="http://www.learningaboutelectronics.com/Articles/Hall-effect-sensor-circuit.php">How to Build a Hall Effect Sensor Circuit</a><br><br>
+
+  
+
+    <a href="http://www.learningaboutelectronics.com/Articles/How-to-build-a-touch-sensor-circuit">How to Build a Touch Sensor Circuit</a><br><br>
+	
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Accelerometer-circuit.php">How to Build an Accelerometer Circuit</a><br><br>
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Motion-detector-circuit.php">How to Build a Motion Detector Circuit</a><br><br>
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Motion-detector-alarm-circuit.php">How to Build a Motion Detector Alarm Circuit</a><br><br>
+
+
+<!-- begin htmlcommentbox.com -->
+ 
+
+
+</p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/MQ-8-hydrogen-sensor-circuit-with-arduino.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/MQ-8-hydrogen-sensor-circuit-with-arduino.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/MQ-8-hydrogen-sensor-circuit-with-arduino.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FMQ-8-hydrogen-sensor-circuit-with-arduino.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ 
+
+
+<link rel="stylesheet" type="text/css" href="./MQ-8 Hydrogen Gas Sensor Circuit Built with an Arduino_files/skin.css">
+ 
+
+
+<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={ };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 
+<!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

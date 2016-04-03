@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile mode if small screen device -->
+    
+    <title>Voltage Dividers - learn.sparkfun.com</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="Voltage%20Dividers%20-%20learn.sparkfun.com_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="Voltage%20Dividers%20-%20learn.sparkfun.com_files/theme.css" type="text/css" media="screen">    <link rel="alternate" type="application/atom+xml" title="Education Blog" href="https://learn.sparkfun.com/feeds/blog">
+    <link rel="alternate" type="application/atom+xml" title="Tutorials" href="https://learn.sparkfun.com/feeds/tutorials">
+    <link rel="alternate" type="application/atom+xml" title="Education Blog Comments" href="https://learn.sparkfun.com/feeds/blog_comments">
+    <link rel="alternate" type="application/atom+xml" title="Tutorial Comments" href="https://learn.sparkfun.com/feeds/tutorial_comments">
+
+    <script src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/analytics.js" async=""></script><script type="text/javascript">
+          var SFECONFIG = {
+      currencies: {"USD":{"code":"USD","title":"US Dollar","symbol_left":"$","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.0000"},"CAD":{"code":"CAD","title":"Canadian Dollar","symbol_left":"$","symbol_right":" CAD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.2672"},"AUD":{"code":"AUD","title":"Australian Dollar","symbol_left":"$","symbol_right":" AUD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.3441"},"GBP":{"code":"GBP","title":"British Pound","symbol_left":"&pound;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.6444"},"EUR":{"code":"EUR","title":"Euro","symbol_left":"&euro;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.8966"}},
+      dnt: false,
+      preferred_currency: 'USD',
+        http_server: 'http://www.sparkfun.com',
+        https_server: 'https://www.sparkfun.com',
+        http_static: 'https://cdn.sparkfun.com',
+        base_url: '/',
+        url: '/',
+        controller: 'tutorials',
+        action: 'view',
+        entity_id: '',
+        auth: false,
+        sparkrev: '1436549074',
+        search_key: 'qLqN6uVRKXnjHd2QapGm'      };
+      var require = {
+        paths: {
+          'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min'
+        },
+        baseUrl: '/js/',
+        urlArgs: "sparkrev=" + SFECONFIG.sparkrev,
+        deps: ['jqueryui'],
+        callback: function() {
+          $('#learn').learn();
+          $('#learn').sfeutil();
+        }
+      };
+    </script>
+    <script src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/learn-built.js"></script><script src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/jquery-ui.js" data-requiremodule="jqueryui" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script>
+          <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3404365-1', 'auto', {'allowLinker': true});
+      ga('require', 'linker');
+      ga('linker:autoLink', ['www.sparkfun.com', 'avc.sparkfun.com'] );
+      ga('require', 'displayfeatures');
+            ga('set', 'dimension1', 'Guest');
+      ga('send', 'pageview');
+
+      </script>
+      <script src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/tutorial.js" data-requiremodule="tutorial" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/jquery.js" data-requiremodule="jquery.imagesloaded" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+
+  <body id="learn" class="layout-default no-type tutorials-view no-touch" ontouchstart="">
+    <div class="wrapper" itemscope="" itemtype="http://schema.org/WebSite">
+      <meta itemprop="url" content="https://www.sparkfun.com/">
+      <div class="wrapper-inner">
+
+    
+<div class="header">
+  <div class="container">
+
+<!-- Mobile Nav Button -->
+<div class="mobile-menu-container left">
+  <a id="nav_toggle" class="mobile-menu-button nav_toggle" href="#"><span>≡</span></a>
+      <a id="search_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-search"></span></a>
+  </div>
+
+<nav class="top-links">
+  &nbsp;
+</nav>
+
+<!-- Logo -->
+<div class="logo-container">
+  <a class="logo" href="https://www.sparkfun.com/">
+    <span class="sfe-icon-flame"></span>
+    <span class="sfe-icon-sparkfun" data-icon="🔥">
+      <span class="visuallyhidden">sparkfun.com</span>
+    </span>
+  </a>
+</div>
+
+<!-- Tabs -->
+<!-- also edit mobile tabs in .main-nav -->
+<nav class="tabs-container">
+  <ul>
+    <li class="shop "><a href="https://www.sparkfun.com/">Shop</a></li>
+    <li class="learn active"><a href="https://learn.sparkfun.com/">Learn</a></li>
+    <li class="avc "><a href="https://avc.sparkfun.com/"><span class="sfe-icon-avc"><span class="visuallyhidden">AVC</span></span></a></li>
+    <li class="forum "><a href="https://forum.sparkfun.com/">Forum</a></li>
+    <li class="data "><a href="https://data.sparkfun.com/">Data</a></li>
+  </ul>
+</nav>
+
+<!-- Cart & User -->
+<div class="user-container mobile-menu-container right">
+
+  <a id="account_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-user"></span></a>
+
+  
+      <div class="user">
+      <!-- login modal trigger -->
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fvoltage-dividers" data-toggle="modal" data-target="#login_modal" data-remote="false">log in</a>
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/make">register</a>    </div>
+  
+</div>
+
+<!-- Navigation / Search -->
+<div class="main-nav-container">
+
+  <nav class="main-nav">
+    <ul>
+      <li class="tab shop ">
+        <a href="https://www.sparkfun.com/">Shop</a>      </li>
+      <li class="tab learn active">
+        <a href="https://learn.sparkfun.com/">Learn</a>      </li>
+      <li class="tab forum ">
+        <a href="https://forum.sparkfun.com/">Forum</a>
+      </li>
+      <li class="tab data ">
+        <a href="https://data.sparkfun.com/">Data</a>
+      </li>
+
+      
+<li class="start-a-project ">
+  <a href="https://learn.sparkfun.com/start_a_project">Start a Project</a></li>
+<li><a href="https://learn.sparkfun.com/blog">EDU Blog</a></li>
+<li><a href="https://learn.sparkfun.com/resources">Resources</a></li>
+<li class="active"><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+<li><a href="https://learn.sparkfun.com/events">Classes</a></li>
+<li><a href="https://learn.sparkfun.com/calendar">Calendar</a></li>
+<li><a href="https://learn.sparkfun.com/workshops">Workshops</a></li>
+<li><a href="https://learn.sparkfun.com/contact">Contact</a></li>
+
+      <li class="desktop-toggle">
+        <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fvoltage-dividers">Desktop Site</a>      </li>
+    </ul>
+  </nav>
+
+      <form id="search_form" class="search" action="https://www.sparkfun.com/search/results" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.sparkfun.com/search/results?term={term}">
+      <div class="ui-widget">
+        <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input name="term" id="global-search" class="form-control ui-autocomplete-input" placeholder="search..." itemprop="query-input" autocomplete="off" type="text">
+      </div>
+    </form>
+  
+</div>
+
+  </div>
+</div>
+
+
+    
+    <div class="content">
+      <div class="container">
+
+        
+        <div class="main-title">
+  <ul class="breadcrumb">
+    <li><a href="https://learn.sparkfun.com/">Home</a></li>
+    <li><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+    <li>Voltage Dividers</li>
+      </ul>
+
+  <h1>
+    Voltage Dividers  </h1>
+
+</div>
+
+
+<a id="nav_toggle_pages" class="nav_toggle" href="#"><span>≡</span> Pages</a>
+
+<div id="tutorial" class="row">
+
+  <div class="col-sm-8" id="sections">
+
+    <div class="contributors">
+                      Contributors:
+                <a href="https://www.sparkfun.com/users/69916"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/f2ed505f510e392f58811e4aa03e6fe0.jpeg"> Jimb0</a>          </div>
+
+    <span class="fave_widget verbose">
+  <a href="#" class="fave_btn " title="Add to favorites" data-entity="learn_tutorials" data-entity-id="44">
+    <span class="fave_yes">
+      <span class="glyphicon glyphicon-heart"></span>
+      <span class="name">Favorited</span>
+    </span>
+    <span class="fave_no">
+      <span class="glyphicon glyphicon-heart-empty"></span>
+      <span class="name">Favorite</span>
+    </span>
+  </a>
+  <span class="fave_count">5</span>
+</span>    <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t44" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft44" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft44&amp;name=Voltage+Dividers" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft44" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Voltage+Dividers&amp;url=http%3A%2F%2Fsfe.io%2Ft44&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft44&amp;t=Voltage+Dividers" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft44&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F4%2F0%2F3%2Fa%2Fe%2F511948ffce395f7f47000000.png&amp;description=Voltage+Dividers" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+          <div class="section tutorial-page">
+        <h2 id="introduction">Introduction</h2>
+        <p>A voltage divider is a simple circuit which turns a large 
+voltage into a smaller one. Using just two series resistors and an input
+ voltage, we can create an output voltage that is a fraction of the 
+input. Voltage dividers are one of the most fundamental circuits in 
+electronics. If learning <a href="https://learn.sparkfun.com/voltage-current-resistance-and-ohms-law">Ohm’s law</a> was like being introduced to the ABC’s, learning about voltage dividers would be like learning how to spell <em>cat</em>.</p>
+
+<h3>Covered in this Tutorial</h3>
+
+<ul>
+<li>What a voltage divider circuit looks like.</li>
+<li>How the output voltage depends on the input voltage and divider resistors.</li>
+<li>How voltage dividers behave in the real-world.</li>
+<li>Real-life voltage divider applications.</li>
+</ul>
+
+
+<h3>Suggested Reading</h3>
+
+<p>This tutorial builds on basic electronics knowledge. If you haven’t already, consider reading these tutorials:</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/what-is-a-circuit">What is a circuit?</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/series-and-parallel-circuits">Series and Parallel Circuits</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law">Voltage, Current, Resistance, and Ohm’s Law</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/analog-vs-digital">Analog vs Digital</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter">How to Use a Multimeter</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">How to Use a Breadboard</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/analog-to-digital-conversion">Analog-to-Digital Conversion</a></li>
+</ul>
+      </div>
+          <div class="section tutorial-page">
+        <h2 id="ideal-voltage-divider">Ideal Voltage Divider</h2>
+        <p>There are two important parts to the voltage divider: the circuit and the equation.</p>
+
+<h3>The Circuit</h3>
+
+<p>A voltage divider involves applying a voltage source across a series 
+of two resistors. You may see it drawn a few different ways, but they 
+should always essentially be the same circuit.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/4/0/3/a/e/511948ffce395f7f47000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/511948ffce395f7f47000000.png" alt="Examples of voltage divider schematics"></a></p>
+
+<p style="text-align:center;"> <em>Examples of voltage divider schematics. Shorthand, longhand, resistors at same/different angles, etc.</em></p>
+
+<p>We’ll call the resistor closest to the input voltage (V<sub>in</sub>) R<sub>1</sub>, and the resistor closest to ground R<sub>2</sub>. The voltage drop across R<sub>2</sub> is called V<sub>out</sub>, that’s the divided voltage our circuit exists to make.</p>
+
+<p>That’s all there is to the circuit! V<sub>out</sub> is our divided voltage. That’s what’ll end up being a fraction of the input voltage.</p>
+
+<h3>The Equation</h3>
+
+<p>The voltage divider equation assumes that you know three values of the above circuit: the input voltage (V<sub>in</sub>), and both resistor values (R<sub>1</sub> and R<sub>2</sub>). Given those values, we can use this equation to find the output voltage (V<sub>out</sub>):</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/e/7/6/3/c/511968d9ce395f7c54000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/511968d9ce395f7c54000000.png" alt="Vout = Vin * (R2 / (R1 + R2))"></a></p>
+
+<p style="text-align:center;"> <em>Memorize that equation!</em></p>
+
+<p>This equation states that the output voltage is <strong>directly proportional</strong> to the <strong>input voltage</strong> and the <strong>ratio of R<sub>1</sub> and R<sub>2</sub></strong>. If you’d like to find out where this comes from, check out <a href="https://learn.sparkfun.com/tutorials/extra-credit-proof">this section</a> where the equaion is derived. But for now, just write it down and remember it!</p>
+
+<h3>Calculator</h3>
+
+<p>Have some fun experimenting with inputs and outputs to the voltage divider equation! Below, you can plug in numbers for V<sub>in</sub> and both resistors and see what kind of output voltage they produce.</p>
+
+<script language="JavaScript">
+function calcVout() {
+    form=document.valueSelect;
+    r1=form.rOne.value;
+    r2=form.rTwo.value;
+    v1=form.vIn.value;
+    v2=v1*r2/(r1-(-1)*r2);
+    v2=form.vOut.value=v2.toFixed(2);
+}
+
+function calcR2() {
+    form=document.forms[0];
+    r1=form.rOne.value;
+    v1=form.vIn.value;
+    v2=form.vOut.value;
+    r2=v2*r1/(v1-v2);
+    r2=form.rTwo.value=r2.toFixed(2);
+}
+
+</script>
+
+
+
+
+<div style="color:black;text-align:center">
+<form name="valueSelect" method="" action="">
+V<sub>in</sub> = <input name="vIn" value="25" size="5" onchange="calcVout()" type="text">&nbsp;V<br>
+R<sub>1</sub> = <input name="rOne" value="11750" size="5" onchange="calcVout()" type="text">&nbsp;Ω<br>
+R<sub>2</sub> = <input name="rTwo" value="0" size="5" onchange="calcVout()" type="text">&nbsp;Ω<br>
+V<sub>out</sub> = <input name="vOut" value="0.00" size="5" onchange="calcR2()" type="text">&nbsp;V<br>
+</form></div>
+
+
+<p>Or, if you adjust V<sub>out</sub>, you’ll see what resistance value at R<sub>2</sub> is required (given a V<sub>in</sub> and R<sub>1</sub>).</p>
+
+<h3>Simplifications</h3>
+
+<p>There are a few generalizations that are good to keep in mind when 
+using voltage dividers. These are simplifications that make evaluating a
+ voltage dividing circuit just a little easier.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/8/6/0/3/2/51197073ce395f5d6d000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/51197073ce395f5d6d000000.png" alt="Vout = Vin/2 if R1=R2"></a></p>
+
+<p>First, <strong>if R2 and R1 are equal</strong> then the output voltage is <strong>half</strong> that of the input. This is true regardless of the resistors' values.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/3/4/f/4/6/5119730dce395f2353000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/5119730dce395f2353000000.png" alt="Vout=Vin if R2&gt;&gt;R1"></a></p>
+
+<p>If R<sub>2</sub> is <em>much</em> larger (at least an order of magnitude) than R<sub>1</sub>, then the output voltage will be very close to the input. There will be very little voltage across R<sub>1</sub>.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/0/1/c/9/0/5119730dce395f7153000001.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/5119730dce395f7153000001.png" alt="Vout=0 if R2&lt;&lt;R1"></a></p>
+
+<p>Conversely, if R<sub>2</sub> is much smaller than R<sub>1</sub>, the output voltage will be tiny compared to the input. Most of the input voltage will be across R<sub>1</sub></p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="applications">Applications</h2>
+        <p>Voltage dividers have tons of applications, they are among 
+the most common of circuits electrical engineers use. Here are just a 
+few of the many places you’ll find voltage dividers.</p>
+
+<h3>Potentiometers</h3>
+
+<p>A potentiometer is a variable resistor which can be used to create an adjustable voltage divider.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/7/9/2/b/6/511ac70dce395f3245000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/511ac70dce395f3245000000.png" alt="A variety of pots"></a></p>
+
+<p style="text-align:center;"><em>A smattering of potentiometers. From top-left, clockwise: <a href="https://www.sparkfun.com/products/9288">a standard 10k trimpot</a>, <a href="https://www.sparkfun.com/products/9032">2-axis joystick</a>, <a href="https://www.sparkfun.com/products/9074">softpot</a>, <a href="https://www.sparkfun.com/products/11620">slide pot</a>, <a href="https://www.sparkfun.com/products/9939">classic right-angle</a>, and a <a href="https://www.sparkfun.com/products/9806">breadboard friendly 10k trimpot</a>.</em></p>
+
+<p>Internal to the pot is a single resistor and a wiper, which cuts the 
+resistor in two and moves to adjust the ratio between both halves. 
+Externally there are usually three pins: two pins connect to each end of
+ the resistor, while the  third connects to the pot’s wiper.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/6/3/e/5/e/511ac8f5ce395f5846000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/511ac8f5ce395f5846000000.png" alt="Schematic symbol for a potentiometer"></a></p>
+
+<p style="text-align:center;"><em>A potentiometer schematic symbol. Pins 1 and 3 are the resistor ends. Pin 2 connects to the wiper.</em></p>
+
+<p>If the outside pins connect to a voltage source (one to ground, the other to V<sub>in</sub>), the output (V<sub>out</sub>
+ at the middle pin will mimic a voltage divider. Turn the pot all the 
+way in one direction, and the voltage may be zero; turned to the other 
+side the output voltage approaches the input; a wiper in the middle 
+position means the output voltage will be half of the input.</p>
+
+<p>Potentiometers come in a variety of packages, and have many 
+applications of their own. They may be used to create a reference 
+voltage, <a href="https://www.sparkfun.com/products/11043">adjust radio stations</a>, measure position on a <a href="https://www.sparkfun.com/products/9032">joystick</a>, or in tons of other applications which require a variable input voltage.</p>
+
+<h3><a id="photocell"></a>Reading Resistive Sensors</h3>
+
+<p>Many sensors in the real world are simple resistive devices. A <a href="https://www.sparkfun.com/products/9088">photocell</a> is a variable resistor, which produces a resistance proportional to the amount of light it senses. Other devices like <a href="https://www.sparkfun.com/products/8606?">flex sensors</a>, <a href="https://www.sparkfun.com/products/9375">force-sensitive resistors</a>, and <a href="https://www.sparkfun.com/products/250">thermistors</a>, are also variable resistors.</p>
+
+<p>It turns out voltage is really easy for microcontrollers (those with <a href="https://learn.sparkfun.com/tutorials/analog-to-digital-conversion">analog-to-digital converters</a>
+ - ADC’s - at least) to measure. Resistance? Not so much. But, by adding
+ another resistor to the resistive sensors, we can create a voltage 
+divider. Once the output of the voltage divider is known, we can go back
+ and calculate the resistance of the sensor.</p>
+
+<p>For example, the photocell’s resistance varies between 1kΩ in the 
+light and about 10kΩ in the dark. If we combine that with a static 
+resistance somewhere in the middle - say 5.6kΩ, we can get a wide range 
+out of the voltage divider they create.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/7/2/a/7/5/511acd39ce395f6746000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/511acd39ce395f6746000000.png" alt="Photocell interface schematic"></a></p>
+
+<p style="text-align:center;"><em>Photocell makes up half of this voltage divider. The voltage is measured to find the resistance of the light sensor.</em></p>
+
+<table align="center" border="1" width="500">
+<tbody><tr align="center"><td><b>Light Level</b></td><td><b>R<sub>2</sub> (Sensor)</b></td><td><b>R<sub>1</sub> (Fixed)</b></td><td><b>Ratio R<sub>2</sub>/(R<sub>1</sub>+R<sub>2</sub>)</b></td><td><b>V<sub>out</sub></b></td></tr>
+<tr align="center"><td>Light</td><td>1kΩ</td><td>5.6kΩ</td><td>0.15</td><td>0.76 V</td></tr>
+<tr align="center"><td>Dim</td><td>7kΩ</td><td>5.6kΩ</td><td>0.56</td><td>2.78 V</td></tr>
+<tr align="center"><td>Dark</td><td>10kΩ</td><td>5.6kΩ</td><td>0.67</td><td>3.21 V</td></tr>
+</tbody></table>
+
+
+<br>
+
+
+<p>A swing of about 2.45V from light to dark. Plenty of resolution for most ADCs!</p>
+
+<h3>Level Shifting</h3>
+
+<p>More complicated sensors may transmit their readings using heavier serial interfaces, like a <a href="https://learn.sparkfun.com/serial-communication">UART</a>, <a href="https://learn.sparkfun.com/serial-peripheral-interface-spi">SPI</a>, or <a href="https://learn.sparkfun.com/tutorials/i2c">I2C</a>.
+ Many of those sensors operate at a relatively low voltage, in order to 
+conserve power. Unfortunately, it’s not uncommon that those low-voltage 
+sensors are ultimately interfacing with a microcontroller operating at a
+ higher system voltage. This leads to a problem of <a href="https://learn.sparkfun.com/tutorials/using-the-logic-level-converter">level shifting</a>, which has a number of solutions including voltage dividing.</p>
+
+<p>For example, an <a href="https://www.sparkfun.com/products/9836">ADXL345 accelerometer</a>
+ allows for a maximum input voltage of 3.3V, so if you try to interface 
+it with an Arduino (assume operating at 5V), something will need to be 
+done to step down that 5V signal to 3.3V. Voltage divider! All that’s 
+needed is a couple resistors whose ratio will divide a 5V signal to 
+about 3.3V. Resistors in the 1kΩ-10kΩ range are usually best for such an
+ application; let’s</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/4/2/6/5/e/51422598ce395ff511000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/51422598ce395f010e000000.png" alt="Breadboard example of level-shifting voltage dividers"></a></p>
+
+<p style="text-align:center;"><em>3.3kΩ resistors (orange, orange, red) are the R<sub>2</sub>’s, 1.8kΩ resistors are the R<sub>1</sub>’s. An example of voltage dividers in a <a href="https://learn.sparkfun.com/tutorials/breadboards">breadboard</a>, level shifting 5V signals to 3.24V. (Click to see a larger view).</em></p>
+
+<p>Keep in mind, this solution only works in one direction. A voltage 
+divider alone will never be able to step a lower voltage up to a higher 
+one.</p>
+
+<h3>Application Dont’s</h3>
+
+<p>As tempting as it may be to use a voltage divider to step down, say, a 12V power supply to 5V, <strong>voltage dividers should not be used to supply power to a load</strong>.</p>
+
+<p>Any current that the load requires is also going to have to run through R<sub>1</sub>. The current and voltage across R<sub>1</sub>
+ produce power, which is dissipated in the form of heat. If that power 
+exceeds the rating of the resistor (usually between ⅛W and 1W), the heat
+ begins to become a major problem, potentially melting the poor 
+resistor.</p>
+
+<p>That doesn’t even mention how inefficient a 
+voltage-divider-power-supply would be. Basically, don’t use a voltage 
+divider as a voltage supply for anything that requires even a modest 
+amount of power. If you need to drop down a voltage to use it as a power
+ supply, look into voltage regulators or switching supplies.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="extra-credit-proof">Extra Credit: Proof</h2>
+        <p>If you haven’t yet gotten your fill of voltage dividers, in 
+this section we’ll evaluate how Ohm’s law is applied to produce the 
+voltage divider equation. This is a fun exercise, but not 
+super-important to understanding what voltage dividers do. If you’re 
+interested, prepare for some fun times with Ohm’s law and algebra.</p>
+
+<h3>Evaluating the circuit</h3>
+
+<p>So, what if you wanted to measure the voltage at V<sub>out</sub>? How could Ohm’s law be applied to create a formula to calculate the voltage there? Let’s assume that we know the values of V<sub>in</sub>, R<sub>1</sub>, and R<sub>2</sub>, so let’s get our V<sub>out</sub> equation in terms of those values.</p>
+
+<p>Let’s start by drawing out the currents in the circuit–I<sub>1</sub> and I<sub>2</sub>–which we’ll call the currents across the respective resistors.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/8/8/7/7/514208cbce395f1c12000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cbce395f1c12000000.png" alt="Standard voltage divider circuit with currents drawn in"></a></p>
+
+<p>Our goal is to calculate V<sub>out</sub>, what if we applied Ohm’s law to that voltage? Easy enough, there’s just one resistor and one current involved:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/d/5/c/5/3/514208cace395f750e000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cace395f750e000000.png" alt="Vout = R2 * I2"></a></p>
+
+<p>Sweet! We know R<sub>2</sub>’s value, but what about I<sub>2</sub>? 
+That’s an unknown value, but we do know a little something about it. We 
+can assume (and this turns out to be a big assumption) that <b>I<sub>1</sub> is equivalent to I<sub>2</sub></b>. Alright, but does that help us? Hold that thought. Our circuit now looks like this, where <em>I</em> equals both I<sub>1</sub> and I<sub>2</sub>.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/5/4/6/4/7/514208cace395fd711000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cace395fd711000000.png" alt="Voltage divider with just a single current loop"></a></p>
+
+<p>What do we know about V<sub>in</sub>? Well, V<sub>in</sub> is the voltage across both resistors R<sub>1</sub> and R<sub>2</sub>. Those resistors are in series. Series resistors add up to one value, so we could say:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/2/e/6/1/514208cace395f3510000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cace395f3510000000.png" alt="R = R1 + R2"></a></p>
+
+<p>And, for a moment, we can simplify the circuit to:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/0/b/6/a/c/514208cace395fa10d000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514209a3ce395f6c11000000.png" alt="Further simpling the voltage divider circuit - combining R1 and R2"></a></p>
+
+<p>Ohm’s law at its most basic! V<sub>in</sub> = I * R. Which, if we turn that <i>R</i> back into <i>R<sub>1</sub> + R<sub>2</sub></i>, can also be written as:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/a/0/8/8/4/514208cace395f1c11000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cace395f1c11000000.png" alt="I = Vin/(R1 + R2)"></a></p>
+
+<p>And since I is equivalent to I<sub>2</sub>, plug that into our V<sub>out</sub> equation to get:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/1/f/2/5/d/514208cace395f1d12000000.png"><img src="Voltage%20Dividers%20-%20learn.sparkfun.com_files/514208cace395f1d12000000.png" alt="Voltage divider equation! Vout = R2 * (Vin/(R1+R2))"></a></p>
+
+<p>And that, my friends, is the voltage divider equation! The output 
+voltage is a fraction of the input voltage, and that fraction is R<sub>2</sub> divided by the sum of R<sub>1</sub> and R<sub>2</sub>.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="res">Resources and Going Further</h2>
+        <p>Now that you’ve got the gist of one of the most common circuits in electronics, there’s a world of new stuff to learn!</p>
+
+<p>Would you like to learn how a microcontroller, like an Arduino, could read the analog voltage produced by a voltage divider?</p>
+
+<ul>
+<li><a href="http://learn.sparkfun.com/tutorials/analog-to-digital-conversion">Analog-to-Digital Converters</a></li>
+</ul>
+
+
+<p>With the power of the voltage divider and the ADC, you can accomplish
+ a lot in the world of electronics. Check out these other great 
+tutorials.</p>
+
+<ul>
+<li>Some varieties of <a href="https://learn.sparkfun.com/tutorials/accelerometer-basics">accelerometers</a> and <a href="https://learn.sparkfun.com/tutorials/gyroscope">gyroscopes</a> have anlog outputs that must be read in on an ADC to get usable values.</li>
+<li><a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation">Pulse-width Modulation (PWM)</a> is like an analog output, which is the opposite of analog input.</li>
+<li>The <a href="https://learn.sparkfun.com/tutorials/ina169-breakout-board-hookup-guide">INA169</a> allows you to sense current using ADC.</li>
+<li>Using a <a href="https://learn.sparkfun.com/tutorials/voltage-dividers">voltage divider</a> and the ADC, you can read in all sorts of sensors and variable components such as <a href="https://learn.sparkfun.com/tutorials/resistors/types-of-resistors#trim">trimpots, joysticks, sliders, and force sensitive resistors</a> amongst many, many more.</li>
+<li>The Arduino <a href="http://arduino.cc/en/Reference/map">map()</a> function</li>
+<li>Arduino <a href="http://arduino.cc/en/Tutorial/AnalogInputPins">Analog Pins</a></li>
+<li>The <a href="https://learn.sparkfun.com/tutorials/uh-oh-battery-level-indicator-hookup-guide">Uh-Oh Battery Indicator Hookup Guide</a> uses a voltage divider to tell you if your battery is getting too low.</li>
+</ul>
+      </div>
+    
+        <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t44" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft44" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft44&amp;name=Voltage+Dividers" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft44" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Voltage+Dividers&amp;url=http%3A%2F%2Fsfe.io%2Ft44&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft44&amp;t=Voltage+Dividers" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft44&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F4%2F0%2F3%2Fa%2Fe%2F511948ffce395f7f47000000.png&amp;description=Voltage+Dividers" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+  </div>
+
+  <div class="col-sm-4" id="nav-pages">
+    <div class="affix" id="sidebar_affix">
+
+      <div id="tutorial-pages" class="list-group">
+        <a class="list-group-item"><b>Sections</b></a>
+                          <a data-pagename="introduction" class="list-group-item" href="#introduction">
+            Introduction          </a>
+                  <a data-pagename="ideal-voltage-divider" class="list-group-item" href="#ideal-voltage-divider">
+            Ideal Voltage Divider          </a>
+                  <a data-pagename="applications" class="list-group-item active" href="#applications">
+            Applications          </a>
+                  <a data-pagename="extra-credit-proof" class="list-group-item" href="#extra-credit-proof">
+            Extra Credit: Proof          </a>
+                  <a data-pagename="res" class="list-group-item" href="#res">
+            Resources and Going Further          </a>
+              </div>
+
+      <div class="list-group">
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/voltage-dividers/discuss">
+          Comments
+          <span class="badge">4</span>
+        </a>
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/voltage-dividers/introduction">
+          View Paginated
+        </a>
+        <a class="list-group-item" href="#" onclick="window.print(); return false;">
+          Print
+        </a>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>Tags</b></li>
+        <li class="list-group-item"><ul class="tags-list">
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/concepts">Concepts</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/electrical-engineering">Electrical Engineering</a>  </li>
+</ul>
+</li>
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>License</b></li>
+        <li class="list-group-item">
+          <span class="sfe-icon-cc">
+            <span class="visuallyhidden">Creative Commons</span>
+          </span>
+          <small>tutorials are <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="new">CC BY-NC-SA 3.0</a></small>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  require(['tutorial', 'jquery.imagesloaded'], function() {
+    $('#tutorial').tutorial();
+  });
+</script>
+
+      </div> <!-- /container -->
+    </div> <!-- /content -->
+
+    
+<footer>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="sharing-ingenuity">
+          <span class="sfe-icon-flame"></span>
+          <span class="text"><span class="text-top">Sharing<br></span>Ingenuity</span>
+        </div>
+        <ul class="spew">
+          <li><a href="http://www.github.com/sparkfun" target="_blank" class="sfe-icon-github"><span class="visuallyhidden">GitHub</span></a></li>
+          <li><a href="http://www.youtube.com/sparkfun" target="_blank" class="sfe-icon-youtube"><span class="visuallyhidden">YouTube</span></a></li>
+          <li><a href="http://www.vimeo.com/sparkfun" target="_blank" class="sfe-icon-vimeo"><span class="visuallyhidden">Vimeo</span></a></li>
+          <li><a href="http://www.facebook.com/SparkFun" target="_blank" class="sfe-icon-facebook"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/106084846822083498483/" target="_blank" class="sfe-icon-google-plus"><span class="visuallyhidden">Google Plus</span></a></li>
+          <li><a href="http://www.flickr.com/photos/sparkfun/" target="_blank" class="sfe-icon-flickr"><span class="visuallyhidden">Flickr</span></a></li>
+          <li><a href="https://twitter.com/#%21/sparkfun" target="_blank" class="sfe-icon-twitter"><span class="visuallyhidden">Twitter</span></a></li>
+          <li><a href="https://www.sparkfun.com/feeds" class="sfe-icon-feed"><span class="visuallyhidden">RSS</span></a></li>
+        </ul>
+        <div class="newsletter">
+          <form action="https://learn.sparkfun.com/newsletter/subscribe_email" method="post" class="form-inline" id="js-newsletter_subscribe">
+            <div class="form-group">
+              <input class="form-control" name="newsletter_email" placeholder="Email Address" type="email">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default" value="Subscribe to Education Newsletter" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end .row -->
+  </div><!-- end .container -->
+</div><!-- end .social -->
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="subfooter subfooter-about">
+      <p>
+        <b>SparkFun</b> is an online retail store that sells the bits and pieces to
+        make your electronics projects possible. Whether it's a robot that can
+        cook your breakfast or a GPS cat tracking device, our products and
+        resources are designed to make the world of electronics more accessible.
+      </p>
+      <p>
+        In addition to products, SparkFun also offers
+        classes and online tutorials to help educate
+        individuals in the wonderful world of embedded electronics.
+      </p>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>About Us</b>
+            </li><li><a href="https://www.sparkfun.com/static/about">About SparkFun</a></li>
+            <li><a href="https://learn.sparkfun.com/about">SparkFun Education</a></li>
+            <li><a title="RSS Feeds" href="https://www.sparkfun.com/feeds">Feeds <span class="sfe-icon-feed"></span></a></li>
+            <li><a href="https://www.sparkfun.com/jobs">Jobs</a></li>
+            <li><a href="https://www.sparkfun.com/static/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Help</b></li>
+            <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+            <li><a href="https://www.sparkfun.com/support#ShippingPolicy">Shipping</a></li>
+            <li><a href="https://www.sparkfun.com/returns">Return Policy</a></li>
+            <li><a href="https://www.sparkfun.com/static/faq">FAQ</a></li>
+                      </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Programs</b></li>
+            <li><a href="https://learn.sparkfun.com/educator_discount">Educator Discount</a></li>
+            <li><a href="https://www.sparkfun.com/sponsor">Partner with SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/project_calls">Tell Us About Your Project</a></li>
+            <li><a href="https://learn.sparkfun.com/tutorials/how-to-sell-your-widget-on-sparkfun">Sell Your Widget on SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/distributors/apply">Become a SparkFun Distributor</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Community</b></li>
+            <li><a href="https://forum.sparkfun.com/">Forum</a></li>
+            <li><a href="https://www.sparkfun.com/news/263">SparkFun IRC Channel</a></li>
+            <li><a href="https://www.sparkfun.com/quiz">Take the SparkFun Quiz</a></li>
+            <li><a href="https://www.kickstarter.com/pages/sparkfun">SparkFun Kickstarter Projects</a></li>
+            <li><a href="https://www.sparkfun.com/distributors">Distributors</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end .row -->
+
+    </div>
+
+    <div id="feedback" class="subfooter subfooter-woym">
+      <form id="woym_form" class="feedback" action="https://learn.sparkfun.com/feedback/mind.json" onsubmit="$(this).sfeutil('mind_feedback'); return false;" method="POST">
+        <div class="error" id="error_feedback" style="display: none"></div>
+        <input name="sparkaptcha" id="sparkaptcha" value="0" type="hidden">
+
+        <div class="form-group">
+          <label for="feedback_textarea" class="control-label">What's on your mind?</label>
+          <div class="controls">
+            <textarea id="feedback_textarea" class="form-control" name="feedback_text" required=""></textarea>
+            <div class="error" id="error_feedback_text" style="display: none"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_dest" class="control-label">For which department?</label>
+          <select name="dest" class="form-control" id="feedback_dest">
+            <option selected="selected" value="general">General</option>
+            <option value="cust">Customer Service</option>
+            <option value="tech">Tech Support</option>
+                          <option value="edu">Education Department</option>
+                      </select>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_email" class="control-label">
+            Please include your email address if you'd like us to respond to a specific question.
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input class="form-control" id="feedback_email" name="email" placeholder="email address" type="text">
+          </div>
+          <div class="error" id="error_feedback_email" style="display: none"></div>
+
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div><!-- end .row -->
+  
+  <ul class="copyleft">
+    <li>SparkFun Electronics <a href="https://www.sparkfun.com/news/300">®</a></li>
+    <li><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=6333+Dry+Creek+Parkway,+Niwot,+CO+80503">Niwot, Colorado</a></li>
+    <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+    <li><a href="https://www.sparkfun.com/sitemap">Site Map</a></li>
+    <li><a href="https://www.sparkfun.com/terms">Terms of Service</a></li>
+    <li><a href="https://www.sparkfun.com/privacy">Privacy Policy</a></li>
+    <li class="desktop-toggle">
+              <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fvoltage-dividers">Desktop Site</a>          </li>
+  </ul>
+
+</div><!-- end .container -->
+
+</footer>
+
+    <div class="nav-account">
+  <ul class="nav nav-tabs">
+    <li class="visible-xs">
+      <a class="nav-toggle-account back" href="#">Your Account</a>
+    </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fvoltage-dividers" data-toggle="modal" data-target="#login_modal" data-remote="false">Log In</a>
+      </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/make">Register</a>
+      </li>
+      </ul>
+</div>
+
+      </div><!-- end .wrapper-inner -->
+    </div><!-- end .wrapper -->
+
+    <!-- Login Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Log In</h4>
+        <p class="modal-header-msg"></p>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="https://www.sparkfun.com/account/login" method="post">
+          <input name="redirect" value="/learn/tutorials/voltage-dividers" type="hidden">
+          <div class="form-group">
+            <label for="login-username">Email</label>
+            <input tabindex="1" name="user" id="login-username" class="form-control" type="email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input tabindex="2" name="passwd" id="login-password" class="form-control" type="password">
+          </div>
+          <div class="form-group">
+            <input value="Log In" tabindex="3" class="btn btn-action" type="submit">
+          </div>
+        </form>
+        <p>
+          <a href="https://www.sparkfun.com/account/forgot_password">Forgot your password?</a>          <br>
+          No account? <a id="btn_register_account" href="https://www.sparkfun.com/account/make">Register one!</a>        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

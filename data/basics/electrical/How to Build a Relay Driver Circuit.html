@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0073)http://www.learningaboutelectronics.com/Articles/Relay-driver-circuit.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Build a Relay Driver Circuit</title>
+<meta name="keywords" content="relay driver circuit, how to, build, transistor, BJT, DC, AC, diode, RC network">
+<meta name="description" content="In this project, we will go over how to build a relay driver circuit which is a circuit which can 
+drive a relay to operate as a switch.">
+<link href="./How to Build a Relay Driver Circuit_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Build a Relay Driver Circuit_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<!-- <h1><a href="#">Mr&bull;Techie</a></h1> -->
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+		<!-- <p><a href="#">By CSS Templates For Free</a></p> -->
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+	<div style="float:right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Build a Relay Driver Circuit</h1><br>
+<img style="width: 145px; height: 121px;" alt="Relay" src="./How to Build a Relay Driver Circuit_files/Relay.png">
+
+
+
+
+<br><br><br>
+
+
+
+<p id="para1">A relay driver circuit is a circuit which can drive, or operate, a relay so that it can function appropriately in a circuit. 
+
+</p><p id="para1">The driven relay can then operate as a switch in the circuit which can open or close, according to the needs of the circuit and its operation. 
+
+</p><p id="para1">In this project, we will build a relay driver for both DC and AC relays. Since DC and AC voltages operate differently, to build 
+relay drivers for them requires slightly different setup. We will also go over a generic relay driver which can operate from either AC or DC voltage
+and operate both AC and DC relays.
+
+</p><p id="para1">All the circuits are relatively simple to understand. 
+
+<br><br>
+</p><h3>DC Relay Driver Circuit</h3>
+<p id="para1">We will first go over how to build a relay driver circuit for relays which operate from DC power.
+
+</p><p id="para1">To drive a DC relay, all we need is sufficient DC voltage which the relay is rated for and a zener diode. 
+
+</p><p id="para1">All relays come with a voltage rating. This is called on a relay's datasheet its rated coil voltage. This is the voltage needed
+in order for the relay to be able to operate and be able to open or close its switch in a circuit. In order for a relay to function, it must receive
+this voltage at its coil terminals. Thus, if a relay has a rated voltage of 9VDC, it must receive 9 volts of DC voltage to operate. So the most important 
+thing a DC relay needs is its rated DC voltage. If you don't know this, look up what relay you have and look up its datasheet and check for 
+this specification. 
+
+</p><p id="para1">And the reason why a diode is needed is usually because it functions to eliminate voltage spikes from a relay circuit as the relay 
+opens and closes. The coil of a relay acts an inductor. Remember that inductors are basically coils of wires wrapped around a conductive core. 
+This is what relay coils are as well. Therefore, they act as inductors. Inductors are electronic components that resist changes in current. Inductors
+do not like sudden changes in current. If the flow of current through a coil is suddenly interrupted, for example, a switch opening, the coil
+will respond by producing a sudden, very large voltage across its leads, causing a large surge of current through it. From a physics or physical 
+perspective, this phenomen is a result of a collapsing magnetic field within the coil as the current is terminated abruptly. Mathematically, this can 
+be understood by noticing how a large change in current (dI/dt) affects the voltage across a coil (V=LdI/dt). Since we are opening the switch, in this 
+case, the current literally goes from full mode to 0 instantaneously. This creates a large voltage spike. Surges in current that result from 
+inductive effects can create very high voltage spikes (as high as 1000V) that can have nasty effects on neighboring devices with in the circuits, such 
+as switches and transistors getting zapped. Not only are these voltage spikes damaging to other electronic components in a circuit but thye are also 
+damaging to the relay's switch contacts. The contacts will suffer from these spikes as well. 
+
+</p><p id="para1">So how do we prevent these voltage spikes? How can we suppress them so that they don't cause this damage? The answer for DC relay 
+circuits is to use a diode. A diode is placed reverse biased in parallel with the relay. The diode acts as a transient suppressor. A transient is a spike. 
+A transient suppressor suppresses these spikes. Placing a diode in reverse bias across a relay's coil eliminates voltage spikes by going into 
+conduction before a large voltage can form across the coil. In other words, a diode will conduct current in reverse bias once the voltage reaches
+a certain threshold and shunt the current to ground. Once the diode begins conducting, it no longer holds voltage. So that the relay in parallel will 
+not receive the excess voltage. So the diode functions to shunt excess power to ground once it reaches a certain threshold. Diodes are devices 
+that do not conduct in reverse. However, if the voltage reaches a certain level, called the breakdown voltage, it will conduct. This is a good 
+thing, when we need the diode to act as a transient suppressor, because it forces all excess power to ground, as to not affect any other parts of 
+the circuit. 
+
+</p><p id="para1">The diode must be rated to handle currents equivalent to the maximum current that woudl have been flowing through the coil 
+before the supply current was interrupted. Therefore, if the relay normally passes a certain amount of current through it during normal operation, 
+the diode must be rated for a current rating above this value, as to not stop normal operation. 
+<br><br>
+</p><h3>Components Needed</h3>
+<ul id="para1">
+<li>DC Relay</li>
+<li>Zener Diode</li>
+<li>DC Voltage Source</li>
+</ul>
+
+<br><br>
+<p id="para1">Again, the DC relay must receive its rated voltage value in order to operate. 
+
+</p><p id="para1">The DC power source can be either batteries, wall wart power, or a DC power supply- any DC power source. 
+
+</p><p id="para1">The zener diode is placed reverse biased in parallel to the relay. 
+
+<br><br>
+</p><h3>DC Relay Driver Circuit Schematic</h3>
+<div style="float:right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Homepage */
+google_ad_slot = "1511328022";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<p id="para1">Below is the DC relay driver circuit which we will build:<br><br>
+
+<img style="width: 575px; height: 222px;" alt="DC relay driver circuit" src="./How to Build a Relay Driver Circuit_files/DC-relay-driver-circuit.png">
+<br><br>
+
+</p><p id="para1">The relay which we use in this case is rated for 9V. Therefore, a 9-volt DC voltage source feeds the resistor. To suppress transients 
+that may be caused by the relay opening and closing, we place a zener diode reverse biased in parallel with the relay. This will shunt all 
+excess power to ground once it reaches a certain threshold. This is all that is needed to operate the relay. With sufficient power, the relay will 
+now closed, driving the loads that are connected to its output. 
+
+<br><br>
+</p><h3>How to Build an AC Relay Driver Circuit</h3>
+<p id="para1">Now we will show how to build an AC relay driver circuit. 
+
+</p><p id="para1">This is a relay which is run, not off of DC power, but AC power. 
+
+</p><p id="para1">To drive an AC relay, all we need is sufficient AC voltage which the relay is rated for and again a transient suppressor. 
+
+</p><p id="para1">Unlike DC relays, however, you cannot use a diode to to eliminate voltage spikes. With AC power, the diode will conduct on alternate
+half-cycles. Using 2 diodes in reverse parallel will also not work because the current will not make it to the coil of the relay. The current will 
+just go through the diodes. Instead, to create a working transient voltage suppressor with an AC circuit, we use an RC series newtwork placed across the coil in parallel. The capacitor absorbs
+excessive charge and the resistor helps to control the discharge. 
+
+<br><br>
+</p><h3>Components Needed</h3>
+<ul id="para1">
+<li>AC relay</li>
+<li>0.05µF capacitor</li>
+<li>100Ω Resistor</li>
+<li>AC Voltage Source</li>
+</ul>
+
+<br><br>
+
+<p id="para1">The AC voltage source will likely come from a plug plugged into a US wall outlet. 
+
+</p><p id="para1"><b>Warning: Be very careful with AC power coming directly from a wall outlet because it is lethal enough to cause shock. Please 
+consult a professional before taking power directly from a plug in a wall outlet.
+
+<br><br>
+</b></p><h3><b>AC Relay Driver Circuit</b></h3><b>
+<div style="float:right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Homepage */
+google_ad_slot = "1511328022";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<p id="para1">The AC relay driver circuit we will build is shown below:<br><br>
+
+<img style="width: 604px; height: 225px;" alt="AC relay driver circuit" src="./How to Build a Relay Driver Circuit_files/AC-relay-driver-circuit.png">
+
+<br><br>
+
+</p><p id="para1">We, again, feed the AC relay the AC voltage it is rated for. If we use a relay with a rated voltage of 110VAC, we must feed it 
+110V from an AC power source. The capacitor and resistor in series acts as the transient voltage suppressor to suppress voltage spikes. This first
+half of the circuit serves as the relay driver. With the relay now having sufficient power, it will turn on and power the loads it is connected to.
+
+<br><br>
+</p><h3>Generic Relay Driver Circuit</h3>
+<p id="para1">The last relay driver circuit we will show is one which can be driven by an arbitrary control voltage. 
+
+</p><p id="para1">This is a relay driver circuit which can be driven by either AC or DC input voltage. And unlike the other circuits,
+ a specific voltage, 
+such as the rated voltage values we used to drive the others, does not need to be used. Because this circuit contains a transistor, much less power
+needs to used on the input side to drive it. 
+
+<br><br>
+</p><h3>Components Needed</h3>
+<ul id="para1">
+<li>6-9V Relay</li>
+<li>2N2222 Transistor</li>
+<li>Zener diode</li>
+<li>1KΩ Resistor</li>
+<li>9V Battery or DC Power Supply</li>
+<li>Another input voltage source</li>
+</ul>
+<br><br>
+
+<h3>Relay Driver Circuit</h3>
+<p id="para1">The circuit we will build is shown below:<br><br>
+
+<img style="width: 414px; height: 390px;" alt="relay driver circuit" src="./How to Build a Relay Driver Circuit_files/Relay-driver-circuit.png">
+<br><br>
+
+</p><p id="para1">Now that we're using a transistor to drive the relay, we can use considerably less power to get the relay driven. Because a transistor is an 
+amplifier, we just have to make sure that the base lead gets enough current to cause a larger current to flow from the emitter of the transistor 
+to the collector. Once the base receives sufficient power, the transistor will conduct from emitter to collector and power the relay. 
+
+</p><p id="para1">With no voltage or input current applied to the transistor's base lead, the transistor's emitter-to-collector channel is open, hence
+blocking current flow through the relay's coil. However, if sufficient voltage and input current are applied to the base lead, the transistor's 
+emitter-to-collector channel will open, allowing current to flow through the relay's coil. 
+
+</p><p id="para1">The benefit of this circuit is a smaller and arbitrary (DC or AC) current can be used to power the circuit and the relay. 
+
+
+<br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+
+				<a href="http://www.learningaboutelectronics.com/Articles/How-to-connect-a-relay-to-a-circuit">How to Connect a Relay to a Circuit</a><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/How-to-connect-a-single-pole-single-throw-relay-in-a-circuit">How to Connect a Single Pole Single Throw (SPST) Relay to a Circuit</a><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/How-to-connect-a-single-pole-double-throw-relay-in-a-circuit">How to Connect a Single Pole Double Throw (SPDT) Relay to a Circuit</a><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/How-to-connect-a-double-pole-double-throw-relay-in-a-circuit">How to Connect a Double Pole Double Throw (DPDT) Relay to a Circuit</a><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php">How to Build an LED Driver Circuit</a><br><br>
+
+<br> <br>
+
+<!-- begin htmlcommentbox.com -->
+ </p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/Relay-driver-circuit.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/Relay-driver-circuit.php#HCB_comment_box"><input type="hidden" name="opts" value="406" id="hcb_form_opts"><input type="hidden" name="mod" value="" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;</div></form></div><div id="comments_list"><div class="comment" id="comment_626955"><span class="date">(June 30, 2015) </span><span class="author"><b class="author-name">Anonymous </b> said:</span> <blockquote>This article is written by someone who knows nothing about electronics. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('626955')"><img src="./How to Build a Relay Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('626955')"><img src="./How to Build a Relay Driver Circuit_files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./How to Build a Relay Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_7826776"><span class="date">(Nov 25, 2014) </span><span class="author"><b class="author-name">shripal </b> said:</span> <blockquote>which voltage rated zener should i use to drive 5v/220v dc relay
+<br>
+<br> </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('7826776')"><img src="./How to Build a Relay Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('7826776')"><img src="./How to Build a Relay Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Relay Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_7617713"><span class="date">(Aug 4, 2014) </span><span class="author"><b class="author-name">anoop </b> said:</span> <blockquote>powlichu...... </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('7617713')"><img src="./How to Build a Relay Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('7617713')"><img src="./How to Build a Relay Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Relay Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_522332"><span class="date">(Aug 4, 2014) </span><span class="author"><b class="author-name">thoma </b> said:</span> <blockquote>powlichu...... </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('522332')"><img src="./How to Build a Relay Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('522332')"><img src="./How to Build a Relay Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Relay Driver Circuit_files/like.png"></div></div><div class="comment" id="comment_4373166"><span class="date">(Jan 22, 2014) </span><span class="author"><b class="author-name">Babatunde </b> said:</span> <blockquote>Pls wot is d voltage of d capacitor used in d A C relay driver circuit.tanks </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('4373166')"><img src="./How to Build a Relay Driver Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('4373166')"><img src="./How to Build a Relay Driver Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Relay Driver Circuit_files/like.png"></div></div></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FRelay-driver-circuit.php&opts=406&mod=" style="text-decoration:none"><img src="./How to Build a Relay Driver Circuit_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ <link rel="stylesheet" type="text/css" href="./How to Build a Relay Driver Circuit_files/skin.css">
+ <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=406&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end htmlcommentbox.com --><br>
+
+<div id="ads" ;="" div="" style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of page image ads */
+google_ad_slot = "7646509937";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+<o:p></o:p><p></p>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</b></div><b>
+	<!-- end content -->
+	
+</b></div><b>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></b></div></body></html>

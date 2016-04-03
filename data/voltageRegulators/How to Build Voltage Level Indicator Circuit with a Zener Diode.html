@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0095)http://www.learningaboutelectronics.com/Articles/Voltage-level-indicator-with-a-zener-diode.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Build Voltage Level Indicator Circuit with a Zener Diode</title>
+<meta name="keywords" content="voltage level indicator, zener diode, circuit">
+<meta name="description" content="In this circuit, we show how to build a voltage level indicator with a zener diode.">
+<link href="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Build a Voltage Level Indicator with a Zener Diode</h1><br>
+<img style="width: 272px; height: 61px;" alt="Zener Diode" src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/Zener-diode.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+
+
+<br><br><br><br>
+
+<p id="para1">In this circuit, we will show how to build a voltage level indicator with a single zener diode.
+
+</p><p id="para1">A voltage level indicator is a circuit which can show if the voltage input into a circuit is greater than 
+a certain threshold level. If the voltage is greater than a certain level, then an output such as an LED can light up or a buzzer 
+can sound off.
+
+</p><p id="para1">We use a single zener diode in this circuit to function as our voltage level indicator. 
+
+</p><p id="para1">A zener diode is a diode which has a break downs when a certain voltage level is reached and conducts
+current- when it is connected
+reverse biased in a circuit. This voltage that causes current to conduct across it is called
+the breakdown voltage of the zener diode. If a zener diode has a breakdown voltage of 5.1V, after 5.1V or greater is applied 
+to it, it will conduct current across it which can then power on a load. 
+
+</p><p id="para1">In this circuit, the type of zener diode we will use is the 1N4733 zener diode, which has a breakdown voltage
+of 5.1V. The type of output we will use is an LED. 
+
+</p><p id="para1">So when the voltage reaches above the threshold of 5.1V, the diode conducts current across and lights up the 
+LED, indicating the voltage level.
+
+
+
+
+
+
+
+
+<br><br>
+</p><h3>Components</h3>
+<ul id="para1">
+<li>1N4733 5.1V Zener Diode</li>
+<li>220Ω resistor</li>
+<li>LED</li>
+</ul>
+<br><br>
+
+<p id="para1">The 1N4733 zener diode can be obtained very cheaply from a number of online retailers. It can be obtained
+from Tayda Electronics at the following link:
+<a href="http://www.taydaelectronics.com/1n4733-zener-diode-1w-5-1v.html">1N4733 5.1V Zener Diode</a>.
+
+</p><p id="para1">The datasheet for this diode can be found at:
+<a href="http://www.learningaboutelectronics.com/Datasheets/1N47XX-zener-diode-datasheet.pdf">
+1N47XX Zener Diode Datasheet</a>.
+
+</p><p id="para1">This diode again has a breakdown voltage of 5.1V. After 5.1V, it will break down and conduct current 
+across from cathode to anode. 
+
+
+</p><p id="para1">The pinout for a zener diode is shown below:
+<br><br>
+<img style="width: 335px; height: 201px;" alt="Zener diode pinout" src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/Zener-diode-pinout.png">
+<br><br>
+
+
+</p><p id="para1">The cathode end of the zener diode is the end with the band on it. The other end is the cathode.
+
+
+
+
+
+<br><br>
+
+
+</p><h3>Voltage Level Indicator Circuit</h3>
+
+<p id="para1">The voltage level indicator circuit we will build with a 1N4733 zener diode is shown below. 
+<br><br>
+</p><div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+<img style="width: 106px; height: 352px;" alt="Voltage level indicator circuit with a zener diode" src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/Voltage-level-indicator-circuit-with-a-zener-diode.png">
+
+
+
+
+
+<br><br>
+
+<p id="para1">The breadboard schematic of the above circuit is shown below. 
+
+<br><br>
+<img style="width: 446px; height: 410px;" alt="Voltage level indicator breadboard circuit with a zener diode" src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/Voltage-level-indicator-breadboard-circuit-with-a-zener-diode.png">
+
+<br><br>
+
+
+
+</p><p id="para1">So the circuit is very simple. 
+
+</p><p id="para1">The zener diode is connected in reverse biased to the power source. After this comes the 220Ω
+resistor that limits current to the LED and then we have the LED.
+
+</p><p id="para1">How this circuit works is the power source feeds voltage to the circuit. 
+
+</p><p id="para1">When the voltage goes above the 5.1V threshold, then the zener diode breaks down and begins to conduct
+current across from its cathode to its anode. This current then powers on the LED, lighting it up. The LED serves as 
+a visual indicator that the voltage that is being fed into the circuit is greater than 5.1V, the breakdown voltage of the 
+1N4733 zener diode. 
+
+</p><p id="para1">You can make many modifications to this circuit. You can swap out this zener diode for another to get a
+different voltage threshold. 
+
+</p><p id="para1">The types of zener diodes you can use are: 
+</p><div style="float:right">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Large image ads -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7591845391773873" data-ad-slot="3467666961"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<p id="para1">1N4728: 3.3V
+
+</p><p id="para1">1N4729: 3.6V
+
+</p><p id="para1">1N4730: 3.9V
+
+</p><p id="para1">1N4731: 4.3V
+
+</p><p id="para1">1N4732: 4.7V
+
+</p><p id="para1">1N4734: 5.6V
+
+</p><p id="para1">1N4735: 6.2V
+
+</p><p id="para1">1N4736: 6.8V
+
+</p><p id="para1">1N4737: 7.5V
+
+</p><p id="para1">1N4738: 8.2V
+
+</p><p id="para1">1N4739: 9.1V
+
+</p><p id="para1">1N4740: 10V
+
+</p><p id="para1">1N4741: 11V
+
+</p><p id="para1">1N4742: 12V
+
+</p><p id="para1">1N4743: 13V
+
+</p><p id="para1">1N4746: 18V
+
+</p><p id="para1">These are many different zener diodes you can use. They all have different breakdown voltages, so they can 
+set a different threshold voltage for the voltage level indicator circuit.
+
+
+</p><p id="para1">And this is how a voltage level indicator can be built with a zener diode.
+
+
+
+
+
+
+
+
+<br><br><br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+	
+  				<a href="http://www.learningaboutelectronics.com/Articles/How-to-vary-the-brightness-of-an-led">How to Vary the Brightness of an LED</a><br><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/LED-driver-circuit.php">How to Build an LED Driver Circuit</a><br><br>
+  				<a href="http://www.learningaboutelectronics.com/Articles/LED-flasher-circuit.php">How to Build an LED Flasher Circuit</a><br><br>
+<!-- begin htmlcommentbox.com -->
+ 
+
+
+</p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/Voltage-level-indicator-with-a-zener-diode.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/Voltage-level-indicator-with-a-zener-diode.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/Voltage-level-indicator-with-a-zener-diode.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FVoltage-level-indicator-with-a-zener-diode.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ 
+
+
+<link rel="stylesheet" type="text/css" href="./How to Build Voltage Level Indicator Circuit with a Zener Diode_files/skin.css">
+ 
+
+
+<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={ };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 
+<!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

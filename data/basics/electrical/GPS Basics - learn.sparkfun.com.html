@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile mode if small screen device -->
+    
+    <title>GPS Basics - learn.sparkfun.com</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="GPS%20Basics%20-%20learn.sparkfun.com_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="GPS%20Basics%20-%20learn.sparkfun.com_files/theme.css" type="text/css" media="screen">    <link rel="alternate" type="application/atom+xml" title="Education Blog" href="https://learn.sparkfun.com/feeds/blog">
+    <link rel="alternate" type="application/atom+xml" title="Tutorials" href="https://learn.sparkfun.com/feeds/tutorials">
+    <link rel="alternate" type="application/atom+xml" title="Education Blog Comments" href="https://learn.sparkfun.com/feeds/blog_comments">
+    <link rel="alternate" type="application/atom+xml" title="Tutorial Comments" href="https://learn.sparkfun.com/feeds/tutorial_comments">
+
+    <script src="GPS%20Basics%20-%20learn.sparkfun.com_files/analytics.js" async=""></script><script type="text/javascript">
+          var SFECONFIG = {
+      currencies: {"USD":{"code":"USD","title":"US Dollar","symbol_left":"$","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.0000"},"CAD":{"code":"CAD","title":"Canadian Dollar","symbol_left":"$","symbol_right":" CAD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.2672"},"AUD":{"code":"AUD","title":"Australian Dollar","symbol_left":"$","symbol_right":" AUD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.3441"},"GBP":{"code":"GBP","title":"British Pound","symbol_left":"&pound;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.6444"},"EUR":{"code":"EUR","title":"Euro","symbol_left":"&euro;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.8966"}},
+      dnt: false,
+      preferred_currency: 'USD',
+        http_server: 'http://www.sparkfun.com',
+        https_server: 'https://www.sparkfun.com',
+        http_static: 'https://cdn.sparkfun.com',
+        base_url: '/',
+        url: '/',
+        controller: 'tutorials',
+        action: 'view',
+        entity_id: '',
+        auth: false,
+        sparkrev: '1436549074',
+        search_key: 'qLqN6uVRKXnjHd2QapGm'      };
+      var require = {
+        paths: {
+          'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min'
+        },
+        baseUrl: '/js/',
+        urlArgs: "sparkrev=" + SFECONFIG.sparkrev,
+        deps: ['jqueryui'],
+        callback: function() {
+          $('#learn').learn();
+          $('#learn').sfeutil();
+        }
+      };
+    </script>
+    <script src="GPS%20Basics%20-%20learn.sparkfun.com_files/learn-built.js"></script>
+          <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3404365-1', 'auto', {'allowLinker': true});
+      ga('require', 'linker');
+      ga('linker:autoLink', ['www.sparkfun.com', 'avc.sparkfun.com'] );
+      ga('require', 'displayfeatures');
+            ga('set', 'dimension1', 'Guest');
+      ga('send', 'pageview');
+
+      </script>
+      <script src="GPS%20Basics%20-%20learn.sparkfun.com_files/jquery-ui.js" data-requiremodule="jqueryui" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="GPS%20Basics%20-%20learn.sparkfun.com_files/tutorial.js" data-requiremodule="tutorial" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="GPS%20Basics%20-%20learn.sparkfun.com_files/jquery.js" data-requiremodule="jquery.imagesloaded" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+
+  <body id="learn" class="layout-default no-type tutorials-view no-touch" ontouchstart="">
+    <div class="wrapper" itemscope="" itemtype="http://schema.org/WebSite">
+      <meta itemprop="url" content="https://www.sparkfun.com/">
+      <div class="wrapper-inner">
+
+    
+<div class="header">
+  <div class="container">
+
+<!-- Mobile Nav Button -->
+<div class="mobile-menu-container left">
+  <a id="nav_toggle" class="mobile-menu-button nav_toggle" href="#"><span>≡</span></a>
+      <a id="search_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-search"></span></a>
+  </div>
+
+<nav class="top-links">
+  &nbsp;
+</nav>
+
+<!-- Logo -->
+<div class="logo-container">
+  <a class="logo" href="https://www.sparkfun.com/">
+    <span class="sfe-icon-flame"></span>
+    <span class="sfe-icon-sparkfun" data-icon="🔥">
+      <span class="visuallyhidden">sparkfun.com</span>
+    </span>
+  </a>
+</div>
+
+<!-- Tabs -->
+<!-- also edit mobile tabs in .main-nav -->
+<nav class="tabs-container">
+  <ul>
+    <li class="shop "><a href="https://www.sparkfun.com/">Shop</a></li>
+    <li class="learn active"><a href="https://learn.sparkfun.com/">Learn</a></li>
+    <li class="avc "><a href="https://avc.sparkfun.com/"><span class="sfe-icon-avc"><span class="visuallyhidden">AVC</span></span></a></li>
+    <li class="forum "><a href="https://forum.sparkfun.com/">Forum</a></li>
+    <li class="data "><a href="https://data.sparkfun.com/">Data</a></li>
+  </ul>
+</nav>
+
+<!-- Cart & User -->
+<div class="user-container mobile-menu-container right">
+
+  <a id="account_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-user"></span></a>
+
+  
+      <div class="user">
+      <!-- login modal trigger -->
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fgps-basics" data-toggle="modal" data-target="#login_modal" data-remote="false">log in</a>
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/make">register</a>    </div>
+  
+</div>
+
+<!-- Navigation / Search -->
+<div class="main-nav-container">
+
+  <nav class="main-nav">
+    <ul>
+      <li class="tab shop ">
+        <a href="https://www.sparkfun.com/">Shop</a>      </li>
+      <li class="tab learn active">
+        <a href="https://learn.sparkfun.com/">Learn</a>      </li>
+      <li class="tab forum ">
+        <a href="https://forum.sparkfun.com/">Forum</a>
+      </li>
+      <li class="tab data ">
+        <a href="https://data.sparkfun.com/">Data</a>
+      </li>
+
+      
+<li class="start-a-project ">
+  <a href="https://learn.sparkfun.com/start_a_project">Start a Project</a></li>
+<li><a href="https://learn.sparkfun.com/blog">EDU Blog</a></li>
+<li><a href="https://learn.sparkfun.com/resources">Resources</a></li>
+<li class="active"><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+<li><a href="https://learn.sparkfun.com/events">Classes</a></li>
+<li><a href="https://learn.sparkfun.com/calendar">Calendar</a></li>
+<li><a href="https://learn.sparkfun.com/workshops">Workshops</a></li>
+<li><a href="https://learn.sparkfun.com/contact">Contact</a></li>
+
+      <li class="desktop-toggle">
+        <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fgps-basics">Desktop Site</a>      </li>
+    </ul>
+  </nav>
+
+      <form id="search_form" class="search" action="https://www.sparkfun.com/search/results" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.sparkfun.com/search/results?term={term}">
+      <div class="ui-widget">
+        <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input name="term" id="global-search" class="form-control ui-autocomplete-input" placeholder="search..." itemprop="query-input" autocomplete="off" type="text">
+      </div>
+    </form>
+  
+</div>
+
+  </div>
+</div>
+
+
+    
+    <div class="content">
+      <div class="container">
+
+        
+        <div class="main-title">
+  <ul class="breadcrumb">
+    <li><a href="https://learn.sparkfun.com/">Home</a></li>
+    <li><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+    <li>GPS Basics</li>
+      </ul>
+
+  <h1>
+    GPS Basics  </h1>
+
+</div>
+
+
+<a id="nav_toggle_pages" class="nav_toggle" href="#"><span>≡</span> Pages</a>
+
+<div id="tutorial" class="row">
+
+  <div class="col-sm-8" id="sections">
+
+    <div class="contributors">
+                      Contributors:
+                <a href="https://www.sparkfun.com/users/267389"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/7f40d50a4bcf158a1280bfaf1ebcbb8b.jpeg"> Mando</a>          </div>
+
+    <span class="fave_widget verbose">
+  <a href="#" class="fave_btn " title="Add to favorites" data-entity="learn_tutorials" data-entity-id="9">
+    <span class="fave_yes">
+      <span class="glyphicon glyphicon-heart"></span>
+      <span class="name">Favorited</span>
+    </span>
+    <span class="fave_no">
+      <span class="glyphicon glyphicon-heart-empty"></span>
+      <span class="name">Favorite</span>
+    </span>
+  </a>
+  <span class="fave_count">2</span>
+</span>    <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t9" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft9" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft9&amp;name=GPS+Basics" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft9" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=GPS+Basics&amp;url=http%3A%2F%2Fsfe.io%2Ft9&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft9&amp;t=GPS+Basics" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft9&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F3%2F6%2F6%2Ff%2F7%2F50edfc17ce395f7105000000.jpg&amp;description=GPS+Basics" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+          <div class="section tutorial-page">
+        <h2 id="the-basics-of-gps">The Basics of GPS</h2>
+        <p style="text-align:center;"> <a href="https://www.sparkfun.com/products/11571"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50dc8479ce395f1a7d000001.jpg" alt="GPS Module"></a></p>
+
+<p style="text-align:center;"> <em>A common GPS receiver or GPS module.</em></p>
+
+<p>You have probably used or benefitted from a GPS receiver. They are 
+found in most smartphones, many new automobiles, and they are used to 
+track commerce all over the globe. These tiny devices can 
+instantaneously give your exact position and time, almost anywhere on 
+the planet, for free! All you need is a <a href="https://www.sparkfun.com/search/products?term=gps+receiver&amp;what=products">GPS receiver</a>, and receivers are getting less expensive and smaller every day.</p>
+
+<p>Don’t take these tiny, inexpensive modules for granted. There are 
+decades of engineering that went in to giving you accurate position 
+anytime, anywhere. Dozens of GPS satellites, all containing extremely 
+accurate atomic clocks, have been launched since the late 70’s, and 
+launches continue to this day. The satellites continuously send data 
+down to earth over dedicated RF frequencies. Our pocket-sized GPS 
+receivers have tiny processors and antennas that directly receive the 
+data sent by the satellites and compute your position and time on the 
+fly. Simply amazing.</p>
+
+<h3>Suggested Reading</h3>
+
+<p>There are some concepts that this tutorial builds upon and that you may need to know or prepare before starting:</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/logic-levels">Logic Levels</a></li>
+<li><a href="http://learn.sparkfun.com/tutorials/connector-basics">Connector Basics</a></li>
+<li><a href="http://learn.sparkfun.com/tutorials/binary">Binary</a> (used in the configuration section)</li>
+<li><a href="https://learn.sparkfun.com/tutorials/serial-communication">Serial Communication</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/terminal-basics">Serial Terminal Basics</a></li>
+</ul>
+      </div>
+          <div class="section tutorial-page">
+        <h2 id="how-does-gps-work">How Does GPS Work</h2>
+        <p>GPS receivers use a constellation of satellites and ground stations to compute position and time almost anywhere on earth.</p>
+
+<p style="text-align:center;"> <img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50db5859ce395f0c2a000002.gif" alt="animated image of earth and the view of satellites visable from a given location"></p>
+
+<p style="text-align:center;"> <em>Notice the moving point on the globe and the number of visible satellites.</em></p>
+
+<p>At any given time, there are at least 24 active satellites orbiting 
+over 12,000 miles above earth. The positions of the satellites are 
+constructed in a way that the sky above your location will always 
+contain at most 12 satellites. The primary purpose of the 12 visible 
+satellites is to <em>transmit</em> information back to earth over radio 
+frequency (ranging from 1.1 to 1.5 GHz). With this information and some 
+math, a ground based <em>receiver</em> or GPS module can calculate its position and time.</p>
+
+<h3>How does a GPS receiver calculate its position and time?</h3>
+
+<p>The data sent down to earth from each satellite contains a few 
+different pieces of information that allows your GPS receiver to 
+accurately calculate its position and time. An important piece of 
+equipment on each GPS satellite is an extremely accurate atomic clock. 
+The time on the atomic clock is sent down to earth along with the 
+satellite’s orbital position and arrival times at different points in 
+the sky. In other words, the GPS module receives a timestamp from each 
+of the visible satellites, along with data on where in the sky each one 
+is located (among other pieces of data). From this information, the GPS 
+receiver now knows the distance to each satellite in view. <strong>If the GPS receiver’s antenna can see at least 4 satellites, it can accurately calculate its position and time.</strong> This is also called a <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">lock or a fix</a>.</p>
+
+<p>Did you catch all of that? If not or if you want more, check out a much more detailed explanation, in volume 1 of <a href="https://cdn.sparkfun.com/datasheets/Sensors/GPS/fundamentals_of_gps_receivers-v1.pdf"><em>GPS Fundamentals</em></a> by Dan Doberstein. Volume 1 has been released for free, but you must support the author to read volume 2.</p>
+
+<p style="text-align:center;"> <img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50ef2e3ece395fb926000000.jpg" alt="satellites transmitting and receiveing GPS data"></p>
+
+<p style="text-align:center;"> <em>An artist’s rendition of the control segment.</em></p>
+
+<p>There is another piece of the global positioning system we haven’t 
+talked about. Along with satellites and GPS receivers, there are ground 
+based stations that can communicate with the satellite network and some 
+GPS receivers. This system is formally called the control segment and 
+increases the accuracy of your GPS receiver. Common systems that use the
+ control segment to improve accuracy are <a href="http://www8.garmin.com/aboutGPS/waas.html">WAAS</a> and <a href="http://en.wikipedia.org/wiki/Differential_GPS">DGPS</a>.
+ WAAS is common on most GPS receivers and improves accuracy to about 5 
+meters. DGPS requires a specific type of GPS receiver and gets 
+centimeter accuracy. DGPS units are also expensive and tend to be larger
+ because they require an additional antenna.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="gps-accuracy-">GPS Accuracy </h2>
+        <p>GPS Accuracy depends on a number of variables, most notably 
+signal to noise ratio (noisy reception), satellite position, weather and
+ obstructions such as buildings and mountains. These factors can create 
+errors in your perceived location. Signal noise usually creates an error
+ from around one to ten meters. Mountains, buildings and other things 
+that might obstruct the path between the receiver and the satellite can 
+cause three times as much error as signal noise. A GPS receiver must be 
+able to get a lock on 4 satellites to be able to solve for a position. 
+The first lock it gets allows the receiver to obtain the <a href="http://gps.about.com/od/glossary/g/GPS_Almanac.htm">almanac</a>
+ information and thus what other satellites it should listen for. 
+Although it is possible to get a position from less than 4 satellites, 
+the margin of error of this position can be rather large. Your most 
+accurate read of your location comes when you have a clear view of a 
+clear sky away from any obstructions and under more than four 
+satellites. To combat these errors, a couple of different assistants 
+have been created.</p>
+
+<h3>Assisted GPS</h3>
+
+<p>One of these ancillaries is <a href="http://en.wikipedia.org/wiki/Assisted_GPS">Assisted GPS</a>
+ or AGPS. This method uses wireless (ground-based) networks to help 
+relay between the satellite and the receiver when the GPS signal is weak
+ or not able to be picked up. There are two ways AGPS can help out. The 
+first is to provide the receiver with the proper almanac data and the 
+precise time. The second utilizes the higher computing power and good 
+satellite signal of the ground base to interpret the broken or 
+fragmented information the receiver is receiving to provide a more 
+accurate position reading to the receiver. AGPS is mostly accomplished 
+by GPS receivers mounted on cellular towers. When communicating with 
+these receivers, the GPS can acquire a lock on the satellite more 
+quickly as well as receive more accurate information. This method is 
+what is used for GPS in mobile phones and why they’re sometimes more 
+accurate than the GPS receivers on their own. But AGPS is present in <a href="http://en.wikipedia.org/wiki/List_of_devices_with_Assisted_GPS">more devices</a>
+ than just cellphones; it’s even available in cameras and some vehicles.
+ It’s most beneficial in cities where the GPS signal may have a 
+difficult time making it through the dense maze of the buildings.</p>
+
+<h3>Differential GPS</h3>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/6/c/9/1/a/52af5b6c757b7f28528b4573.GIF"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/52af5b6c757b7f28528b4573.GIF" alt="alt text"></a></p>
+
+<p style="text-align:center;"><em>(Image Courtesy of ASMA)</em></p>
+
+<p>Another method is <a href="http://en.wikipedia.org/wiki/Differential_GPS">Differential GPS</a>
+ or DGPS. DGPS also uses ground or fixed GPS stations to determine the 
+location, but differs in that it finds the difference between both the 
+satellite and the ground location reading. These ground stations may be 
+up to 200 nautical miles from the receiver, and it is important to note 
+that accuracy deteriorates the further you are from the ground station. 
+DGPS is accomplished by a ground station broadcasting a signal which 
+dictates the error between the actual <a href="http://en.wikipedia.org/wiki/Pseudorange">pseudorange</a>
+ and the measured pseudorange. This value is calculated by multiplying 
+the speed of light by the time it takes the signal to travel from the 
+satellite to the receiver. As an example, one form of DGPS is <a href="http://en.wikipedia.org/wiki/WAAS">Wide Area Augmentation System</a> or WAAS.</p>
+
+<p>Originally developed by the <a href="http://www.faa.gov/">FAA</a> to 
+assist aircraft GPS, WAAS uses a system of specifically built ground 
+stations. WAAS holds a specific set of accuracy standards that ground 
+station measurements must meet. Laterally and vertically, WAAS must be 
+accurate to within 7.6 meters 95% of the time. These ground stations 
+send their measurements to master stations which send the corrections to
+ WAAS satellites every 5 seconds or quicker. From the Satellite, a 
+signal is broadcast back to the receivers on earth where the corrections
+ are used to improve the GPS accuracy. In some locations, WAAS is able 
+to provide an accuracy of 1 meter lateral and 1.5 meters vertically. 
+While WAAS is only present in North America, similar systems are in 
+place in many other parts of the world.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="message-formats">Message Formats</h2>
+        <p>GPS data is displayed in different message formats over a <a href="https://learn.sparkfun.com/tutorials/serial-communication">serial interface</a>. There are standard and non-standard (proprietary) message formats. Nearly all GPS receivers output <a href="http://en.wikipedia.org/wiki/NMEA_0183">NMEA</a>
+ data. The NMEA standard is formatted in lines of data called sentences.
+ Each sentence contains various bits of data organized in comma 
+delimited format (i.e. data separated by commas). Here’s example NMEA 
+sentences from a GPS receiver with satellite <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">lock</a> (4+ satellites, accurate position):</p>
+
+<pre><code>$GPRMC,235316.000,A,4003.9040,N,10512.5792,W,0.09,144.75,141112,,*19
+$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
+$GPGSA,A,3,22,18,21,06,03,09,24,15,,,,,2.5,1.6,1.9*3E
+</code></pre>
+
+<p>For example, the GPGGA sentence contains the follow:</p>
+
+<ul>
+<li>Time: 235317.000 is 23:53 and 17.000 seconds in Greenwich mean time</li>
+<li>Longitude: 4003.9040,N is latitude in degrees.decimal minutes, north</li>
+<li>Latitude: 10512.5792,W is longitude in degrees.decimal minutes, west</li>
+<li>Number of satellites seen: 08</li>
+<li>Altitude: 1577 meters</li>
+</ul>
+
+
+<p>The data is separated by commas to make it easier to read and parse 
+by computers and microcontrollers. This data is sent out on the serial 
+port at an interval called the <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">update rate</a>.
+ Most receivers update this information once per second (1Hz), but more 
+advanced receivers are capable multiple updates per second. 5 to 20Hz is
+ possible with modern receivers.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="reading-gps-data">Reading GPS data</h2>
+        <p>Most GPS modules have a <a href="https://learn.sparkfun.com/tutorials/serial-communication">serial port</a>, which makes them perfect to connect to a microcontroller or computer.</p>
+
+<h3>Connecting to a Microcontroller</h3>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/r/600-600/assets/f/a/8/4/8/50f889a2ce395f0a42000001.jpg"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50f889a0ce395f0b42000001.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em><a href="https://www.sparkfun.com/products/465">EM406 GPS</a> with <a href="https://www.sparkfun.com/products/10402">EM406 Breakout</a></em></p>
+
+<p>Once a GPS module is powered, NMEA data (or another message format) is sent out of a serial transmit pin (TX) at a specific <a href="http://learn.sparkfun.com/tutorials/serial-communication/rules-of-serial#baud">baud rate</a> and <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">update rate</a>,
+ even if there is no lock. To have your microcontroller read the NMEA 
+data, all that is needed is to connect the TX pin of the GPS to the RX 
+(receive) pin on the microcontroller. To <a href="http://learn.sparkfun.com/tutorials/gps-basics/configuring-a-gps-receiver">configure</a> the GPS module, you will need to also connect the RX pin of the GPS to the TX pin of the microcontroller.</p>
+
+<p>It is common for the microcontroller to parse the NMEA data. Parsing 
+is simply removing the chunks of data from the NMEA sentence so the 
+microcontroller can do something useful with the data.</p>
+
+<p>For example, the microcontroller might need to read only the altitude of your GPS.</p>
+
+<pre><code>$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
+</code></pre>
+
+<p>Instead of dealing with all of this text, the microcontroller can 
+parse the GPGGA sentence and end up with only the altitude (in meters).</p>
+
+<pre><code>1577
+</code></pre>
+
+<p>Once the microcontroller can grab the data needed, the information 
+can be manipulated to create other interactions on the microcontroller.</p>
+
+<p>The <a href="https://learn.sparkfun.com/tutorials/what-is-an-arduino">Arduino</a> platform can parse NMEA data easily with the help of the <a href="http://arduiniana.org/libraries/tinygps/">Tiny GPS</a> library. Check out the <a href="http://learn.sparkfun.com/tutorials/gps-shield-quick-start">GPS Shield Getting Started Guide</a> for a walk-through example on how to connect an Arduino to a GPS module and parse NMEA sentences.</p>
+
+<h3>Connecting to a Computer</h3>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/d/5/5/3/4/50f98b01ce395f9458000000.jpg"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50f98af5ce395fb354000002.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em><a href="https://www.sparkfun.com/products/465">EM406 GPS</a> - <a href="https://www.sparkfun.com/products/10402">EM406 Breakout</a> - <a href="https://www.sparkfun.com/products/9716">5V FTDI Breakout</a></em></p>
+
+<p>A simple way to see the NMEA data directly is to connect the GPS 
+module to a computer. For the connections, all that is needed is to 
+power the GPS with the FTDI basic (in this case 5V and GND), then 
+connect the TX pin of the GPS to the RX pin on the FTDI Basic.</p>
+
+<p>Next, open a <a href="https://learn.sparkfun.com/tutorials/terminal-basics">serial terminal program</a> at the same baud rate of your GPS module. Even if the GPS does <em>not</em> have a lock, you should see NMEA sentences steaming by.</p>
+
+<pre><code>$GPRMC,235316.000,A,4003.9040,N,10512.5792,W,0.09,144.75,141112,,*19
+$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
+$GPGSA,A,3,22,18,21,06,03,09,24,15,,,,,2.5,1.6,1.9*3E
+</code></pre>      </div>
+          <div class="section tutorial-page">
+        <h2 id="configuring-a-gps-receiver">Configuring a GPS receiver</h2>
+        <p>To configure a GPS receiver, knowing the type of <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">chipset</a>
+ your GPS is using is very important. The GPS chipset contains a 
+powerful processor that is responsible for the user interface, all of 
+the calculations, as well as analog circuitry for the antenna. The 
+chipset also allows for data to be sent to the GPS receiver to configure
+ parameters like, update rate, baud rate, sentence selection, etc.</p>
+
+<p>In order to send commands over a <a href="http://learn.sparkfun.com/tutorials/serial-communication">serial interface</a>
+ to a GPS receiver, you will need a command set or reference manual. 
+Before diving too far into the command set for a given module, be sure 
+to check with the vendor. Many chipset vendors provide software that 
+allows you to easily communicate and configure the GPS module over a 
+serial port.</p>
+
+<p>The following are datasheets and command sets for some of the more common chipsets.</p>
+
+<p>SiRF chipsets:</p>
+
+<ul>
+<li><a href="https://cdn.sparkfun.com/datasheets/Sensors/GPS/NMEA%20Reference%20Manual1.pdf">SiRF NMEA Reference Manual</a></li>
+<li><a href="https://cdn.sparkfun.com/datasheets/Sensors/GPS/SiRF_Binary_Protocol.pdf">SiRF Binary Reference Manual</a></li>
+<li><a href="https://cdn.sparkfun.com/datasheets/Sensors/GPS/setupSiRFDemo3.87.zip">SiRF Demo Software</a></li>
+</ul>
+
+
+<p>UBlox chipsets</p>
+
+<ul>
+<li><a href="http://cdn.sparkfun.com/datasheets/Sensors/GPS/760.pdf">u-blox6 NMEA and UBX Reference Manual</a></li>
+<li><a href="https://cdn.sparkfun.com/datasheets/Sensors/GPS/u-centerSetup-7.0.2.1.zip">u-center Demo Software</a></li>
+</ul>
+
+
+<p>SkyTraq chipsets</p>
+
+<ul>
+<li><a href="http://cdn.sparkfun.com/datasheets/Sensors/GPS/AN0003_v1.4.19.pdf">Skytraq Reference Manual</a></li>
+<li><a href="http://cdn.sparkfun.com/datasheets/Sensors/GPS/GPS%20Viewer%20-%20Customer%20Release.exe">SkyTraq Demo Software</a></li>
+</ul>
+
+
+<p>Some chipsets allow for alternate protocols such as SiRF binary (SiRF
+ chipset), UBX (ublox chipset), or a proprietary messages. These 
+protocols contain the same information, but communicate using binary 
+(instead of ASCII) for faster communication.</p>
+
+<p>When communicating with a GPS receiver, most commands need to be 
+terminated by a checksum. In most cases, you need to XOR each of your 
+sentences. Here is a simple <a href="http://www.hhhh.org/wiml/proj/nmeaxor.html">XOR online calculator</a>.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="gps-glossary">GPS Glossary</h2>
+        <p><strong>Accuracy</strong> - How accurate is GPS? Well, it 
+varies a bit, but you can usually find out where you are, anywhere in 
+the world, within 30 seconds, down to +/– 5 meters. Amazing! The +/– is 
+there because accuracy can vary between modules, time of day, clarity of
+ reception, etc. Most modules can get down to +/-3m with WAAS enabled, 
+but if you need sub-meter or centimeter accuracy, it gets really 
+expensive and requires something called DGPS.</p>
+
+<p>Overall, to get the best accuracy from your GPS, you must be in clear view of the sky and moving.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/a/6/f/4/d/50edf68dce395fbe05000000.jpg"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50ef3138ce395fbf27000000.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em>Logged and plotted GPS waypoints around SparkFun headquarters. Each track represents a different type of GPS module.</em></p>
+
+<p>If you notice in the example tracks around the SparkFun building, the
+ GPS positions bounce around at ‘Lock Start’ and ‘Lock End’. This is 
+when the GPS module isn’t moving. The GPS has some amount of error (~5 
+meters), and you can see it when not moving. Once the module starts 
+moving, the track is relatively accurate, and the GPS can ‘guess’ your 
+track. However, notice on the approach to the <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">Urban Canyon</a>,
+ which is in between two tall buildings, the accuracy can suffer. 
+Remember, the GPS signals are being transmitted from satellites that are
+ not necessarily over you head; some can be close to the horizon. Also, 
+the RF signals can reflect off of buildings/objects and create something
+ called <a href="http://en.wikipedia.org/wiki/Multipath_interference">multi-path interference</a>. Always keep in mind, GPS works best with a full view of the sky.</p>
+
+<p><strong>Antenna</strong> - Remember, that little GPS module is 
+receiving signals from satellites about 12,000 miles away, not only 
+above your head, but anywhere in the sky. For the best performance, you 
+want a clear path between the antenna and most of the sky. Weather, 
+clouds, snow storms, shouldn’t affect the signal, but things like trees,
+ buildings, mountains, the roof over your head, will all create unwanted
+ interference and your GPS accuracy will suffer.</p>
+
+<p>There are many antenna choices, but these are some of the most common.</p>
+
+<p style="text-align:center;"> <a href="https://www.sparkfun.com/products/10890?_ga=1.51111977.1245106948.1436432299"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50edfc17ce395f7105000000.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em>The smallest and most common form of antenna is the ceramic patch antenna.</em></p>
+
+<p>This antenna is low profile, inexpensive, and compact, but it has 
+lower reception compared to other types of antennas. This antenna needs 
+to face upwards with a clear view of the sky to get good a good signal, 
+i.e. the <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">gain</a> of the antenna is greatest when facing up.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/6/3/7/5/f/50f8899fce395f1b3f000000.jpg"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50f8899fce395f1b3f000000.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em>Some GPS modules use helical antennas.</em></p>
+
+<p>This antenna can take up more room than the ceramic patch, but the 
+shape of the antenna allows for a better signal in any orientation, at 
+the expense of slightly lower gain in any one specific orientation.</p>
+
+<p style="text-align:center;"> <a href="https://www.sparkfun.com/products/10920"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50edfb5cce395fbc05000001.jpg" alt="alt text"></a><a href="https://cdn.sparkfun.com/assets/6/f/a/d/5/50f98486ce395ff35f000002.jpg"><img src="GPS%20Basics%20-%20learn.sparkfun.com_files/50f98486ce395ff35f000002.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"> <em>Some modules can be used with a SMA antenna attachment.</em></p>
+
+<p>The SMA attachment gives you the ability to mount your antenna in a 
+different location than your main circuit. This can be beneficial if 
+your main system is not in good view of the sky. For example, inside of a
+ building or in a car.</p>
+
+<p><strong>Baud Rate</strong> - GPS receivers send serial data out of a 
+transmit pin (TX) at a specific bit rate. The most common is 9600bps for
+ 1Hz receivers but 57600bps is becoming more common. Check the datasheet
+ of the receiver for more information.</p>
+
+<p><strong>Channels</strong> - The number of channels that the GPS 
+module runs will affect your time to first fix (TTFF). Since the module 
+doesn’t know which satellites are in view, the more frequencies/channels
+ it can check at once, the faster a fix will be found. After the module 
+gets a lock or fix, some modules will shut down the extra blocks of 
+channels to save power. If you don’t mind waiting a little longer for a 
+lock, 12 or 14 channels will work just fine for tracking.</p>
+
+<p><strong>Chipset</strong> - The GPS chipset is responsible for doing 
+everything from performing calculations, to providing the analog 
+circuitry for the antenna, to power control, to the user interface. It’s
+ a lot of work, and yet that’s exactly what these tiny GPS units are 
+doing. The chipset is independent of the antenna type, therefore you can
+ have a range of different antennas for GPS modules with specific 
+chipsets. Common chipsets are ublox, SiRF, and SkyTraq and all contain 
+very powerful processors that allow for fast acquisitions times and high
+ reliability. The differences between chipsets usually falls on a 
+balance between power consumption, acquisition times, and accessibility 
+of hardware.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/DGPS"><strong>DGPS</strong></a>
+ - Differential GPS or DGPS is a specific type of GPS receiver. DGPS 
+receivers have additional antenna that receive signals not only from 
+satellites but directly from ground stations. DGPS devices usually 
+require two antennas. These are much larger and more expensive than your
+ standard GPS device but can provide centimeter accuracy in position.</p>
+
+<p><strong>Gain</strong> - The gain is the efficiency of the antenna in 
+any given orientation. This applies to both transmitting antennas and 
+receiving antennas.</p>
+
+<p><strong>Lock or Fix</strong> - When a GPS receiver has a lock or fix,
+ there are at least 4 satellites in good view and you can get accurate 
+position and time.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/NMEA_0183"><strong>NMEA</strong></a>
+ - This is a common data format that most GPS modules use. NMEA data is 
+displayed in sentences and sent out of the GPS modules serial transmit 
+(TX) pin. The NMEA sentences contain all of the useful data, (position, 
+time, etc.).</p>
+
+<p><strong>Power</strong> - GPS modules are not power hogs, but they do 
+need some juice to number crunch the data from the satellites and to 
+obtain a lock. On average, a common GPS module, with a lock, draws 
+around 30mA at 3.3V. Also, keeping the <a href="http://learn.sparkfun.com/tutorials/gps-basics/gps-glossary">start-up time</a> low, saves power.</p>
+
+<p><strong>PPS</strong> - Pulse per second. This is an output pin on 
+some GPS modules. Generally, when this pin toggles, once a second, you 
+can synchronize your system clock to the GPS clock.</p>
+
+<p><strong>Start-up Times (Hot, Warm, and Cold)</strong> - Some GPS 
+modules have a super-capacitor or battery backup to save previous 
+satellite data in volatile memory after a power down. This helps 
+decrease the TTFF on subsequent power-ups. Also, a faster start time 
+translates into less overall power draw.</p>
+
+<ul>
+<li><p>Cold Start - If you power down the module for a long period of 
+time and the backup cap dissipates, the data is lost. On the next power 
+up, the GPS will need to download new almanac and ephemeris data.</p></li>
+<li><p>Warm Start - Depending on how long your backup power lasts, you 
+can have a warm start, which means some of the almanac and ephemeris 
+data is preserved, but it might take a bit extra time to acquire a lock.</p></li>
+<li><p>Hot Start: A hot start means all of the satellites are up to date
+ and are close to the same positions as they were in the previous power 
+on state. With a hot start the GPS can immediately lock.</p></li>
+</ul>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Trilateration"><strong>Trilateration</strong></a>
+ - The mathematical method used to calculate position using multiple 
+reference points. In order for a GPS receiver to compute accurate 
+position and time, it needs to be in good view of at least 4 satellites 
+in the sky. This is called a GPS lock or fix. We all know how to use 
+triangulation to calculate the distance to an object using two reference
+ points (x, y). However, with GPS, we need to determine 4 values, i.e. 
+latitude, longitude, elevation, and time.</p>
+
+<p><strong>TTFF</strong> - Time to first fix. The time it takes, after 
+power-on, to accurately compute your position and time using at least 4 
+satellites. If you are in a location with a bad view of the sky, the 
+TTFF can be very long.</p>
+
+<p><strong>Update Rate</strong> - The update rate of a GPS module is how
+ often it calculates and reports its position. The standard for most 
+devices is 1Hz (once per second). <a href="http://en.wikipedia.org/wiki/UAV">UAVs</a>
+ and other fast vehicles may require increased update rates. 5 and even 
+10Hz update rates are becoming available in low cost modules. Keep in 
+mind, that higher update rates mean there’s more NMEA sentences flying 
+out of the module.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Wide_Area_Augmentation_System"><strong>WAAS</strong></a>
+ - The WAAS, or wide area augmentation system, is a network of ground 
+based stations (in North America) that transmit correction data back to 
+the satellites. The WAAS gives close to 5 meter accuracy on position. 
+Other countries have similar systems, for example the European system is
+ called <a href="http://en.wikipedia.org/wiki/Egnos">EGNOS</a>, the Japenese system is <a href="http://en.wikipedia.org/wiki/Multi-functional_Satellite_Augmentation_System">MSAS</a>, and India has <a href="http://en.wikipedia.org/wiki/GAGAN">GAGAN</a>. Most GPS receivers have WAAS enabled by default and support EGNOS, MSAS, and GAGAN.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="res">Resources and Going Further</h2>
+        <p>You should now have a clear understanding of how GPS units 
+work and how to implement them into your next project. For more great 
+project ideas check out these other SparkFun tutorials.</p>
+
+<ul>
+<li><a href="http://learn.sparkfun.com/tutorials/gyroscope">Gyroscope Basics</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/accelerometer-basics">Accelerometer Basics</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-power-a-project">How to Power Your Project</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/electric-power">Electric Power</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">How to Use a Breadboard</a></li>
+</ul>
+      </div>
+    
+        <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t9" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft9" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft9&amp;name=GPS+Basics" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft9" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=GPS+Basics&amp;url=http%3A%2F%2Fsfe.io%2Ft9&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft9&amp;t=GPS+Basics" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft9&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F3%2F6%2F6%2Ff%2F7%2F50edfc17ce395f7105000000.jpg&amp;description=GPS+Basics" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+  </div>
+
+  <div class="col-sm-4" id="nav-pages">
+    <div style="position: relative;" class="affix" id="sidebar_affix">
+
+      <div id="tutorial-pages" class="list-group">
+        <a class="list-group-item"><b>Sections</b></a>
+                          <a data-pagename="the-basics-of-gps" class="list-group-item" href="#the-basics-of-gps">
+            The Basics of GPS          </a>
+                  <a data-pagename="how-does-gps-work" class="list-group-item" href="#how-does-gps-work">
+            How Does GPS Work          </a>
+                  <a data-pagename="gps-accuracy-" class="list-group-item" href="#gps-accuracy-">
+            GPS Accuracy           </a>
+                  <a data-pagename="message-formats" class="list-group-item" href="#message-formats">
+            Message Formats          </a>
+                  <a data-pagename="reading-gps-data" class="list-group-item" href="#reading-gps-data">
+            Reading GPS data          </a>
+                  <a data-pagename="configuring-a-gps-receiver" class="list-group-item" href="#configuring-a-gps-receiver">
+            Configuring a GPS receiver          </a>
+                  <a data-pagename="gps-glossary" class="list-group-item" href="#gps-glossary">
+            GPS Glossary          </a>
+                  <a data-pagename="res" class="list-group-item active" href="#res">
+            Resources and Going Further          </a>
+              </div>
+
+      <div class="list-group">
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/gps-basics/discuss">
+          Comments
+          <span class="badge">0</span>
+        </a>
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/gps-basics/the-basics-of-gps">
+          View Paginated
+        </a>
+        <a class="list-group-item" href="#" onclick="window.print(); return false;">
+          Print
+        </a>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>Tags</b></li>
+        <li class="list-group-item"><ul class="tags-list">
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/gps">GPS</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/technology">Technology</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/wireless">Wireless</a>  </li>
+</ul>
+</li>
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>License</b></li>
+        <li class="list-group-item">
+          <span class="sfe-icon-cc">
+            <span class="visuallyhidden">Creative Commons</span>
+          </span>
+          <small>tutorials are <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="new">CC BY-NC-SA 3.0</a></small>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  require(['tutorial', 'jquery.imagesloaded'], function() {
+    $('#tutorial').tutorial();
+  });
+</script>
+
+      </div> <!-- /container -->
+    </div> <!-- /content -->
+
+    
+<footer>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="sharing-ingenuity">
+          <span class="sfe-icon-flame"></span>
+          <span class="text"><span class="text-top">Sharing<br></span>Ingenuity</span>
+        </div>
+        <ul class="spew">
+          <li><a href="http://www.github.com/sparkfun" target="_blank" class="sfe-icon-github"><span class="visuallyhidden">GitHub</span></a></li>
+          <li><a href="http://www.youtube.com/sparkfun" target="_blank" class="sfe-icon-youtube"><span class="visuallyhidden">YouTube</span></a></li>
+          <li><a href="http://www.vimeo.com/sparkfun" target="_blank" class="sfe-icon-vimeo"><span class="visuallyhidden">Vimeo</span></a></li>
+          <li><a href="http://www.facebook.com/SparkFun" target="_blank" class="sfe-icon-facebook"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/106084846822083498483/" target="_blank" class="sfe-icon-google-plus"><span class="visuallyhidden">Google Plus</span></a></li>
+          <li><a href="http://www.flickr.com/photos/sparkfun/" target="_blank" class="sfe-icon-flickr"><span class="visuallyhidden">Flickr</span></a></li>
+          <li><a href="https://twitter.com/#%21/sparkfun" target="_blank" class="sfe-icon-twitter"><span class="visuallyhidden">Twitter</span></a></li>
+          <li><a href="https://www.sparkfun.com/feeds" class="sfe-icon-feed"><span class="visuallyhidden">RSS</span></a></li>
+        </ul>
+        <div class="newsletter">
+          <form action="https://learn.sparkfun.com/newsletter/subscribe_email" method="post" class="form-inline" id="js-newsletter_subscribe">
+            <div class="form-group">
+              <input class="form-control" name="newsletter_email" placeholder="Email Address" type="email">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default" value="Subscribe to Education Newsletter" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end .row -->
+  </div><!-- end .container -->
+</div><!-- end .social -->
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="subfooter subfooter-about">
+      <p>
+        <b>SparkFun</b> is an online retail store that sells the bits and pieces to
+        make your electronics projects possible. Whether it's a robot that can
+        cook your breakfast or a GPS cat tracking device, our products and
+        resources are designed to make the world of electronics more accessible.
+      </p>
+      <p>
+        In addition to products, SparkFun also offers
+        classes and online tutorials to help educate
+        individuals in the wonderful world of embedded electronics.
+      </p>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>About Us</b>
+            </li><li><a href="https://www.sparkfun.com/static/about">About SparkFun</a></li>
+            <li><a href="https://learn.sparkfun.com/about">SparkFun Education</a></li>
+            <li><a title="RSS Feeds" href="https://www.sparkfun.com/feeds">Feeds <span class="sfe-icon-feed"></span></a></li>
+            <li><a href="https://www.sparkfun.com/jobs">Jobs</a></li>
+            <li><a href="https://www.sparkfun.com/static/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Help</b></li>
+            <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+            <li><a href="https://www.sparkfun.com/support#ShippingPolicy">Shipping</a></li>
+            <li><a href="https://www.sparkfun.com/returns">Return Policy</a></li>
+            <li><a href="https://www.sparkfun.com/static/faq">FAQ</a></li>
+                      </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Programs</b></li>
+            <li><a href="https://learn.sparkfun.com/educator_discount">Educator Discount</a></li>
+            <li><a href="https://www.sparkfun.com/sponsor">Partner with SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/project_calls">Tell Us About Your Project</a></li>
+            <li><a href="https://learn.sparkfun.com/tutorials/how-to-sell-your-widget-on-sparkfun">Sell Your Widget on SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/distributors/apply">Become a SparkFun Distributor</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Community</b></li>
+            <li><a href="https://forum.sparkfun.com/">Forum</a></li>
+            <li><a href="https://www.sparkfun.com/news/263">SparkFun IRC Channel</a></li>
+            <li><a href="https://www.sparkfun.com/quiz">Take the SparkFun Quiz</a></li>
+            <li><a href="https://www.kickstarter.com/pages/sparkfun">SparkFun Kickstarter Projects</a></li>
+            <li><a href="https://www.sparkfun.com/distributors">Distributors</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end .row -->
+
+    </div>
+
+    <div id="feedback" class="subfooter subfooter-woym">
+      <form id="woym_form" class="feedback" action="https://learn.sparkfun.com/feedback/mind.json" onsubmit="$(this).sfeutil('mind_feedback'); return false;" method="POST">
+        <div class="error" id="error_feedback" style="display: none"></div>
+        <input name="sparkaptcha" id="sparkaptcha" value="0" type="hidden">
+
+        <div class="form-group">
+          <label for="feedback_textarea" class="control-label">What's on your mind?</label>
+          <div class="controls">
+            <textarea id="feedback_textarea" class="form-control" name="feedback_text" required=""></textarea>
+            <div class="error" id="error_feedback_text" style="display: none"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_dest" class="control-label">For which department?</label>
+          <select name="dest" class="form-control" id="feedback_dest">
+            <option selected="selected" value="general">General</option>
+            <option value="cust">Customer Service</option>
+            <option value="tech">Tech Support</option>
+                          <option value="edu">Education Department</option>
+                      </select>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_email" class="control-label">
+            Please include your email address if you'd like us to respond to a specific question.
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input class="form-control" id="feedback_email" name="email" placeholder="email address" type="text">
+          </div>
+          <div class="error" id="error_feedback_email" style="display: none"></div>
+
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div><!-- end .row -->
+  
+  <ul class="copyleft">
+    <li>SparkFun Electronics <a href="https://www.sparkfun.com/news/300">®</a></li>
+    <li><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=6333+Dry+Creek+Parkway,+Niwot,+CO+80503">Niwot, Colorado</a></li>
+    <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+    <li><a href="https://www.sparkfun.com/sitemap">Site Map</a></li>
+    <li><a href="https://www.sparkfun.com/terms">Terms of Service</a></li>
+    <li><a href="https://www.sparkfun.com/privacy">Privacy Policy</a></li>
+    <li class="desktop-toggle">
+              <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fgps-basics">Desktop Site</a>          </li>
+  </ul>
+
+</div><!-- end .container -->
+
+</footer>
+
+    <div class="nav-account">
+  <ul class="nav nav-tabs">
+    <li class="visible-xs">
+      <a class="nav-toggle-account back" href="#">Your Account</a>
+    </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fgps-basics" data-toggle="modal" data-target="#login_modal" data-remote="false">Log In</a>
+      </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/make">Register</a>
+      </li>
+      </ul>
+</div>
+
+      </div><!-- end .wrapper-inner -->
+    </div><!-- end .wrapper -->
+
+    <!-- Login Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Log In</h4>
+        <p class="modal-header-msg"></p>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="https://www.sparkfun.com/account/login" method="post">
+          <input name="redirect" value="/learn/tutorials/gps-basics" type="hidden">
+          <div class="form-group">
+            <label for="login-username">Email</label>
+            <input tabindex="1" name="user" id="login-username" class="form-control" type="email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input tabindex="2" name="passwd" id="login-password" class="form-control" type="password">
+          </div>
+          <div class="form-group">
+            <input value="Log In" tabindex="3" class="btn btn-action" type="submit">
+          </div>
+        </form>
+        <p>
+          <a href="https://www.sparkfun.com/account/forgot_password">Forgot your password?</a>          <br>
+          No account? <a id="btn_register_account" href="https://www.sparkfun.com/account/make">Register one!</a>        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

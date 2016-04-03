@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0081)http://www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Build a Dark-activated Light Circuit</title>
+<meta name="keywords" content="dark-activated light circuit, night, dark, how to build, photoresistor, ldr">
+<meta name="description" content="In this article, we will go over how to build a dark-activated light circuit. This is a circuit 
+that will turn on automatically when it gets dark.">
+<link href="./How to Build a Dark-activated Light Circuit_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Build a Dark-activated Light Circuit_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Build a Dark-activated Light Circuit</h1>
+<img style="width: 388px; height: 211px;" alt="Dark-activated light" src="./How to Build a Dark-activated Light Circuit_files/dark-activated-light.png">
+
+
+
+
+
+<br><br><br>
+
+
+
+<p id="para1">In this project, we will go over how to build a dark-activated light circuit.
+
+</p><p id="para1">This is a circuit whose light will turn on once it is exposed to darkness. So it's a light that will come on 
+when it gets dark such as at night time. 
+
+</p><p id="para1">This is extremely useful for people who may live in a house that have vision problems and need the lights to automatically turn
+on when it gets dark. It's also very useful for elderly people who live in a home who may have difficulty walking to turn on lights
+when it becomes dark. 
+
+</p><p id="para1">In our circuit, we will turn on a lamp as soon as the level of light reaches a certain level of darkness. Thus, the place
+where we place this circuit will always be illuminated, either by the natural light of the day or by the lamp of this circuit turning 
+on when it becomes dark. 
+
+<br><br>
+</p><h3>Components Needed</h3>
+<ul id="para1">
+<li>Photoresistor</li>
+<li>100KΩ Resistor</li>
+<li>2N3904 NPN Transistor</li>
+<li>LED</li>
+<li>2 AA batteries or DC Power Supply</li>
+</ul>
+<br><br>
+
+
+
+<div id="ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large vertical ad-images only */
+google_ad_slot = "6245545482";
+
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><p id="para1">What we will use for this circuit is a photoresistor. Photoresistors are also called 
+light-dependent resistors (LDRs). This can be obtained at digikey at
+the following link: <a href="http://www.taydaelectronics.com/photo-conductive-cell-resistor-ldr-650nm-radial-ke-10720.html" target="_blank">
+Tayda Electronics- Photoresistor</a>. If you don't have a photoresistor, just make sure to use one that has
+a dark resistance of 2MΩ or more and a light resistance of about 20-30KΩ.
+
+</p><p id="para1">A photoresistor is a resistor whose resistance changes according to the amount of light that it is exposed to. 
+When exposed to total darkness, the photoresistor's resistance is very high. This is called its rated dark resistance. For example, in our 
+case we are using a 2MΩ photoresistor. This means that when exposed to total darkness, its resistance will be around 2MΩ. As the 
+photoresistor is exposed to increasing amounts of light, its resistance begins to drop significantly. There is another rating 
+on the datasheet labeled <b>cell resistance @ illuminance</b>. This is the resistance that the photoresistor will drop to when 
+exposed to bright light, typically 10 lux. This is also called the light resistance (since it is the resistance the photoresistor 
+has when exposed to bright light). For our photoresistor, in particular the cell resistance @ illuminance is 20-30kΩ. This means 
+the resistance of the photoresistor will drop to 20-30KΩ when exposed to 10 lux level of light.
+
+</p><p id="para1">So a photoresistor is basically a device that gives off very high resistance at dark light levels and low resistance at 
+high light levels. Being that it does this, it can act as a sensor for light, or a photosensor. 
+
+
+
+
+</p><p id="para1">With the photoresistor acting as the light sensor, the other significant component is the 2N3904 transistor. 
+The transistor in this circuit will act as an amplifier, amplifying current so that sufficient current is produced
+to light the lamp. 
+
+</p><p id="para1">Any type of LED can be used for this circuit.
+
+</p><p id="para1">The power we will use for this circuit is a 3 volts, which can be obtained from either
+2 'AA' batteries in series or from a DC power supply set to this voltage. 
+
+<br><br>
+</p><h3>Dark-activated Light Circuit Schematic</h3>
+<p id="para1">The schematic of the dark-activated light circuit we will build is shown below:
+<br><br>
+<img style="width: 450px; height: 382px;" alt="Dark-actived light circuit" src="./How to Build a Dark-activated Light Circuit_files/Dark-activated-light-circuit.png">
+
+<br><br>
+
+</p><p id="para1">So, for this circuit, 3 volts is powering the circuit. This 3 volts is in parallel to a 100KΩ resistor and the photoresistor. 
+In the middle of these 2 components is connected the base of the NPN 2N3904 transistor. 
+
+</p><p id="para1">This is how the circuit works:
+
+</p><div id="ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large image ads */
+google_ad_slot = "3467666961";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<p id="para1">When exposed to bright light, the photoresistor's resistance is very low. It drops to around 20-30KΩ. Current travels through the 
+100KΩ resistor and then has 2 paths- it can either go through the base of the transistor or go through the photoresistor. The base of the 
+resistor to the collector has a resistance of around 400KΩ. Current always takes the path of least resistance. When the photoresistor is 
+exposed to bright light, its resistance is about 20-30KΩ, which is significantly less than the 400KΩ of resistance the base of the transistor 
+has. Therefore, most of the current will go through the photoresistor and very little will go to the base of the transistor. 
+So the base of the transistor is bypassed. Thus, the transistor does not receive enough current to turn on and power on the LED. 
+Thus, the LED is off when 
+there is a lot of light in the surroundings. 
+
+</p><p id="para1">However, when it begins to get dark, the photoresistor's resistance becomes very high. Its resistance goes up to over 2MΩ of 
+resistance. This creates a very high-resistance path. Being that 2MΩ is significantly greater than the 400KΩ of resistance that the 
+base of the transistor offers, most of the current will go through the base of the transistor. This means that current does not go through 
+the photoresistor when it is 
+dark, due to this high resistance. Instead current goes through the 100KΩ resistor and through the base of the transistor. The transistor 
+receives enough current to power on and turn on the LED connected to the collector terminal.
+
+
+</p><p id="para1">So this is how a dark-activated light circuit can work. 
+
+</p><p id="para1">Again, as always, variations of this circuit can be done. Instead of using am LED, we can use any other type of lighting 
+fixture such as a lamp. You may want to use a bright LED.  Or you can use 
+any other various lighting source. You may want to use multiple lights, so you can place different lights in parallel in one another. All that would be needed
+is an adjustment in the voltage and current of the circuit. Customize
+the circuit according to your needs and preferences. 
+
+<br><br>
+</p><p id="para1">To see how this circuit functions in real life, see the video below.
+
+<br><br>
+<iframe width="560" height="315" src="./How to Build a Dark-activated Light Circuit_files/ZVnJlidjV08.html" frameborder="0" allowfullscreen=""></iframe>
+
+
+
+
+<br><br>
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+
+
+<a href="http://www.learningaboutelectronics.com/Articles/Dark-activated-switch.php">How to Build a Dark-activated Switch</a><br><br>
+
+
+<a href="http://www.learningaboutelectronics.com/Articles/Hall-effect-sensor-circuit.php">How to Build a Hall Effect Sensor Circuit</a><br><br>
+
+  
+
+    <a href="http://www.learningaboutelectronics.com/Articles/How-to-build-a-touch-sensor-circuit">How to Build a Touch Sensor Circuit</a><br><br>
+	
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Accelerometer-circuit.php">How to Build an Accelerometer Circuit</a><br><br>
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Motion-detector-circuit.php">How to Build a Motion Detector Circuit</a><br><br>
+
+    <a href="http://www.learningaboutelectronics.com/Articles/Motion-detector-alarm-circuit.php">How to Build a Motion Detector Alarm Circuit</a><br><br>
+
+
+<!-- begin htmlcommentbox.com -->
+ 
+
+
+</p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/Dark-activated-light-circuit.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./How to Build a Dark-activated Light Circuit_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><div class="comment" id="comment_4418140"><span class="date">(Jan 2, 2015) </span><span class="author"><b class="author-name">(january 2,2015) RAM said- </b> said:</span> <blockquote>very impressively expained.
+<br>one can definitely educate himself much more hear. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('4418140')"><img src="./How to Build a Dark-activated Light Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('4418140')"><img src="./How to Build a Dark-activated Light Circuit_files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./How to Build a Dark-activated Light Circuit_files/like.png"></div></div><div class="comment" id="comment_8068423"><span class="date">(June 16, 2014) </span><span class="author"><b class="author-name">Mason </b> said:</span> <blockquote>You might never see this, but thank you so much for explaining (in detail) EXACTLY where the charge goes when this circuit is running. I have yet to find a more thorough description. Thank you!
+<br>
+<br>God bless,
+<br>Mason </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('8068423')"><img src="./How to Build a Dark-activated Light Circuit_files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('8068423')"><img src="./How to Build a Dark-activated Light Circuit_files/like.png"> like</a> </p><div class="likes"><span>2 </span><img src="./How to Build a Dark-activated Light Circuit_files/like.png"></div></div></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FDark-activated-light-circuit.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./How to Build a Dark-activated Light Circuit_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ 
+
+
+<link rel="stylesheet" type="text/css" href="./How to Build a Dark-activated Light Circuit_files/skin.css">
+ 
+
+
+<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={ };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 
+<!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

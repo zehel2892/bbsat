@@ -1,0 +1,20 @@
+/**/try{hbl.client.callbacks.pollevents(
+{
+    "capacity": false,
+    "conversation_has_slot": true,
+    "in_active_conversation": false,
+    "ipaddress": "14.139.187.94",
+    "is_popup": false,
+    "last_index": 14364323029004.0,
+    "new_events": [],
+    "operator_composing_state": false,
+    "operator_has_sent_message": false,
+    "operator_nickname": null,
+    "resend_nickname": true,
+    "resend_status": true,
+    "site_is_online": true,
+    "slot_available": true,
+    "state": "NOT_IN_CONVERSATION",
+    "status_state": "away"
+}
+);}catch(e){}try{if(document.getElementById('olark-131436432487856')) hbl.util.remove_element('olark-131436432487856');}catch(e){}

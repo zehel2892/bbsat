@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0103)http://www.learningaboutelectronics.com/Articles/Multiple-I2C-devices-to-an-arduino-microcontroller.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to Connect Multiple I2C Devices to an Arduino Microcontroller</title>
+<meta name="keywords" content="I2C, devices, multiple, arduino, microcontroller">
+<meta name="description" content="In this article, we will show how to connect multiple I2C devices to 
+an Arduino microcontroller
+so that we can use the microcontroller and communicate via I2C to control these I2C devices.">
+<link href="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store/">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>How to Connect Multiple I<sup>2</sup>C devices to an Arduino Microcontroller</h1><br>
+<img style="width: 224px; height: 239px;" alt="Multiple I2C devices" src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/Multiple-I2C-devices.png">
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+<p id="para1">In this project, we will show how to connect multiple I<sup>2</sup>C devices to an arduino microcontroller. 
+
+</p><p id="para1">The I<sup>2</sup>C bus is a bus which enables high-speed two-way communication between devices while using 
+a minimal number of I/O pins to facilitate communication. 
+
+</p><p id="para1">An I<sup>2</sup>C bus is controlled by a master device (usually a microcontroller) and contains one ore more slave
+devices that receive information from the master device. 
+
+</p><p id="para1">The I<sup>2</sup>C protocol was created by Phillips in the early 1980s and was standardized and adopted widespread
+in the 1990s. The protocol is known as the "two-wire" protocol because 2 lines are used for communication. These 2 lines are
+the clock line and data line. 
+
+</p><p id="para1">I<sup>2</sup>C protocol can use multiple devices that all share the same communication lines: a clock signal (SCL)
+and a bidirectional data line used for sending information back and forth between the master and slave (SDA). 
+
+</p><p id="para1">In order to work, the 2 lines of the I<sup>2</sup>C, the clock and data lines, need pull-up resistors to the positive
+voltage source.
+
+
+
+</p><p id="para1">The I<sup>2</sup>C bus allows multiple slave devices to share communication lines with a single master device. 
+
+The Arduino acts as the master device. The bus master is responsible for initiating all communications. Slave devices cannot 
+initiate communications; they only respond to requests that are sent by the master device. This prevents multiple slave devices 
+from all trying to communicate at the same thing, causing garbled messages. 
+
+</p><p id="para1">When a command or request is sent out by the master device, it is received by all slave devices on the bus. Each 
+I<sup>2</sup>C device has a unique 7-bit address, or ID number. When communication is initiated by the master device, a device
+ID is transmitted. I<sup>2</sup>C slave devices react to data on the bus only when it is drected at their ID number. Since 
+all the devices are receiving all the data transmitted by the master device, each device has to have a unique ID number so that
+the master can speak to a particular slave device. 
+
+</p><p id="para1">Some I<sup>2</sup>C devices have selectable addresses whereas others come form the manufacturer with a fixed
+address. 
+ 
+</p><p id="para1">An example of an I<sup>2</sup>C device that has fixed addresses is the TC74 temperature sensor. This means 
+that the addresses are fixed by the manufacturer. However, just because it is fixed doesn't mean you can't have multiple TC74 sensors
+connected together. It's possible to connect possible sensors to an I<sup>2</sup>C bus by purchasing this IC with eight different
+ID numbers. So you could connect up to eight of them on a single bus. Each of the 8 lines having different addresses. 
+
+</p><p id="para1">Other I<sup>2</sup>C, such as the AD7414 and AD7415, have address select (AS) pins that allow you to configure
+the I<sup>2</sup>C address of the device. 
+
+
+</p><p id="para1">the basic steps for controlling any I<sup>2</sup>C device are as follows. 
+
+</p><ol id="para1">
+<li>The Master device sends a start bit</li>
+<li>The Master sends 7-bit slave address of the slave device it wants to talk to</li>
+<li>The Master sends a read (1) or write (0) bit depending on whether it wants to write data into an I<sup>2</sup>C device's 
+register or if it wants to read from one of the I<sup>2</sup>C device's registers.</li>
+<li>The Slave device then responds with an "acknowledge" or ACK bit (a logic low)</li>
+<li>In write mode, the master sends 1 byte of information at a time, and slave responds with ACKs. In read mode, the master 
+receives 1 byte of information at a time and sends an ACK to the slave after each byte</li>
+<li>When communication has been completed, the master sends a stop bit</li>
+</ol>
+
+
+
+
+
+
+<br><br>
+
+<h3>Components</h3>
+<ul id="para1">
+<li>TC74A0-5.0VAT sensor</li>
+<li>TC74A1-5.0VAT sensor</li>
+<li>2 4.7KΩ resistors</li>
+<li>Arduino microcontroller</li>
+</ul>
+<br><br>
+
+<div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large Vertical Ad- image and text */
+google_ad_slot = "3652005880";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+<p id="para1">The TC74 temperature we use specifically is the TC74A0-5.0VAT and the TC74A1-5.0VAT sensor.
+
+</p><p id="para1">These sensors both run on 5V on power. 
+
+</p><p id="para1">The only difference between these sensors is that they have addresses. Being that we are connecting 2 TC74 sensors to an arduino, they need to have distinguishable addresses
+so that the arduino can differentiate how to communicate with each of these sensors. If we bought 2 TC74A0s, they would have the same address 
+
+</p><p id="para1">The TC74 sensor has 5 pins. 
+
+<br><br>
+<img style="width: 132px; height: 356px;" alt="TC74 temperature sensor pinout" src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/TC74-temperature-sensor-pinout.png">
+<br><br>
+
+</p><p id="para1">The NC pin is just a Not Connected pin. It doesn't connect to our circuit.
+
+</p><p id="para1">The SDA is the serial data pin. This is how the arduino microcontroller and the temperature sensor share
+data with each other. Data is shared bidirectionally. 
+
+</p><p id="para1">The third pin is the power ground pin. 
+
+</p><p id="para1">The fourth pin is the SCLK pin. This allows for communication on a clock signal. 
+
+</p><p id="para1">And the fifth pin is V<small>DD</small>, which gets connected +5V. 
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+
+
+
+</p><h3>Circuit Connecting 2 I<sup>2</sup>C TC74 Temperature Sensors to an Arduino Microcontroller</h3>
+
+<p id="para1">The I<sup>2</sup>C temperature sensors circuit we will build with an Arduino is shown below.  
+
+<br><br>
+<img style="width: 713px; height: 610px;" alt="Multiple I2C temperature sensors circuit" src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/Multiple-I2C-TC74-temperature-sensors-circuit.png">
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+</p><p id="para1">In this circuit, the hardware connections are very simple. 
+
+</p><p id="para1">Pin 1 is NC, which means Not Connected. So we leave that pin unconnected. 
+
+</p><p id="para1">Pin 2 is the SDA pin, which is the Serial Data pin. This transmits data bidirectionally between the 
+master device and the slave device. Both SDA pins of the 2 sensors connect to analog pin 4 on the arduino. 
+
+</p><p id="para1">Pin 3 is the power ground, so they connect to the ground terminal of the arduino.
+
+</p><p id="para1">Pin 4 is the SCLK pin, which is the Serial Clock pin. This pin clocks data into and out of the TC74 sensor. Both SCLK pins of the 2 sensors connect to pin 4 on the arduino.
+
+</p><p id="para1">Pin 5 is the V<small>DD</small> pin, which is the positive voltage power source for the sensor. These are tied together from both sensors and connect
+to the +5V pin of the arduino. 
+
+</p><p id="para1">And these complete the hardware connections from the arduino microcontroller to the I<sup>2</sup>C sensors. 
+
+
+
+<br><br>
+</p><div style="float:right">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Long ad Text or image -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-7591845391773873" data-ad-slot="7055274289"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<h3>Code</h3>
+<p id="para1">The code so that we can connect the I<sup>2</sup>C TC74 sensors to an arduino microcontroller is shown below. 
+
+</p><p id="para1">Arduino's I<sup>2</sup>C communication library is called the Wire library. With this library, you can easily 
+write to and read from I<sup>2</sup>C devices. 
+
+</p><p id="para1">
+#include &lt;Wire.h&gt;<br><br>
+
+int address_sensor1= 72; <orange>//binary equivalent is 1001000</orange><br><br>
+int address_sensor2= 73; <orange>//binary equivalent is 1001001</orange><br><br>
+
+void setup(){<br><br>
+
+Serial.begin(9600); <orange>//this creates the Serial Monitor</orange><br>
+Wire.begin(); <orange>//this creates a Wire object</orange><br>
+}<br><br>
+
+void loop(){<br>
+Wire.beginTransmission(address); <orange>//Send a request to begin communication with the device at the specified address</orange><br><br>
+
+Wire.write(0); <orange>//Sends a bit asking for register 0, the data register of the TC74 sensor</orange><br><br>
+
+Wire.endTransmission(); <orange>//this ends transmission of data from the arduino to the temperature sensor</orange><br><br>
+
+<orange>//this now reads the temperature from the TC74 sensor</orange><br>
+Wire.requestFrom(temp_address, 1);<orange>//this requests 1 byte from the specified address</orange><br><br>
+
+while(Wire.available() == 0);<br>
+int celsius= Wire.read();<br><br>
+
+int fahrenheit= round(celsius * 9.0/5.0 + 32.0);<br><br>
+
+Serial.print("Temperature sensor 1:");
+Serial.print(celsius);<br>
+Serial.print("degrees celsius ");<br>
+Serial.print(fahrenheit);<br>
+Serial.print(" degrees Fahrenheit");<br><br>
+
+delay(2000);<br>
+
+
+Wire.beginTransmission(address_sensor2); <orange>//Send a request to begin communication with the device at the specified address</orange><br><br>
+
+Wire.write(0); <orange>//Sends a bit asking for register 0, the data register of the TC74 sensor</orange><br><br>
+
+Wire.endTransmission(); <orange>//this ends transmission of data from the arduino to the temperature sensor</orange><br><br>
+
+<orange>//this now reads the temperature from the TC74 sensor</orange><br>
+Wire.requestFrom(address_sensor2, 1);<orange>//this requests 1 byte from the specified address</orange><br><br>
+
+while(Wire.available() == 0);<br>
+int celsius= Wire.read();<br><br>
+
+int fahrenheit= round(celsius * 9.0/5.0 + 32.0);<br><br>
+
+Serial.print("Temperature sensor 2:");
+Serial.print(celsius);<br>
+Serial.print("degrees celsius ");<br>
+Serial.print(fahrenheit);<br>
+Serial.print(" degrees Fahrenheit");<br><br>
+
+delay(2000);<br>
+
+
+
+}
+
+
+
+
+<br><br><br><br>
+
+
+</p><p id="para1">First, we import the Wire library, which is the library for communicating with I<sup>2</sup>C devices. 
+
+</p><p id="para1">Next, we initialize the value of the address which we want to communicate. The TC74 sensors that run on 5V comes in 8 different IC packages. These are TC74A0 to 
+TC74A7. Depending on which TC74 sensor you use determines the address that we will initialize to. The TC74 datasheet has all the addresses listed for all the various TC74s. Therefore, you 
+just need to look up the address on the datasheet. Being that we are using a TC74A0, the address is 1001000; the decimal equivalent of this is 72. Therefore, we initialize the first 
+address to 72. For the TC74A1 sensor, the address is 1001001; the decimal equivalent of this is 73. Therefore, we initialize the second address to 73. Therefore, we can now address both 
+sensors independently. 
+
+</p><p id="para1">Next, we have the setup() function. This creates the Serial monitor where we can see the reading of our temperature. And we create a Wire object, which allows for communication 
+between the master and slave devices. 
+
+</p><p id="para1">Next, we have our loop() function. We begin a transmission in which we communicate with the first sensor at the address we initially specified. This allows the master device 
+to communicate with that 
+slave device (at that address). Since we specify the first address, which is sensor 1 (address 72), we communicate first with that sensor. Next, we communicate with the second sensor (at
+address 73).
+
+
+</p><p id="para1">Next, we send a bit asking for register 0 of the TC74, which is the data register of the sensor. We will then read from this data register to find out the temperature. We then 
+end the transmission of data from the master to the slave device. 
+
+</p><p id="para1">We then request 1 byte from the TC74 sensor. This value will come in the value celsius. We then calculate the fahrenheit based on this celsius value. And then print out the values
+in both celsius and fahrenehit. 
+
+</p><p id="para1">We give 2-second delay for the next sensor. 
+
+</p><p id="para1">We then repeat the same process for the second sensor. We create a print statement as "Temperature Sensor 2:" so that we know it's the second sensor. We did the same for the 
+first sensor. 
+
+</p><p id="para1">With a circuit such as this, we can address each of the sensor, obtain temperatures with each of the sensors, so that we can see whether they are similar in output. If we have
+another device that's measuring the temperature that is highly accurate, we can see which of the TC74 sensors are closer in value to that temperature sensor. It's a way we can gauge which 
+temperature sensor is more accurate. 
+
+</p><p id="para1">And this is how multiple I<sup>2</sup>C devices can be connected to an arduino microcontroller. 
+
+
+<br><br><br><br>
+
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+	
+	<a href="http://www.learningaboutelectronics.com/Articles/MCP4131-digital-potentiometer-circuit.php">How to Build a Digital Potentiometer Circuit Using a MCP4131</a><br><br>
+
+<!-- begin htmlcommentbox.com -->
+ 
+
+
+</p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/Multiple-I2C-devices-to-an-arduino-microcontroller.php" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/Multiple-I2C-devices-to-an-arduino-microcontroller.php#HCB_comment_box"><input type="hidden" name="opts" value="478" id="hcb_form_opts"><input type="hidden" name="mod" value="$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;<div style="float:right"><small class="admin-link"><a href="https://accounts.google.com/o/oauth2/auth?scope=email&state=http%3A//www.learningaboutelectronics.com/Articles/Multiple-I2C-devices-to-an-arduino-microcontroller.php&redirect_uri=http%3A//www.htmlcommentbox.com%2Foauth2callback&response_type=code&client_id=509841468006-i7n9nufur9vg81ukmm33k0lfo3bmu0fr.apps.googleusercontent.com&approval_prompt=force"><img src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/door_in.png" alt="[login]" class="hcb-icon"></a>&nbsp;</small></div><div style="clear:both"></div></div></form></div><div id="comments_list"><p id="no_comments">No one has commented yet. Be the first!</p></div><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FMultiple-I2C-devices-to-an-arduino-microcontroller.php&opts=478&mod=$1$wq1rdBcg$Sz4Jxvl/cDJ0gObHhdw9I1" style="text-decoration:none"><img src="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ 
+
+
+<link rel="stylesheet" type="text/css" href="./How to Connect Multiple I2C Devices to an Arduino Microcontroller_files/skin.css">
+ 
+
+
+<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={ };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sz4Jxvl/cDJ0gObHhdw9I1"+"&opts=478&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 
+<!-- end htmlcommentbox.com -->
+
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a> |
+		<a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

@@ -1,0 +1,98 @@
+/**/try{hbl.client.callbacks.begin(
+{
+    "assets_config_md5": "b4cd035973188f9616096b5e5527730e",
+    "capacity": false,
+    "conversation_has_slot": true,
+    "conversation_history": [
+        [
+            14367235949985,
+            {
+                "capacity": false,
+                "type": "capacityChanged",
+                "unique_id": "0aaf3eb1-ebed-40b8-b59e-edc94525022b"
+            }
+        ],
+        [
+            14367236112546,
+            {
+                "geolocation": {
+                    "city": "Chennai",
+                    "country": "India",
+                    "country_code": "IN",
+                    "domain": "vodafone.in",
+                    "ipaddress": "1.39.61.179",
+                    "isp": "Vodafone India",
+                    "lat": 13.083300000000008,
+                    "long": 80.2833,
+                    "organization": "Vodafone India",
+                    "state": "25"
+                },
+                "type": "geolocation",
+                "unique_id": "02c05a86-74d8-418d-8f2e-b810268ecf92"
+            }
+        ],
+        [
+            14367241106276,
+            {
+                "type": "conversation_ended",
+                "unique_id": "9bf9ca5b-0f37-4054-818d-d804853bf78d"
+            }
+        ],
+        [
+            14367251286661,
+            {
+                "type": "conversation_ended",
+                "unique_id": "5e9f2cfb-258c-49b7-af82-bfbe840f3f3a"
+            }
+        ],
+        [
+            14367260348040,
+            {
+                "type": "conversation_ended",
+                "unique_id": "7cff83e6-1647-4d65-bcf5-4801b992f83b"
+            }
+        ],
+        [
+            14367269497149,
+            {
+                "type": "conversation_ended",
+                "unique_id": "4ebe3132-58dd-477f-b3f0-9fc76775e2f9"
+            }
+        ]
+    ],
+    "conversation_id": "jh0Rtv1fnSUP5A2B2L9Bo354DJeVEABN",
+    "ended": {
+        "next_conversation_id": "5s1RjGK9jIAlYdCenQGFYWFpsdyAiJgH"
+    },
+    "geolocation_data": {
+        "city": "Chennai",
+        "country": "India",
+        "country_code": "IN",
+        "domain": "vodafone.in",
+        "ipaddress": "1.39.61.179",
+        "isp": "Vodafone India",
+        "lat": 13.083300000000008,
+        "long": 80.2833,
+        "organization": "Vodafone India",
+        "state": "25"
+    },
+    "group_idstring": null,
+    "in_active_conversation": false,
+    "ipaddress": "1.39.61.179",
+    "is_popup": false,
+    "is_premium": true,
+    "operator_composing_state": false,
+    "operator_has_sent_message": false,
+    "operator_nickname": null,
+    "resend_nickname": true,
+    "resend_status": true,
+    "site_config_changed": false,
+    "site_idstring": "4728-501-10-9212",
+    "site_is_online": true,
+    "slot_available": true,
+    "ssl": true,
+    "state": "NOT_IN_CONVERSATION",
+    "status_state": "away",
+    "visitor_id": "IilbSMQJoLyWwVag2L9Bo354DJBVAe1A"
+}
+);}catch(e){}try{if(document.getElementById('olark-11436727374829')) hbl.util.remove_element('olark-11436727374829');}catch(e){}

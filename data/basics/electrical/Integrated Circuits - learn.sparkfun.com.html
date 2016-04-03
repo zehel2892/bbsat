@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile mode if small screen device -->
+    
+    <title>Integrated Circuits - learn.sparkfun.com</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="Integrated%20Circuits%20-%20learn.sparkfun.com_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="Integrated%20Circuits%20-%20learn.sparkfun.com_files/theme.css" type="text/css" media="screen">    <link rel="alternate" type="application/atom+xml" title="Education Blog" href="https://learn.sparkfun.com/feeds/blog">
+    <link rel="alternate" type="application/atom+xml" title="Tutorials" href="https://learn.sparkfun.com/feeds/tutorials">
+    <link rel="alternate" type="application/atom+xml" title="Education Blog Comments" href="https://learn.sparkfun.com/feeds/blog_comments">
+    <link rel="alternate" type="application/atom+xml" title="Tutorial Comments" href="https://learn.sparkfun.com/feeds/tutorial_comments">
+
+    <script src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/analytics.js" async=""></script><script type="text/javascript">
+          var SFECONFIG = {
+      currencies: {"USD":{"code":"USD","title":"US Dollar","symbol_left":"$","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.0000"},"CAD":{"code":"CAD","title":"Canadian Dollar","symbol_left":"$","symbol_right":" CAD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.2672"},"AUD":{"code":"AUD","title":"Australian Dollar","symbol_left":"$","symbol_right":" AUD","decimal_point":".","thousands_point":",","decimal_places":"2","value":"1.3441"},"GBP":{"code":"GBP","title":"British Pound","symbol_left":"&pound;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.6444"},"EUR":{"code":"EUR","title":"Euro","symbol_left":"&euro;","symbol_right":"","decimal_point":".","thousands_point":",","decimal_places":"2","value":"0.8966"}},
+      dnt: false,
+      preferred_currency: 'USD',
+        http_server: 'http://www.sparkfun.com',
+        https_server: 'https://www.sparkfun.com',
+        http_static: 'https://cdn.sparkfun.com',
+        base_url: '/',
+        url: '/',
+        controller: 'tutorials',
+        action: 'view',
+        entity_id: '',
+        auth: false,
+        sparkrev: '1436549074',
+        search_key: 'qLqN6uVRKXnjHd2QapGm'      };
+      var require = {
+        paths: {
+          'jqueryui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min'
+        },
+        baseUrl: '/js/',
+        urlArgs: "sparkrev=" + SFECONFIG.sparkrev,
+        deps: ['jqueryui'],
+        callback: function() {
+          $('#learn').learn();
+          $('#learn').sfeutil();
+        }
+      };
+    </script>
+    <script src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/learn-built.js"></script>
+          <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3404365-1', 'auto', {'allowLinker': true});
+      ga('require', 'linker');
+      ga('linker:autoLink', ['www.sparkfun.com', 'avc.sparkfun.com'] );
+      ga('require', 'displayfeatures');
+            ga('set', 'dimension1', 'Guest');
+      ga('send', 'pageview');
+
+      </script>
+      </head>
+
+  <body id="learn" class="layout-default no-type tutorials-view" ontouchstart="">
+    <div class="wrapper" itemscope="" itemtype="http://schema.org/WebSite">
+      <meta itemprop="url" content="https://www.sparkfun.com/">
+      <div class="wrapper-inner">
+
+    
+<div class="header">
+  <div class="container">
+
+<!-- Mobile Nav Button -->
+<div class="mobile-menu-container left">
+  <a id="nav_toggle" class="mobile-menu-button nav_toggle" href="#"><span>≡</span></a>
+      <a id="search_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-search"></span></a>
+  </div>
+
+<nav class="top-links">
+  &nbsp;
+</nav>
+
+<!-- Logo -->
+<div class="logo-container">
+  <a class="logo" href="https://www.sparkfun.com/">
+    <span class="sfe-icon-flame"></span>
+    <span class="sfe-icon-sparkfun" data-icon="🔥">
+      <span class="visuallyhidden">sparkfun.com</span>
+    </span>
+  </a>
+</div>
+
+<!-- Tabs -->
+<!-- also edit mobile tabs in .main-nav -->
+<nav class="tabs-container">
+  <ul>
+    <li class="shop "><a href="https://www.sparkfun.com/">Shop</a></li>
+    <li class="learn active"><a href="https://learn.sparkfun.com/">Learn</a></li>
+    <li class="avc "><a href="https://avc.sparkfun.com/"><span class="sfe-icon-avc"><span class="visuallyhidden">AVC</span></span></a></li>
+    <li class="forum "><a href="https://forum.sparkfun.com/">Forum</a></li>
+    <li class="data "><a href="https://data.sparkfun.com/">Data</a></li>
+  </ul>
+</nav>
+
+<!-- Cart & User -->
+<div class="user-container mobile-menu-container right">
+
+  <a id="account_toggle" class="mobile-menu-button" href="#"><span class="glyphicon glyphicon-user"></span></a>
+
+  
+      <div class="user">
+      <!-- login modal trigger -->
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fintegrated-circuits" data-toggle="modal" data-target="#login_modal" data-remote="false">log in</a>
+      <a class="btn btn-default" href="https://www.sparkfun.com/account/make">register</a>    </div>
+  
+</div>
+
+<!-- Navigation / Search -->
+<div class="main-nav-container">
+
+  <nav class="main-nav">
+    <ul>
+      <li class="tab shop ">
+        <a href="https://www.sparkfun.com/">Shop</a>      </li>
+      <li class="tab learn active">
+        <a href="https://learn.sparkfun.com/">Learn</a>      </li>
+      <li class="tab forum ">
+        <a href="https://forum.sparkfun.com/">Forum</a>
+      </li>
+      <li class="tab data ">
+        <a href="https://data.sparkfun.com/">Data</a>
+      </li>
+
+      
+<li class="start-a-project ">
+  <a href="https://learn.sparkfun.com/start_a_project">Start a Project</a></li>
+<li><a href="https://learn.sparkfun.com/blog">EDU Blog</a></li>
+<li><a href="https://learn.sparkfun.com/resources">Resources</a></li>
+<li class="active"><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+<li><a href="https://learn.sparkfun.com/events">Classes</a></li>
+<li><a href="https://learn.sparkfun.com/calendar">Calendar</a></li>
+<li><a href="https://learn.sparkfun.com/workshops">Workshops</a></li>
+<li><a href="https://learn.sparkfun.com/contact">Contact</a></li>
+
+      <li class="desktop-toggle">
+        <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fintegrated-circuits">Desktop Site</a>      </li>
+    </ul>
+  </nav>
+
+      <form id="search_form" class="search" action="https://www.sparkfun.com/search/results" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.sparkfun.com/search/results?term={term}">
+      <div class="ui-widget">
+        <input name="term" id="global-search" class="form-control" placeholder="search..." itemprop="query-input" autocomplete="off" type="text">
+      </div>
+    </form>
+  
+</div>
+
+  </div>
+</div>
+
+
+    
+    <div class="content">
+      <div class="container">
+
+        
+        <div class="main-title">
+  <ul class="breadcrumb">
+    <li><a href="https://learn.sparkfun.com/">Home</a></li>
+    <li><a href="https://learn.sparkfun.com/tutorials">Tutorials</a></li>
+    <li>Integrated Circuits</li>
+      </ul>
+
+  <h1>
+    Integrated Circuits  </h1>
+
+</div>
+
+
+<a id="nav_toggle_pages" class="nav_toggle" href="#"><span>≡</span> Pages</a>
+
+<div id="tutorial" class="row">
+
+  <div class="col-sm-8" id="sections">
+
+    <div class="contributors">
+                      Contributors:
+                <a href="https://www.sparkfun.com/users/69916"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/f2ed505f510e392f58811e4aa03e6fe0.jpeg"> Jimb0</a>          </div>
+
+    <span class="fave_widget verbose">
+  <a href="#" class="fave_btn " title="Add to favorites" data-entity="learn_tutorials" data-entity-id="80">
+    <span class="fave_yes">
+      <span class="glyphicon glyphicon-heart"></span>
+      <span class="name">Favorited</span>
+    </span>
+    <span class="fave_no">
+      <span class="glyphicon glyphicon-heart-empty"></span>
+      <span class="name">Favorite</span>
+    </span>
+  </a>
+  <span class="fave_count">3</span>
+</span>    <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t80" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft80" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft80&amp;name=Integrated+Circuits" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft80" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Integrated+Circuits&amp;url=http%3A%2F%2Fsfe.io%2Ft80&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft80&amp;t=Integrated+Circuits" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft80&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F8%2F3%2F6%2F3%2Fb%2F51dc6e21ce395f0807000000.png&amp;description=Integrated+Circuits" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+          <div class="section tutorial-page">
+        <h2 id="introduction">Introduction</h2>
+        <p>Integrated circuits (ICs) are a keystone of modern 
+electronics. They are the heart and brains of most circuits. They are 
+the ubiquitous little black “chips” you find on just about every circuit
+ board. Unless you’re some kind of crazy, analog electronics wizard, 
+you’re likely to have at least one IC in every electronics project you 
+build, so it’s important to understand them, inside and out.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/d/8/a/b/5/51dc69f2ce395fab63000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc69f2ce395fab63000000.png" alt="Example of ICs on a PCB"></a></p>
+
+<p style="text-align:center;"> <em>Integrated circuits are the little black “chips”, found all over embedded electronics.</em></p>
+
+<p>An IC is a collection of electronic components – <a href="https://learn.sparkfun.com/tutorials/resistors">resistors</a>, <a href="https://learn.sparkfun.com/tutorials/transistors">transistors</a>, <a href="https://learn.sparkfun.com/tutorials/capacitors">capacitors</a>,
+ etc. – all stuffed into a tiny chip, and connected together to achieve a
+ common goal. They come in all sorts of flavors: single-circuit logic 
+gates, op amps, 555 timers, voltage regulators, motor controllers, 
+microcontrollers, microprocessors, FPGAs…the list just goes on-and-on.</p>
+
+<h3>Covered in this Tutorial</h3>
+
+<ul>
+<li>The make-up of an IC</li>
+<li>Common IC packages</li>
+<li>Identifying ICs</li>
+<li>Commonly used ICs</li>
+</ul>
+
+
+<h3>Suggested Reading</h3>
+
+<p>Integrated circuits are one of the more fundamental concepts of 
+electronics. They do build on some previous knowledge, though, so if you
+ aren’t familiar with these topics, consider reading their tutorials 
+first…</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/what-is-a-circuit">What is a Circuit</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/polarity">Polarity</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/resistors">Resistors</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/diodes">Diodes</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/capacitors">Capacitors</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/transistors">Transistors</a></li>
+</ul>
+      </div>
+          <div class="section tutorial-page">
+        <h2 id="inside-the-ic">Inside the IC</h2>
+        <p>When we think integrated circuits, little black chips are what come to mind. But what’s inside that black box?</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/7/a/6/9/c/51c0d009ce395feb33000000.jpg"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c0d009ce395feb33000000.jpg" alt="Internal view of an IC"></a></p>
+
+<p style="text-align:center;"> <em>The guts of an integrated circuit, visible after <a href="https://www.sparkfun.com/news/384">removing the top</a>.</em></p>
+
+<p>The real “meat” to an IC is a complex layering of semiconductor 
+wafers, copper, and other materials, which interconnect to form 
+transistors, resistors or other components in a circuit. The cut and 
+formed combination of these wafers is called a <strong>die</strong>.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/e/f/1/b/8/51c0d009ce395ff933000000.jpg"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c0d009ce395ff933000000.jpg" alt="Overview of internal IC"></a></p>
+
+<p style="text-align:center;"> <em>An overview of an IC die.</em></p>
+
+<p>While the IC itself is tiny, the wafers of semiconductor and layers 
+of copper it consists of are incredibly thin. The connections between 
+the layers are very intricate. Here’s a zoomed in section of the die 
+above:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/b/0/2/6/4/51c0d456ce395f0334000000.jpg"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c0d456ce395f0334000000.jpg" alt="Microscopic view of an IC"></a></p>
+
+<p>An IC die is the circuit in its smallest possible form, too small to 
+solder or connect to. To make our job of connecting to the IC easier, we
+ package the die. The IC package turns the delicate, tiny die, into the 
+black chip we’re all familiar with.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="ic-packages">IC Packages</h2>
+        <p>The package is what encapsulates the integrated circuit die 
+and splays it out into a device we can more easily connect to. Each 
+outer connection on the die is connected via a tiny piece of gold wire 
+to a <strong>pad</strong> or <strong>pin</strong> on the package. Pins 
+are the silver, extruding terminals on an IC, which go on to connect to 
+other parts of a circuit. These are of utmost importance to us, because 
+they’re what will go on to connect to the rest of the components and 
+wires in a circuit.</p>
+
+<p>There are many different types of packages, each of which has unique dimensions, mounting-types, and/or pin-counts.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/c/7/a/1/9/51e0633cce395f867b000000.jpg"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c1ea70ce395f5f0d000000.jpg" alt="Package variety chart"></a></p>
+
+<h3>Polarity Marking and Pin Numbering</h3>
+
+<p>All ICs are <a href="https://learn.sparkfun.com/polarity/integrated-circuit-polarity">polarized</a>,
+ and every pin is unique in terms of both location and function. This 
+means the package has to have some way to convey which pin is which. 
+Most ICs will use either a <strong>notch</strong> or a <strong>dot</strong> to indicate which pin is the first pin. (Sometimes both, sometimes one or the other.)</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/8/7/3/1/6/51c1ee09ce395f421f000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c1ee09ce395f421f000000.png" alt="Package with notch/dot labeled"></a></p>
+
+<p>Once you know where the first pin is, the remaining pin numbers 
+increase sequentially as you move counter-clockwise around the chip.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/f/0/a/1/f/51c206efce395f0f0d000003.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c206efce395f0f0d000003.png" alt="DIP pin numbering"></a></p>
+
+<h3>Mounting Style</h3>
+
+<p>One of the main distinguishing package type characteristics is the 
+way they mount to a circuit board. All packages fall into one of two 
+mounting types: through-hole (PTH) or surface-mount (SMD or SMT). <strong>Through-hole</strong>
+ packages are generally bigger, and much easier to work with. They’re 
+designed to be stuck through one side of a board and soldered to the 
+other side.</p>
+
+<p><strong>Surface-mount</strong> packages range in size from small to 
+minuscule. They are all designed to sit on one side of a circuit board 
+and be soldered to the surface. The pins of a SMD package either extrude
+ out the side, perpendicular to the chip, or are sometimes arranged in a
+ matrix on the bottom of the chip. ICs in this form factor are not very 
+“hand-assembly-friendly.” They usually require <a href="https://learn.sparkfun.com/tutorials/electronics-assembly">special tools</a> to aid in the process.</p>
+
+<h3>DIP (Dual in-line packages)</h3>
+
+<p>DIP, short for dual in-line package, is the most common through-hole 
+IC package you’ll encounter. These little chips have two parallel rows 
+of pins extending perpendicularly out of a rectangular, black, plastic 
+housing.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/8/b/d/d/d/51dc7161ce395f8303000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc7161ce395f8303000000.png" alt="DIP package example"></a></p>
+
+<p style="text-align:center;"> <em>The 28-pin <a href="https://www.sparkfun.com/products/9061">ATmega328</a> is one of the more popular DIP-packaged microcontrollers (thanks, Arduino!).</em></p>
+
+<p>Each of the pins on a DIP IC are spaced by 0.1" (2.54mm), which is a standard spacing and perfect for fitting into <a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard">breadboards</a>
+ and other prototyping boards. The overall dimensions of a DIP package 
+depend on its pin count, which may be anywhere from four to 64.</p>
+
+<p>The area between each row of pins is perfectly spaced to allow DIP 
+ICs to straddle the center area of a breadboard. This provides each of 
+the pins its own row in the board, and it makes sure they don’t <a href="https://learn.sparkfun.com/tutorials/what-is-a-circuit/short-and-open-circuits">short</a> to each other.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/1/5/4/e/9/51c1e4eece395f1c1f000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c1e4eece395f1c1f000000.png" alt="DIP chips on a breadboard"></a></p>
+
+<p>Aside from being used in breadboards, DIP ICs can also be <strong>soldered into PCBs</strong>.
+ They’re inserted into one side of the board and soldered into place on 
+the other side. Sometimes, instead of soldering directly to the IC, it’s
+ a good idea to <strong>socket</strong> the chip. Using sockets allows for a DIP IC to be removed and swapped out, if it happens to “let its blue smoke out.”</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/b/f/b/4/9/51e0773dce395f8560000000.jpg"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51e0773dce395f8560000000.jpg" alt="alt text"></a></p>
+
+<p style="text-align:center;"><em>A regular <a href="https://www.sparkfun.com/products/7940">DIP socket</a> (top) and a <a href="https://www.sparkfun.com/products/9175">ZIF socket</a> with and without an IC.</em></p>
+
+<h3>Surface-Mount (SMD/SMT) Packages</h3>
+
+<p>There is a huge variety of surface-mount package types these days. In
+ order to work with surface-mount packaged ICs, you usually need a 
+custom printed circuit board (<a href="https://learn.sparkfun.com/tutorials/pcb-basics">PCB</a>) made for them, which has a matching pattern of copper on which they’re soldered.</p>
+
+<p>Here are a few of the more common SMD package types out there, 
+ranging in hand-solderability from “doable” to “doable, but only with 
+special tools” to “doable only with <em>very</em> special, usually automated tools”.</p>
+
+<h4>Small-Outline (SOP)</h4>
+
+<p>Small-outline IC (SOIC) packages are the surface-mount cousin of the 
+DIP. It’s what you’d get if you bent all the pins on a DIP outward, and 
+shrunk it down to size. With a steady hand, and a close eye, these 
+packages are among the easiest SMD parts to hand solder. On SOIC 
+packages, each pin is usually spaced by about 0.05" (1.27mm) from the 
+next.</p>
+
+<p>The SSOP (shrink small-outline package) is an even smaller version of
+ SOIC packages. Other, similar IC packages include TSOP (thin 
+small-outline package) and TSSOP (thin-shrink small-outline package).</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/9/e/4/5/6/51c32e10ce395fdc13000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51c32e10ce395fdc13000000.png" alt="Example of SSOP mounted, quarter added for size-comparison"></a></p>
+
+<p style="text-align:center;"> <em>A 16-Channel Multiplexer (<a href="https://www.sparkfun.com/products/299">CD74HC4067</a>) in a 24-pin SSOP package. Mounted on a board in the middle (quarter added for size-comparison).</em></p>
+
+<p>A lot of the more simple, single-task-oriented ICs like the <a href="https://www.sparkfun.com/products/589">MAX232</a> or <a href="https://www.sparkfun.com/products/299">multiplexers</a> come in SOIC or SSOP forms.</p>
+
+<h4>Quad Flat Packages</h4>
+
+<p>Splaying IC pins out in all four directions gets you something that 
+might look like a quad flat package (QFP). QFP ICs might have anywhere 
+from eight pins per side (32 total) to upwards of seventy (300+ total). 
+The pins on a QFP IC are usually spaced by anywhere from 0.4mm to 1mm. 
+Smaller variants of the standard QFP package include thin (TQFP), very 
+thin (VQFP), and low-profile (LQFP) packages.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/8/3/6/3/b/51dc6e21ce395f0807000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc6e21ce395f0807000000.png" alt="TQFP example package"></a></p>
+
+<p style="text-align:center;"> <em>The <a href="https://www.sparkfun.com/products/11181">ATmega32U4</a> in a 44-pin (11 on each side) TQFP package.</em></p>
+
+<p>If you sanded the legs off a QFP IC, you get something that might look like a <strong>quad-flat no-leads (QFN)</strong>
+ package. The connections on QFN packages are tiny, exposed pads on the 
+bottom corner edges of the IC. Sometimes they wrap around, and are 
+exposed on both the side and bottom, other packages only expose the pad 
+on the bottom of the chip.</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/b/4/a/1/7/51dc6f5bce395fc963000006.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc6f5bce395fc963000006.png" alt="Example of QFN package"></a></p>
+
+<p style="text-align:center;"> <em>The multitalented <a href="">MPU-6050</a> IMU sensor comes in a relatively tiny QFN package, with 24 total pins hiding on the bottom edge of the IC.</em></p>
+
+<p>Thin (TQFN), very thin (VQFN), and micro-lead (MLF) packages are 
+smaller variations of the standard QFN package. There are even dual 
+no-lead (DFN) and thin-dual no-lead (TDFN) packages, which have pins on 
+just two of the sides.</p>
+
+<p>Many microprocessors, sensors, and other modern ICs come in QFP or QFN packages. The popular <a href="https://www.sparkfun.com/products/9261">ATmega328</a> microcontroller is offered in both a TQFP package and a QFN-type (MLF) form, while a tiny <a href="https://learn.sparkfun.com/tutorials/accelerometer-basics">accelerometer</a>/<a href="https://learn.sparkfun.com/tutorials/gyroscope">gyroscope</a> like the <a href="https://www.sparkfun.com/products/10937">MPU-6050</a> comes in a miniscule QFN form.</p>
+
+<h4>Ball Grid Arrays</h4>
+
+<p>Finally, for really advanced ICs, there are ball grid array (BGA) 
+packages. These are amazingly intricate little packages where little 
+balls of solder are arranged in a 2-D grid on the bottom of the IC. 
+Sometimes the solder balls are attached directly to the die!</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/0/8/7/c/4/51dc6d9bce395f2103000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc6d9bce395f2103000000.png" alt="Example of BGA package"></a></p>
+
+<p>BGA packages are usually reserved for advanced microprocessors, like those on the <a href="https://www.sparkfun.com/products/11712">pcDuino</a> or <a href="https://www.sparkfun.com/products/11546">Raspberry Pi</a>.</p>
+
+<p>If you can hand solder a BGA-packaged IC, consider yourself a master 
+solderer. Usually, to put these packages onto a PCB requires an 
+automated procedure involving pick-and-place machines and reflow ovens.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="common-ics">Common ICs</h2>
+        <p>Integrated circuits are prevalent in so many forms across 
+electronics, it’s hard to cover everything. Here are a few of the more 
+common ICs you might encounter in educational electronics.</p>
+
+<h3>Logic Gates, Timers, Shift Registers, Etc.</h3>
+
+<p>Logic gates, the building blocks of much more ICs themselves, can be 
+packaged into their own integrated circuit. Some logic gate ICs might 
+contain a handful of gates in one package, like this quad-input AND 
+gate:</p>
+
+<p style="text-align:center;"> <a href="https://cdn.sparkfun.com/assets/5/b/9/9/b/51dc7fb8ce395f1d1c000000.png"><img src="Integrated%20Circuits%20-%20learn.sparkfun.com_files/51dc7fb8ce395f1d1c000000.png" alt="Logic gate pinout"></a></p>
+
+<p>Logic gates can be connected inside an IC to create timers, counters,
+ latches, shift registers, and other basic logic circuitry. Most of 
+these simple circuits can be found in DIP packages, as well as SOIC and 
+SSOP.</p>
+
+<h3>Microcontrollers, Microprocessors, FPGAs, Etc.</h3>
+
+<p>Microcontrollers, microprocessors, and FPGAs, all packing thousands, 
+millions, even billions of transistors into a tiny chip, are all 
+integrated circuits. These components exist in a wide range in 
+functionality, complexity, and size; from an 8-bit microcontroller like 
+the <a href="https://www.sparkfun.com/products/9061">ATmega328</a> in an <a href="https://www.sparkfun.com/products/11021">Arduino</a>, to a complex 64-bit, multi-core microprocessor organizing activity in your computer.</p>
+
+<p>These components are usually the largest IC in a circuit. Simple 
+microcontrollers can be found in packages ranging from DIP to QFN/QFP, 
+with pin counts lying somewhere between eight and a hundred. As these 
+components grow in complexity, the package gets equally complex. <a href="https://www.sparkfun.com/products/11838">FPGAs</a> and complex <a href="https://www.sparkfun.com/products/11712">microprocessors</a> can have upwards of a thousand pins and are only available in advanced packages like QFN, LGA, or BGA.</p>
+
+<h3>Sensors</h3>
+
+<p>Modern digital sensors, like temperature sensors, <a href="https://learn.sparkfun.com/tutorials/accelerometer-basics">accelerometers</a>, and <a href="https://learn.sparkfun.com/tutorials/gyroscope">gyroscopes</a> all come packed into an integrated circuit.</p>
+
+<p>These ICs are usually smaller than the microcontrollers, or other ICs
+ on a circuit board, with pin counts in the three to twenty range. DIP 
+sensor ICs are becoming a rarity, as modern components are usually found
+ in QFP, QFN, even BGA packages.</p>      </div>
+          <div class="section tutorial-page">
+        <h2 id="res">Resources and Going Further</h2>
+        <p>Integrated circuits are present in just about every circuit 
+out there. Now that you’re familiar with ICs, why not check out some of 
+these related concept tutorials:</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/pcb-basics">PCB Basics</a>
+ - ICs have to be connected to a circuit somehow. Usually we’ll solder 
+an IC to a printed circuit board (PCB). Check out this tutorial to learn
+ more about those little green boards.</li>
+<li><a href="https://learn.sparkfun.com/tutorials/serial-communication">Serial Communication</a>, <a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi">Serial Peripheral Interface (SPI)</a>, and <a href="https://learn.sparkfun.com/tutorials/i2c">I<sup>2</sup>C</a> - All three of these are communication protocols ICs use to communicate between each other.</li>
+</ul>
+
+
+<p>Or, check out some of these skill tutorials. These are handy skills every budding electronics hacker should learn!</p>
+
+<ul>
+<li><a href="https://learn.sparkfun.com/tutorials/how-to-solder---through-hole-soldering">How to Solder</a> - Unless you’re using a breadboard with your ICs, you’ll probably need to solder them.</li>
+<li><a href="https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd">Designing PCBs</a>
+ - Or, if you’re already familiar with PCBs, why not try making one! 
+This tutorial explains how to use a freely available software (Eagle) to
+ design PCBs.</li>
+<li><a href="https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints">Designing PCB Footprints</a> - This tutorial walks you through the steps required to design a PCB footprint for an IC, using Eagle CAD.</li>
+</ul>
+      </div>
+    
+        <div class="share-link-inline">
+
+  <a class="share-link-toggle" href="#">
+    <span class="share-title">
+      <span class="sfe-icon-share"></span>
+      Share    </span>
+  </a>
+
+  <div class="share-link-inner dialog">
+    Use this URL to share:<br>
+    <input class="form-control input-sm" value="http://sfe.io/t80" onclick="$(this).select();" type="text">
+
+    <div class="share-social">
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','googleplus');" href="https://plus.google.com/share?url=http%3A%2F%2Fsfe.io%2Ft80" title="Share on Google+"><span class="sfe-icon-google-plus hidetext"><span>Share on Google+</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','tumblr');" href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fsfe.io%2Ft80&amp;name=Integrated+Circuits" title="Share on Tumblr"><span class="sfe-icon-tumblr hidetext"><span>Share on Tumblr</span></span></a>
+
+      <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','reddit');" href="https://www.reddit.com/submit?url=http%3A%2F%2Fsfe.io%2Ft80" title="Submit to reddit"><span class="sfe-icon-reddit hidetext"><span>Submit to reddi</span></span></a>
+
+    </div>
+
+    </div>
+  
+  <div class="share-social">
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','twitter');" href="https://twitter.com/intent/tweet?text=Integrated+Circuits&amp;url=http%3A%2F%2Fsfe.io%2Ft80&amp;via=sparkfun" title="Share on Twitter"><span class="sfe-icon-twitter hidetext"><span>Share on Twitter</span></span></a>
+
+    <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','facebook');" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsfe.io%2Ft80&amp;t=Integrated+Circuits" title="Share on Facebook"><span class="sfe-icon-facebook-nobox hidetext"><span>Share on Facebook</span></span></a>
+
+          <a rel="nofollow" onclick="return $(this).sfeutil('track_link',this,'Share','clicked','pinterest');" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsfe.io%2Ft80&amp;media=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fr%2F500-1000%2Fassets%2F8%2F3%2F6%2F3%2Fb%2F51dc6e21ce395f0807000000.png&amp;description=Integrated+Circuits" title="Pin It"><span class="sfe-icon-pinterest hidetext"><span>Pin It</span></span></a>
+    
+  </div>
+
+  
+</div>
+
+  </div>
+
+  <div class="col-sm-4" id="nav-pages">
+    <div id="sidebar_affix">
+
+      <div id="tutorial-pages" class="list-group">
+        <a class="list-group-item"><b>Sections</b></a>
+                          <a data-pagename="introduction" class="list-group-item" href="#introduction">
+            Introduction          </a>
+                  <a data-pagename="inside-the-ic" class="list-group-item" href="#inside-the-ic">
+            Inside the IC          </a>
+                  <a data-pagename="ic-packages" class="list-group-item" href="#ic-packages">
+            IC Packages          </a>
+                  <a data-pagename="common-ics" class="list-group-item" href="#common-ics">
+            Common ICs          </a>
+                  <a data-pagename="res" class="list-group-item" href="#res">
+            Resources and Going Further          </a>
+              </div>
+
+      <div class="list-group">
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/integrated-circuits/discuss">
+          Comments
+          <span class="badge">2</span>
+        </a>
+        <a class="list-group-item" href="https://learn.sparkfun.com/tutorials/integrated-circuits/introduction">
+          View Paginated
+        </a>
+        <a class="list-group-item" href="#" onclick="window.print(); return false;">
+          Print
+        </a>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>Tags</b></li>
+        <li class="list-group-item"><ul class="tags-list">
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/components">Components</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/electrical-engineering">Electrical Engineering</a>  </li>
+  <li>
+    <a class="tag" href="https://learn.sparkfun.com/tutorials/tags/technology">Technology</a>  </li>
+</ul>
+</li>
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>License</b></li>
+        <li class="list-group-item">
+          <span class="sfe-icon-cc">
+            <span class="visuallyhidden">Creative Commons</span>
+          </span>
+          <small>tutorials are <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="new">CC BY-NC-SA 3.0</a></small>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  require(['tutorial', 'jquery.imagesloaded'], function() {
+    $('#tutorial').tutorial();
+  });
+</script>
+
+      </div> <!-- /container -->
+    </div> <!-- /content -->
+
+    
+<footer>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="sharing-ingenuity">
+          <span class="sfe-icon-flame"></span>
+          <span class="text"><span class="text-top">Sharing<br></span>Ingenuity</span>
+        </div>
+        <ul class="spew">
+          <li><a href="http://www.github.com/sparkfun" target="_blank" class="sfe-icon-github"><span class="visuallyhidden">GitHub</span></a></li>
+          <li><a href="http://www.youtube.com/sparkfun" target="_blank" class="sfe-icon-youtube"><span class="visuallyhidden">YouTube</span></a></li>
+          <li><a href="http://www.vimeo.com/sparkfun" target="_blank" class="sfe-icon-vimeo"><span class="visuallyhidden">Vimeo</span></a></li>
+          <li><a href="http://www.facebook.com/SparkFun" target="_blank" class="sfe-icon-facebook"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/106084846822083498483/" target="_blank" class="sfe-icon-google-plus"><span class="visuallyhidden">Google Plus</span></a></li>
+          <li><a href="http://www.flickr.com/photos/sparkfun/" target="_blank" class="sfe-icon-flickr"><span class="visuallyhidden">Flickr</span></a></li>
+          <li><a href="https://twitter.com/#%21/sparkfun" target="_blank" class="sfe-icon-twitter"><span class="visuallyhidden">Twitter</span></a></li>
+          <li><a href="https://www.sparkfun.com/feeds" class="sfe-icon-feed"><span class="visuallyhidden">RSS</span></a></li>
+        </ul>
+        <div class="newsletter">
+          <form action="https://learn.sparkfun.com/newsletter/subscribe_email" method="post" class="form-inline" id="js-newsletter_subscribe">
+            <div class="form-group">
+              <input class="form-control" name="newsletter_email" placeholder="Email Address" type="email">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default" value="Subscribe to Education Newsletter" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end .row -->
+  </div><!-- end .container -->
+</div><!-- end .social -->
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="subfooter subfooter-about">
+      <p>
+        <b>SparkFun</b> is an online retail store that sells the bits and pieces to
+        make your electronics projects possible. Whether it's a robot that can
+        cook your breakfast or a GPS cat tracking device, our products and
+        resources are designed to make the world of electronics more accessible.
+      </p>
+      <p>
+        In addition to products, SparkFun also offers
+        classes and online tutorials to help educate
+        individuals in the wonderful world of embedded electronics.
+      </p>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>About Us</b>
+            </li><li><a href="https://www.sparkfun.com/static/about">About SparkFun</a></li>
+            <li><a href="https://learn.sparkfun.com/about">SparkFun Education</a></li>
+            <li><a title="RSS Feeds" href="https://www.sparkfun.com/feeds">Feeds <span class="sfe-icon-feed"></span></a></li>
+            <li><a href="https://www.sparkfun.com/jobs">Jobs</a></li>
+            <li><a href="https://www.sparkfun.com/static/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Help</b></li>
+            <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+            <li><a href="https://www.sparkfun.com/support#ShippingPolicy">Shipping</a></li>
+            <li><a href="https://www.sparkfun.com/returns">Return Policy</a></li>
+            <li><a href="https://www.sparkfun.com/static/faq">FAQ</a></li>
+                      </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Programs</b></li>
+            <li><a href="https://learn.sparkfun.com/educator_discount">Educator Discount</a></li>
+            <li><a href="https://www.sparkfun.com/sponsor">Partner with SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/project_calls">Tell Us About Your Project</a></li>
+            <li><a href="https://learn.sparkfun.com/tutorials/how-to-sell-your-widget-on-sparkfun">Sell Your Widget on SparkFun</a></li>
+            <li><a href="https://www.sparkfun.com/distributors/apply">Become a SparkFun Distributor</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6">
+          <ul>
+            <li><b>Community</b></li>
+            <li><a href="https://forum.sparkfun.com/">Forum</a></li>
+            <li><a href="https://www.sparkfun.com/news/263">SparkFun IRC Channel</a></li>
+            <li><a href="https://www.sparkfun.com/quiz">Take the SparkFun Quiz</a></li>
+            <li><a href="https://www.kickstarter.com/pages/sparkfun">SparkFun Kickstarter Projects</a></li>
+            <li><a href="https://www.sparkfun.com/distributors">Distributors</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end .row -->
+
+    </div>
+
+    <div id="feedback" class="subfooter subfooter-woym">
+      <form id="woym_form" class="feedback" action="https://learn.sparkfun.com/feedback/mind.json" onsubmit="$(this).sfeutil('mind_feedback'); return false;" method="POST">
+        <div class="error" id="error_feedback" style="display: none"></div>
+        <input name="sparkaptcha" id="sparkaptcha" value="0" type="hidden">
+
+        <div class="form-group">
+          <label for="feedback_textarea" class="control-label">What's on your mind?</label>
+          <div class="controls">
+            <textarea id="feedback_textarea" class="form-control" name="feedback_text" required=""></textarea>
+            <div class="error" id="error_feedback_text" style="display: none"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_dest" class="control-label">For which department?</label>
+          <select name="dest" class="form-control" id="feedback_dest">
+            <option selected="selected" value="general">General</option>
+            <option value="cust">Customer Service</option>
+            <option value="tech">Tech Support</option>
+                          <option value="edu">Education Department</option>
+                      </select>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback_email" class="control-label">
+            Please include your email address if you'd like us to respond to a specific question.
+          </label>
+
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input class="form-control" id="feedback_email" name="email" placeholder="email address" type="text">
+          </div>
+          <div class="error" id="error_feedback_email" style="display: none"></div>
+
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div><!-- end .row -->
+  
+  <ul class="copyleft">
+    <li>SparkFun Electronics <a href="https://www.sparkfun.com/news/300">®</a></li>
+    <li><a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=6333+Dry+Creek+Parkway,+Niwot,+CO+80503">Niwot, Colorado</a></li>
+    <li><a href="https://www.sparkfun.com/support">Customer Service</a></li>
+    <li><a href="https://www.sparkfun.com/sitemap">Site Map</a></li>
+    <li><a href="https://www.sparkfun.com/terms">Terms of Service</a></li>
+    <li><a href="https://www.sparkfun.com/privacy">Privacy Policy</a></li>
+    <li class="desktop-toggle">
+              <a href="https://www.sparkfun.com/account/mobile_toggle?redirect=%2Flearn%2Ftutorials%2Fintegrated-circuits">Desktop Site</a>          </li>
+  </ul>
+
+</div><!-- end .container -->
+
+</footer>
+
+    <div class="nav-account">
+  <ul class="nav nav-tabs">
+    <li class="visible-xs">
+      <a class="nav-toggle-account back" href="#">Your Account</a>
+    </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/login?redirect=%2Flearn%2Ftutorials%2Fintegrated-circuits" data-toggle="modal" data-target="#login_modal" data-remote="false">Log In</a>
+      </li>
+          <li class="">
+        <a href="https://www.sparkfun.com/account/make">Register</a>
+      </li>
+      </ul>
+</div>
+
+      </div><!-- end .wrapper-inner -->
+    </div><!-- end .wrapper -->
+
+    <!-- Login Modal -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Log In</h4>
+        <p class="modal-header-msg"></p>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="https://www.sparkfun.com/account/login" method="post">
+          <input name="redirect" value="/learn/tutorials/integrated-circuits" type="hidden">
+          <div class="form-group">
+            <label for="login-username">Email</label>
+            <input tabindex="1" name="user" id="login-username" class="form-control" type="email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input tabindex="2" name="passwd" id="login-password" class="form-control" type="password">
+          </div>
+          <div class="form-group">
+            <input value="Log In" tabindex="3" class="btn btn-action" type="submit">
+          </div>
+        </form>
+        <p>
+          <a href="https://www.sparkfun.com/account/forgot_password">Forgot your password?</a>          <br>
+          No account? <a id="btn_register_account" href="https://www.sparkfun.com/account/make">Register one!</a>        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+</body></html>

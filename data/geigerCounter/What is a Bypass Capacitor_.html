@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0080)http://www.learningaboutelectronics.com/Articles/What-is-a-bypass-capacitor.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>What is a Bypass Capacitor?</title>
+<meta name="keywords" content="Bypass capacitor, ground, shorts, shunts, ac, ground, DC signals">
+<meta name="description" content="This is an article that explains what a bypass capacitor is. A bypass capacitor is a 
+capacitor that shunts AC signals that may be on a DC signal to ground. In doing so, bypass capacitors filter out 
+AC noise from a DC signal to produce a cleaner DC signal.">
+<link href="./What is a Bypass Capacitor__files/default66.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css"></style><script type="text/javascript" src="./What is a Bypass Capacitor__files/jread"></script></head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<!-- <h1><a href="#">Mr&bull;Techie</a></h1> -->
+		<h2><a href="http://www.learningaboutelectronics.com/">Learning about Electronics</a></h2>
+		<!-- <p><a href="#">By CSS Templates For Free</a></p> -->
+	</div>
+<!--	<div id="rss"><a href="#">Subscribe to RSS Feed</a></div> -->
+<!-- 
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div>
+-->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li><a href="http://www.learningaboutelectronics.com/">Home</a></li>
+		<li class="current_page_item"><a href="http://www.learningaboutelectronics.com/Articles">Articles</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Projects">Projects</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Forum">Forum <font size="3" color="red">Discussions</font></a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Store">Store</a></li>
+		<li><a href="http://www.learningaboutelectronics.com/Contact">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+ 
+<div id="page">
+<!-- 
+<div id="left_img">
+<img src="images/dreamstimefree-small.jpg"/>
+</div>
+-->
+	<!-- start ads -->
+	<div id="ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Content Appropriate Ads for Articles */
+google_ad_slot = "4667034212";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+	<!-- end ads -->
+	<!-- start content -->
+		<div class="post">
+<!--			<div class="title">
+			</div>
+-->
+			<div class="entry">
+				<h1>What is a Bypass Capacitor?</h1>
+<img style="width: 78px; height: 226px;" alt="0.1uf Ceramic Capacitor to Filter DC" src="./What is a Bypass Capacitor__files/0.1-uf-ceramic-capacitor.jpg"><br>
+
+
+<br>
+
+<p id="para1">A bypass capacitor is a capacitor that shorts AC signals to ground, so 
+that any AC noise that may be 
+present on a DC signal is removed, producing a much cleaner and pure DC signal.
+
+</p><p id="para1">A bypass capacitor essentially bypasses 
+AC noise that may be on a DC signal, filtering out the AC, so that
+a clean, pure DC signal goes through without any AC ripple. 
+
+
+</p><p id="para1">For example, you may want a pure DC signal from a power source. 
+
+</p><p id="para1">Below is a transistor circuit. A transistor is an active device, so in order to work, it needs DC power. This power source is 
+V<small>CC</small>. In this case, V<small>CC</small> equals 15 volts. 
+
+<br><br><br>
+
+<img style="width: 248px; height: 445px;" alt="DC Power Source for Transistor" src="./What is a Bypass Capacitor__files/DC-power-source-transistor.png">
+
+<br><br><br>
+
+</p><p id="para1">This 15 volts provides power to the transistor so that the transistor can amplify signals. We want this signal to be as purely DC as possible.
+Although we obtain our DC voltage, V<small>CC</small>, from a DC power source such as a power supply, the voltage isn't always purely DC. In fact, many times the 
+voltage is very noisy and contains a lot of AC ripple on it, especially at the 60Hz frequency because this is the frequency at which AC signals run in many countries. 
+
+
+</p><p id="para1">So although we want a pure DC signal, such as below:
+
+<br><br>
+
+</p><div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large image ads */
+google_ad_slot = "3467666961";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><img style="width: 524px; height: 103px;" alt="Pure DC Voltage" src="./What is a Bypass Capacitor__files/Pure-DC-voltage.png">
+
+<br><br>
+
+
+<p id="para1">Many times, we get a noisy signal that looks like:
+
+<br><br>
+
+<img style="width: 505px; height: 130px;" alt="Noisy DC Voltage Signal" src="./What is a Bypass Capacitor__files/Noisy-dc-signal.png">
+
+<br><br>
+
+</p><p id="para1">A DC signal such as this is actually very common. This is undesired because it adds noise to the transistor circuit. Therefore, this 
+noisy DC signal will be imposed on the AC signal. So the AC signal which may have music or some type of recording will now have much more noise. 
+
+</p><p id="para1">This noise which is on the signal is AC ripple. Many times when using a DC power supply connected to an AC power outlet, it will 
+have some of the AC noise transfer to the DC power voltage. AC ripple can also appear from other sources, so even batteries can produce noise. 
+
+</p><p id="para1">To eliminate this AC ripple, we use a bypass capacitor. So our transistor circuit above will have a bypass capacitor added to it:
+
+<br><br>
+
+<img style="width: 430px; height: 414px;" alt="Bypass Capacitor for a Transistor Circuit" src="./What is a Bypass Capacitor__files/Bypass-capacitor-transistor-circuit.png">
+
+<br><br>
+
+</p><p id="para1">A capacitor is a device that offers a tremendously high resistance for signals of low frequencies. Therefore, signals at low frequencies will not go through them. This is because 
+signals (current) always takes the path of least resistance. Therefore, they will instead go through the resistor, R<small>E</small>. Remember, again, this is for low frequency signals, which is 
+basically DC signals. 
+
+</p><p id="para1">However, capacitors offer much less resistance at higher frequencies (AC signals). So AC signals will go through the capacitor and then to gorund. Therefore, DC signals will go 
+through the resistor, R<small>E</small>, while AC signals will go through the capacitor, getting shunted to ground. So AC signals get shunted to ground. This is how we have a clean DC signal 
+across our circuit, while AC noise imposed on it is bypassed to ground. 
+
+
+
+
+<br><br>
+
+</p><div style="float:right"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Large image ads */
+google_ad_slot = "3467666961";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><img style="width: 252px; height: 414px;" alt="How a Bypass Capacitor Works" src="./What is a Bypass Capacitor__files/How-a-bypass-capacitor-works.png">
+
+<br><br>
+
+<p id="para1">So a bypass capacitor blocks the DC from entering it by the great resistance it offers to the signal but accepts the AC noise that may be on the DC line and shunts or bypasses it to ground. 
+This is how bypass capacitors work.
+
+
+
+<br><br><br>
+
+
+</p><p id="para6">Related Resources</p>
+<p id="para1">
+				
+				<a href="http://www.learningaboutelectronics.com/Articles/What-is-a-coupling-capacitor">What is a Coupling Capacitor?</a><br><br>
+				<a href="http://www.learningaboutelectronics.com/Articles/What-is-a-smoothing-capacitor">What is a Smoothing Capacitor?</a><br><br>
+
+				<a href="http://www.learningaboutelectronics.com/Articles/How-to-test-a-capacitor">How to Test a Capacitor</a><br>
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+
+<!-- begin htmlcommentbox.com -->
+ </p><div id="HCB_comment_box"><h3>Comments</h3><style type="text/css">#HCB_comment_box #HCB_comment_form_box{padding-bottom:1em}#HCB_comment_box .hcb-link{cursor:pointer}#HCB_comment_box .hcb-icon{border:0px transparent none}#HCB_comment_box textarea {display:block;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%}#HCB_comment_box blockquote{margin:10px;overflow:hidden}#HCB_comment_box .hcb-err{color:red}#HCB_comment_box .hcb-comment-tb{margin:0}#HCB_comment_box .comment{position:relative}#HCB_comment_box .comment .likes{position:absolute;top:0;right:0;opacity:0.8}#HCB_comment_box .comment .hcb-comment-tb a{visibility:hidden}#HCB_comment_box .comment:hover .hcb-comment-tb a{visibility:visible}#HCB_comment_box .gravatar{padding-right:2px}#HCB_comment_box input{margin-left:0}</style><p id="hcb_msg"></p><div id="HCB_comment_form_box"><form id="hcb_form" onsubmit="return hcb.submit()" action="http://www.htmlcommentbox.com/post" method="post"><input type="hidden" name="page" value="http://www.learningaboutelectronics.com/Articles/What-is-a-bypass-capacitor.html" id="hcb_form_page"><input type="hidden" id="hcb_refer" name="refer" value="http://www.learningaboutelectronics.com/Articles/What-is-a-bypass-capacitor.html#HCB_comment_box"><input type="hidden" name="opts" value="406" id="hcb_form_opts"><input type="hidden" name="mod" value="" id="hcb_form_mod"><input type="hidden" name="replies_to" value="" id="hcb_form_replies_to"><input type="hidden" name="charset" value="UTF-8" id="hcb_form_charset"><div class="hcb-wrapper-half input-field"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><input id="hcb_form_name" class="hcb-shadow-r" name="name" type="text" value="" placeholder="Name"></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div> </div><div class="hcb-wrapper"><div class="hcb-shadow-t"> <div class="hcb-shadow-tl"></div> <div class="hcb-shadow-tr"></div> </div> <div class="hcb-shadow-m"><textarea onkeypress="hcb.delta(event)" class="commentbox hcb-shadow-r" name="content" id="hcb_form_content" rows="4" placeholder="Enter your comment here"></textarea></div> <div class="hcb-shadow-b"> <div class="hcb-shadow-bl"></div> <div class="hcb-shadow-br"></div> </div><div class="hcb-shadow-clear"></div></div><div><input class="submit btn" id="hcb_submit" type="submit" value="Comment">&nbsp;<span class="home-desc" style="font-size:10px">&nbsp;by&nbsp;</span><a target="_blank" style="font-size:10px !important;display:inline !important;visibility:visible !important;color:#fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)" href="http://www.htmlcommentbox.com/">Html Comment Box</a>&nbsp;</div></form></div><div id="comments_list"><div class="comment" id="comment_7286147"><span class="date">(July 5, 2015) </span><span class="author"><b class="author-name">bhushan </b> said:</span> <blockquote>Great... Very nice explanation<br> </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('7286147')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('7286147')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_1282536"><span class="date">(June 18, 2015) </span><span class="author"><b class="author-name">thanasis </b> said:</span> <blockquote>thanka mate for your help </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('1282536')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('1282536')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_1064175"><span class="date">(May 12, 2015) </span><span class="author"><b class="author-name">salman musharaf </b> said:</span> <blockquote>thanks   </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('1064175')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('1064175')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes"><span>1 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_4723266"><span class="date">(May 5, 2015) </span><span class="author"><b class="author-name">diwakar </b> said:</span> <blockquote>really very helpful </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('4723266')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('4723266')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_6776126"><span class="date">(Apr 23, 2015) </span><span class="author"><b class="author-name">Shambunath N K </b> said:</span> <blockquote>Great explanation...  </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('6776126')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('6776126')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_5548990"><span class="date">(Apr 23, 2015) </span><span class="author"><b class="author-name">priyanka sah </b> said:</span> <blockquote>really very nice explanation ...............thanks a lot. </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('5548990')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('5548990')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_2727351"><span class="date">(Apr 19, 2015) </span><span class="author"><b class="author-name">pranav </b> said:</span> <blockquote>Good and simple explaination that one can undestand easily....helpful....thanks </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('2727351')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('2727351')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_7274170"><span class="date">(Apr 12, 2015) </span><span class="author"><b class="author-name">Anonymous </b> said:</span> <blockquote>helpful </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('7274170')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('7274170')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_2640326"><span class="date">(Apr 5, 2015) </span><span class="author"><b class="author-name">Anonymous </b> said:</span> <blockquote>Very Helpful. Thanks a lot </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('2640326')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('2640326')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div><div class="comment" id="comment_9432164"><span class="date">(Mar 24, 2015) </span><span class="author"><b class="author-name">Ashwini </b> said:</span> <blockquote>Thanks . It clarified my fundas... </blockquote><p class="hcb-comment-tb"><a class="hcb-flag" href="javascript:hcb.flag('9432164')"><img src="./What is a Bypass Capacitor__files/flag.png"> flag</a> <a class="hcb-like" href="javascript:hcb.like('9432164')"><img src="./What is a Bypass Capacitor__files/like.png"> like</a> </p><div class="likes" style="display:none"><span>0 </span><img src="./What is a Bypass Capacitor__files/like.png"></div></div></div><p> (Showing 1 to 10) <b class="hcb-link" onclick="hcb.changepage(1);"><img src="./What is a Bypass Capacitor__files/arrow_right.png" class="hcb-icon" title="next page" alt="[next]"></b> </p><a href="http://www.htmlcommentbox.com/rss_clean?page=http%3A%2F%2Fwww.learningaboutelectronics.com%2FArticles%2FWhat-is-a-bypass-capacitor.html&opts=406&mod=" style="text-decoration:none"><img src="./What is a Bypass Capacitor__files/feed.png" class="hcb-icon" alt="rss"> </a></div>
+ <link rel="stylesheet" type="text/css" href="./What is a Bypass Capacitor__files/skin.css">
+ <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=406&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end htmlcommentbox.com --><br>
+
+<div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div style="float:left"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7591845391773873";
+/* Bottom of Page links */
+google_ad_slot = "2558273216";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><br><br><br><br>
+
+
+
+<o:p></o:p><p></p>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+	</div>
+	<!-- end content -->
+	
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div class="fcenter">
+		<a href="http://www.learningaboutelectronics.com/">Home</a> | 
+		<a href="http://www.learningaboutelectronics.com/Articles">Articles</a> |
+		<a href="http://www.learningaboutelectronics.com/Projects">Projects</a> |
+		<a href="http://www.learningaboutelectronics.com/Forum">Forum</a><a> |
+		</a><a href="http://www.learningaboutelectronics.com/Store">Store</a> |
+		<a href="http://www.learningaboutelectronics.com/Contact">Contact</a>
+</div><br>
+<!-- end footer -->
+
+
+
+</div></div></body></html>

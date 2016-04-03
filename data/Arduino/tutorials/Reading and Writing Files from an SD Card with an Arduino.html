@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="robots" content="noodp"><meta property="og:type" content="website"><meta property="og:title" content="Reading and Writing Files from an SD Card with an Arduino"><meta property="og:image" content="/uploads/thumbnails/SD3.jpg"><meta property="og:description" content="In some Arduino applications, it is advantageous to be able to store and retrieve information locally. You can do this with a Secure Digital, or SD, card. An SD card is a non-volatile memory card used extensively in portable devices, such as mobile phones, digital cameras, GPS navigation devices, handheld consoles, and tablet computers. Another type of SD Card is the Micro SD card. Measuring only 15 mm x 11 mm x 1 mm, it is the smallest memory card available. It is about one-quarter the size of a normal-sized SD card, or about the size of a fingernail."><title>Reading and Writing Files from an SD Card with an Arduino</title> <link rel="icon" href="http://www.allaboutcircuits.com/assets/images/favicon.ico"><link rel="alternate" type="application/rss+xml" title="All About Circuits Forum RSS Feed" href="http://forum.allaboutcircuits.com/forums/-/index.rss"><link rel="alternate" type="application/rss+xml" title="All About Circuits Blog RSS Feed" href="http://forum.allaboutcircuits.com/blogs/entriesRss.rss"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/css.css" rel="stylesheet" type="text/css"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/bootstrap.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/font-awesome.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/aacglyphs.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/yamm.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/bootstrap-touch-carousel.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/eetech-theme.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/eetech-theme-orange.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/style.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/main_site.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/docco.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/responsive.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/extra.css" rel="stylesheet"><link href="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/adpopup-pro.css" rel="stylesheet"><script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/analytics.js" async=""></script><script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/gpt.js" type="text/javascript" async=""></script><script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/jquery_002.js"></script> <!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script> <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script> <script src="/assets/js/css3-mediaqueries.js"></script> <link href="/assets/css/ie8.css" rel="stylesheet"><![endif]--><script type="text/javascript">var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script> <script type="text/javascript">googletag.cmd.push(function() {
+	var mappingSidebar = googletag.sizeMapping().
+    	addSize([0,0], [300, 250]).
+        addSize([980, 690], [[300, 600], [300, 250]]).
+        build();  
+        
+    googletag.pubads().setTargeting("category",["memory","arduino","mobile"]);
+    googletag.defineSlot('/62616433/main_sidebar', [[300, 600], [300, 250]], 'div-gpt-ad-1429623690593-0').defineSizeMapping(mappingSidebar).addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script> <script type="text/javascript">googletag.cmd.push(function() {
+	var mappingLeaderboard = googletag.sizeMapping().
+    	addSize([0,0], [320, 50]).
+        addSize([980, 690], [728,90]).
+        build();  
+  
+    googletag.defineSlot('/62616433/main_leaderboard', [[728, 90], [320,50]], 'div-gpt-ad-1430160961981-0').defineSizeMapping(mappingLeaderboard).addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script> <script type="text/javascript">googletag.cmd.push(function() {
+	var mappingWelcome = googletag.sizeMapping().
+    	addSize([0,0], [300, 250]).
+        addSize([980, 690], [640, 480]).
+        build();
+  
+    googletag.defineSlot('/62616433/main_welcome', [[640, 480], [300, 250]], 'div-gpt-ad-1430160889889-0').defineSizeMapping(mappingWelcome).addService(googletag.pubads());
+  	googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+        if(event.slot.i === "/62616433/main_welcome" && event.isEmpty === false) {$('#div-gpt-ad-1430160889889-0').trigger('adready');}        
+    });
+	googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();  
+    googletag.enableServices();
+  });
+</script> <script type="text/javascript">googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot('/62616433/main_wallpaper', 'div-gpt-ad-1430235245447-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script> <script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/pubads_impl_66.js" type="text/javascript" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/osd.js" type="text/javascript"></script></head><body><div style="display: none;" id="MathJax_Message"></div><div id="top-box"><div class="top-box-wrapper"><div class="container"><div class="row"><div class="social-box col-lg-2 col-md-3 col-sm-3 pull-right"><div class=""><span class="hidden-xs">Connect with us</span> <a href="https://www.facebook.com/allaboutcircuits" target="_blank"><i class="fa fa-facebook"></i></a>
+<a href="https://twitter.com/AllAboutCircuit" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/all-about-circuits" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<header id="headerProxy">
+<nav id="main-nav" class="navbar yamm affix" role="navigation">
+<div class="container">
+<div class="row">
+<div class="navbar-header">
+<div class="search-active visible-xs pull-right">
+<form action="/search" method="GET" class="navbar-form navbar-right">
+<a href="#" class="close">×</a>
+<i class="search-icon aaccon-search"></i>
+<a href="http://www.allaboutcircuits.com/"><div class="navbar-brand"></div></a>
+<input name="q" class="form-control" placeholder="Search" type="text">
+</form>
+</div>
+<div class="resp-menu-box pull-right movefront">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+ 
+<img src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/mobile-menu-v2.png" class="mobile-menu-icon">
+</button>
+<div class="clearfix"></div>
+</div>
+<div class="user-menu-box pull-right movefront">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#usernavbar" aria-expanded="false" aria-controls="navbar">
+<i class="fa fa-eetech-user"></i>
+</button>
+<div class="clearfix"></div>
+</div>
+<a class="navbar-brand" href="http://www.allaboutcircuits.com/">
+<img class="navLogo" alt="All About Circuits" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/aac_logo.png">
+</a>
+<div class="clearfix"></div>
+</div>
+<div id="navbar" class=" navbar-collapse collapse">
+<ul id="primary-menu" class="nav navbar-nav navbar-right pull-right ">
+<li id="articles_menu" class="dropdown yamm-fw">
+<a class="dropdown-toggle onhover" data-toggle="dropdown" href="#" role="button" aria-expanded="false">ARTICLES <i class="fa fa-chevron-down"></i></a>
+<ul style="display: none;" class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-2 col-md-3 col-sm-3 category-box match-dp-menu">
+<ul id="articles_list" class="category-menu-filter list-unstyled">
+<li class="active" id="articles_news"><a href="http://www.allaboutcircuits.com/news/">DESIGN NEWS</a></li>
+<li id="articles_projects"><a href="http://www.allaboutcircuits.com/projects/">PROJECTS</a></li>
+<li id="articles_technical_articles"><a href="http://www.allaboutcircuits.com/technical-articles/">TECHNICAL ARTICLES</a></li>
+<li id="articles_education"><a href="http://www.allaboutcircuits.com/education/">EDUCATION</a></li>
+ 
+<li id="articles_categories"><a href="http://www.allaboutcircuits.com/latest/">ALL CATEGORIES</a></li>
+</ul>
+</div>
+<div class="menu-articles col-sm-9 col-md-9 col-lg-10 match-dp-menu hidden-xs" id="articles_main"><div class="col-lg-15 col-md-15 col-sm-15 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/silicons-dark-rival-black-arsenic-phosphorus/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Arsenic.png);"></div><span class="caption">Silicon’s Dark Rival - Black Arsenic Phosphorus</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/the-worlds-smallest-and-fastest-chip-is-here-whats-next/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/IBM%2B7nm%2Bchips%2B1.jpg);"></div><span class="caption">The World’s Smallest and Fastest Chip is Here - What’s Next?</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/synaptics-solves-fingerprint-authentication-security/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Fingerprint.png);"></div><span class="caption">Synaptics Solves Fingerprint Authentication Security</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/worlds-smallest-bluetooth-headset/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/dot.jpeg);"></div><span class="caption">World’s Smallest Bluetooth Headset Includes Hefty Tech</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/why-the-microbit-matters/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/microbit.png);"></div><span class="caption">Why the Micro:bit Matters</span></a><div class="clearfix"></div></div></div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li id="forums_menu" class="dropdown yamm-fw"><a class="dropdown-toggle onhover dblclick" data-toggle="dropdown" href="http://forum.allaboutcircuits.com/" role="button" aria-expanded="false">Forum <i class="fa fa-chevron-down"></i></a>
+<ul style="display: none;" class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-2 col-md-3 col-sm-3 category-box match-dp-menu">
+<ul id="forums_list" class="category-menu-filter list-unstyled">
+<li class="active" id="forums_all"><a href="http://forum.allaboutcircuits.com/">ALL FORUMS</a></li>
+<li id="forums_circuits_projects"><a href="http://forum.allaboutcircuits.com/#electronics.3">CIRCUITS &amp; PROJECTS</a></li>
+<li id="forums_embedded_software"><a href="http://forum.allaboutcircuits.com/#software-microcomputing-and-communications.16">EMBEDDED &amp; MICRO</a></li>
+<li id="forums_math_science"><a href="http://forum.allaboutcircuits.com/#math-science.19">MATH &amp; SCIENCE</a></li>
+<li id="forums_community"><a href="http://forum.allaboutcircuits.com/#community.20">COMMUNITY</a>
+</li>
+</ul>
+</div>
+<div class="menu-articles col-sm-9 col-md-9 col-lg-10 match-dp-menu hidden-xs" id="forums_main"><div class="col-lg-15 col-md-15 col-sm-15 forum-thread-item article-img-box"><a href="http://forum.allaboutcircuits.com/threads/beagleboneblack-arduino-ethernet-shield-refuse-to-communicate.113336/"><div class="forum_container"><div class="caption forum_thread">BeagleBoneBlack + Arduino Ethernet shield refuse to communicate</div></div><span class="caption pull-right">29 minutes ago</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 forum-thread-item article-img-box"><a href="http://forum.allaboutcircuits.com/threads/connect-mp3-to-phone-landline.113176/"><div class="forum_container"><div class="caption forum_thread">Connect MP3 to phone landline</div></div><span class="caption pull-right">one hour ago</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 forum-thread-item article-img-box"><a href="http://forum.allaboutcircuits.com/threads/learning-i2c-circuit-help.113318/"><div class="forum_container"><div class="caption forum_thread">Learning I2C - circuit help</div></div><span class="caption pull-right">one hour ago</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 forum-thread-item article-img-box"><a href="http://forum.allaboutcircuits.com/threads/flyback-transformer-wire.113146/"><div class="forum_container"><div class="caption forum_thread">flyback transformer wire</div></div><span class="caption pull-right">about 2 hours ago</span></a><div class="clearfix"></div></div><div class="col-lg-15 col-md-15 col-sm-15 forum-thread-item article-img-box"><a href="http://forum.allaboutcircuits.com/threads/linear-regulator-with-a-pass-transistor-protection.113298/"><div class="forum_container"><div class="caption forum_thread">Linear regulator with a pass transistor protection.</div></div><span class="caption pull-right">about 2 hours ago</span></a><div class="clearfix"></div></div></div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li id="topics_textbook_menu" class="dropdown yamm-fw">
+<a class="dropdown-toggle onhover dblclick" data-toggle="dropdown" href="http://www.allaboutcircuits.com/textbook/" role="button" aria-expanded="false">
+Textbooks <i class="fa fa-chevron-down"></i>
+</a>
+<ul style="display: none;" class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div id="topics_textbook_main" class="menu-articles match-dp-menu hidden-xs"><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/direct-current/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/direct-current.png);"></div><span class="caption">Vol I. - Direct Current</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/alternating-current/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/alternating-current.png);"></div><span class="caption">Vol II. - Alternating Current</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/semiconductors/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/semiconductor.png);"></div><span class="caption">Vol III. - Semiconductors</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/digital/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/digital.png);"></div><span class="caption">Vol IV. - Digital</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/reference/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/reference.png);"></div><span class="caption">Vol V. - Reference</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="" href="http://www.allaboutcircuits.com/textbook/experiments/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/assets/images/menu-articles/experiment.png);"></div><span class="caption">Vol VI. - Experiments</span></a><div class="clearfix"></div></div></div>
+<div class="visible-xs category-box">
+<ul class="category-menu-filter list-unstyled">
+<li><a href="http://www.allaboutcircuits.com/textbook/direct-current/">VOL I. - DIRECT CURRENT</a></li>
+<li><a href="http://www.allaboutcircuits.com/textbook/alternating-current/">VOL II. - ALTERNATING CURRENT</a></li>
+<li><a href="http://www.allaboutcircuits.com/textbook/semiconductors/">VOL III. - SEMICONDUCTORS</a></li>
+<li><a href="http://www.allaboutcircuits.com/textbook/digital/">VOL IV. - DIGITAL</a></li>
+<li><a href="http://www.allaboutcircuits.com/textbook/reference/">VOL V. - REFERENCE</a></li>
+<li><a href="http://www.allaboutcircuits.com/textbook/experiments/">VOL VI. - EXPERIMENTS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li id="topics_iot_menu" class="cat-menu-item hidden-sm dropdown yamm-fw">
+<a href="http://www.allaboutcircuits.com/latest/iot" class="dropdown-toggle onhover dblclick nodropdown" data-toggle="dropdown" role="button" aria-expanded="false">IoT</a>
+<ul class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div id="topics_iot_main" class="menu-articles match-dp-menu hidden-xs">
+</div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li id="topics_arduino_menu" class="cat-menu-item hidden-sm dropdown yamm-fw">
+<a href="http://www.allaboutcircuits.com/latest/arduino" class="dropdown-toggle onhover dblclick nodropdown" data-toggle="dropdown" role="button" aria-expanded="false">ARDUINO</a>
+<ul style="display: none;" class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div id="topics_arduino_main" class="menu-articles match-dp-menu hidden-xs"><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/technical-articles/fritzing-takes-your-design-from-breadboard-to-pcb/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/fritzing-fig1.png);"></div><span class="caption">Fritzing Takes Your Design from Concept to PCB</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/projects/control-a-motor-with-an-arduino/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/c7.png);"></div><span class="caption">Control a DC Motor with an Arduino</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/the-five-best-hardware-kickstarters-that-need-your-money/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/hedgehog.jpeg);"></div><span class="caption">The Five Best Hardware Kickstarters (That Need Your Money)</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/projects/monitor-temperature-with-an-arduino/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/DSCN3142.JPG);"></div><span class="caption">Keep Your Cool: Monitor Temperature with an Arduino</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/projects/how-to-sense-color-with-an-arduino/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Rainbow.png);"></div><span class="caption">Feel the Rainbow: Sensing Color with an Arduino</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/SD3.jpg);"></div><span class="caption">Reading and Writing Files from an SD Card with an Arduino</span></a><div class="clearfix"></div></div></div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li id="topics_power_menu" class="cat-menu-item hidden-sm dropdown yamm-fw">
+<a href="http://www.allaboutcircuits.com/latest/power" class="dropdown-toggle onhover dblclick nodropdown" data-toggle="dropdown" role="button" aria-expanded="false">Power</a>
+<ul style="display: none;" class="dropdown-menu" role="menu">
+<div class="dropdown-content">
+<div class="container-fluid">
+<div class="row">
+<div id="topics_power_main" class="menu-articles match-dp-menu hidden-xs"><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/technical-articles/mesh-analysis-and-dependent-sources/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Mesh-Analysis1.png);"></div><span class="caption">Mesh Analysis and Dependent Sources</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/intersils-new-buck-boost-regular-reimagines-efficiency/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Intersil.png);"></div><span class="caption">Intersil’s New Buck-Boost Regulator Reinvents Efficiency</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/five-ee-blogs-to-get-you-through-the-weekend/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Blogs.png);"></div><span class="caption">Five EE Blogs to Get You Through the Weekend</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/technical-articles/understanding-inductor-designs-for-converters/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/inductor_designs_for_converters.jpg);"></div><span class="caption">Understanding Inductor Designs for Converters</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/top-websites-to-introduce-your-kids-to-ee-during-summer/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/kids.png);"></div><span class="caption">Top Websites to Introduce Your Kids to EE During Summer</span></a><div class="clearfix"></div></div><div class="col-sm-2 col-md-2 col-lg-2 article-img-box"><a class="darken" href="http://www.allaboutcircuits.com/news/the-end-of-the-battery-new-research-points-to-yes/"><div class="article-img" style="background-image: url(//www.allaboutcircuits.com/uploads/thumbnails/_181_123/Supercapacitator.png);"></div><span class="caption">The End of the Battery? New Research Points to Yes</span></a><div class="clearfix"></div></div></div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li class="login-menu-item dropdown hidden-xs">
+<a href="#" class="dropdown-toggle onhover" data-toggle="dropdown" role="button" aria-expanded="false">Log In/Sign Up</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="http://www.allaboutcircuits.com/login/" title="Login to your existing account">Log In</a></li>
+<li><a href="http://forum.allaboutcircuits.com/register" title="Create an account">Sign Up</a></li>
+<li><a href="http://www.allaboutcircuits.com/login/" title="Sign in with your Facebook, Linkedin or Google account">Sign in with <i class="fa fa-facebook"></i> <i class="fa fa-linkedin"></i><i class="fa fa-google-plus"></i></a></li>
+<li><a href="http://forum.allaboutcircuits.com/register">Member Benefits</a></li>
+</ul>
+</li>
+</ul>
+<div class="search-active">
+<form action="/search" method="GET" class="navbar-form navbar-right hidden-xs open open-default">
+<i class="search-icon aaccon-search"></i>
+<input name="q" class="form-control" placeholder="Search" type="text">
+</form>
+</div>
+</div>
+<div id="usernavbar" class="navbar-collapse collapse">
+<ul id="primary-menu" class="nav navbar-nav visible-xs navbar-right pull-right">
+<li><a href="http://www.allaboutcircuits.com/login/">Log In</a></li>
+<li><a href="http://forum.allaboutcircuits.com/register">Sign Up</a></li>
+<li><a href="http://www.allaboutcircuits.com/login/">Sign in with &nbsp;<i class="fa fa-facebook"></i>&nbsp;<i class="fa fa-linkedin"></i>&nbsp;<i class="fa fa-google-plus"></i></a></li>
+
+<li><a href="http://forum.allaboutcircuits.com/register">Member Benefits</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div class="clearfix"></div>
+</header>
+<main class="row-offcanvas row-offcanvas-right">
+<section class="single-post">
+<div class="container">
+<div class="row rowtable">
+<div style="height: 6171px;" class="col-lg-9 col-md-8 col-sm-12 main-content block-1" data-mh="block-1">
+<div class="breadcrumb-wrap hidden-xs">
+<ol class="breadcrumb">
+<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.allaboutcircuits.com/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i> Home</span></a></li>
+<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.allaboutcircuits.com/projects/" itemprop="url"><span itemprop="title">Projects</span></a></li>
+<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="active"><span itemprop="title">Reading and Writing Files from an SD Card with an Arduino</span></li>
+</ol>
+</div>  
+<article>
+<div class="hidden-lg hidden-md col-xs-12 sidebar-link text-right no-padding sidebarDrawer">
+<a href="#" data-toggle="offcanvas">More Projects &nbsp; <i class="fa fa-chevron-right"></i></a>
+<div class="clearfix"></div>
+</div>
+<div class="page-header">
+<h1 id="1643">Reading and Writing Files from an SD Card with an Arduino</h1>
+<p class="meta">June 23, 2015  
+</p></div>
+<hr>
+<div>
+<div class="sp-content-block">
+<div class="lead">You can use an SD card with your Arduino system to store and retrieve information<br>
+</div><p>In some Arduino applications, it is advantageous to be able to 
+store and retrieve information locally. You can do this with a Secure 
+Digital, or SD, card. An SD card is a&nbsp;non-volatile&nbsp;memory 
+card&nbsp;used extensively in portable devices, such as&nbsp;mobile 
+phones,&nbsp;digital&nbsp;cameras, GPS navigation 
+devices,&nbsp;handheld&nbsp;consoles, and&nbsp;tablet&nbsp;computers. 
+Another type of SD Card is the&nbsp;<span>Micro </span><span>SD card. Measuring only 15 mm x 11 mm x 1 mm, i</span>t
+ is the smallest&nbsp;memory card available. It is about one-quarter the
+ size of a normal-sized&nbsp;SD card, or about the size of a fingernail.</p>
+<figure style="text-align: center;"><img alt="SD Card" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/SD1.jpg"><figcaption>SD Card</figcaption>
+</figure>
+<br><figure style="text-align: center;"><figure style="text-align: center;"><br>
+</figure>
+</figure>
+To connect a micro SD card to our Arduino Mega, we will use an Ethernet 
+shield with a micro SD slot on it. There are, however, many different 
+shields available for other types of SD cards.<p>&nbsp; </p>
+<p><img alt="Pins" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/SD2.jpg"> </p>
+<p>As shown in the figure above, a micro SD card has 8 pins. The table below describes the function of each pin.</p>
+<p>Pin &nbsp; Name &nbsp;&nbsp;&nbsp; Description </p>
+<p>1 &nbsp;&nbsp;&nbsp; NC &nbsp;&nbsp;&nbsp; &nbsp; not connected </p>
+<p>2 &nbsp;&nbsp;&nbsp; CS &nbsp; &nbsp;&nbsp;&nbsp; Chip Select/Slave Select (SS) </p>
+<p>3 &nbsp;&nbsp;&nbsp; DI &nbsp; &nbsp; &nbsp; &nbsp; Master Out/Slave In (MOSI) </p>
+<p>4 &nbsp;&nbsp;&nbsp; VDD &nbsp;&nbsp;&nbsp;&nbsp; Supply voltage </p>
+<p>5 &nbsp;&nbsp;&nbsp; CLK &nbsp;&nbsp;&nbsp;&nbsp; Clock (SCK) </p>
+<p>6 &nbsp;&nbsp;&nbsp; VSS &nbsp;&nbsp;&nbsp;&nbsp; Supply voltage ground </p>
+<p>7 &nbsp;&nbsp;&nbsp; DO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master In/Slave Out (MISO) </p>
+<p>8 &nbsp;&nbsp;&nbsp; RSV &nbsp;&nbsp;&nbsp;&nbsp; Reserved</p>
+<p>If you were to try interfacing this SD card yourself, you would have 
+to ensure that you connected the pins of the SD card to the appropriate 
+pins of the Arduino. Since we are using a commercially-available shield,
+ this is not an issue. All we need to do is to declare the&nbsp;default 
+CS (chip select) pin of the Arduino as OUTPUT. This is pin 53 on our 
+Arduino MEGA. On the Ethernet shield, the CS pin is pin number 4. You 
+need to specify this in the code for the SD card to work properly.</p>
+<p><o:p>&nbsp;</o:p></p>
+<h3><b>Experiment 1</b><br>
+<b></b></h3>
+<p>In this experiment, we will learn how to read a file from the SD card.</p>
+<p><o:p>&nbsp;</o:p></p>
+<h4><span>Hardware Required</span></h4>
+<ul>
+<li>1 x micro SD card<br>
+</li>
+<li>1 x Ethernet shield module<br>
+</li>
+<li>1 x Arduino Mega2560<br>
+</li>
+</ul>
+<figure style="text-align: center;"><img alt="" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/SD3.jpg"></figure>
+<figure style="text-align: center;">Arduino MEGA with Ethernet shield installed</figure>
+<h4><br>
+</h4>
+<h4><span>Code</span></h4>
+<p>To read from the SD card, we will use the SD.h library. This code 
+assumes that the file "ourfile.txt" has already been written to the SD 
+card.</p><pre>                    <code class="hljs cpp"><span class="hljs-preprocessor">#include </span><sd.h>
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> cs = <span class="hljs-number">4</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+  Serial.begin(<span class="hljs-number">9600</span>);
+  
+
+
+
+  Serial.print(<span class="hljs-string">"Initializing card..."</span>);
+  <span class="hljs-comment">// make sure that the default chip select pin is declared OUTPUT</span>
+  
+  pinMode(<span class="hljs-number">53</span>, OUTPUT);
+  
+  <span class="hljs-comment">// see if the card is present</span>
+  <span class="hljs-keyword">if</span> (!SD.begin(cs)) 
+  {
+    Serial.println(<span class="hljs-string">"Card failed to initialize, or not present"</span>);
+  
+    <span class="hljs-keyword">return</span>;
+  }
+  Serial.println(<span class="hljs-string">"card initialized."</span>);
+  
+  <span class="hljs-comment">// open the file named ourfile.txt</span>
+  
+  File myfile = SD.open(<span class="hljs-string">"ourfile.txt"</span>);
+
+  <span class="hljs-comment">// if the file is available, read the file</span>
+  <span class="hljs-keyword">if</span> (myfile) 
+  {
+    <span class="hljs-keyword">while</span> (myfile.available())
+    {
+      Serial.write(myfile.read());
+    }
+    myfile.close();
+  }  
+  <span class="hljs-comment">// if the file cannot be opened give error report</span>
+  <span class="hljs-keyword">else</span> {
+    Serial.println(<span class="hljs-string">"error opening the text file"</span>);
+  } 
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+}
+</sd.h></code>
+                  </pre><br><p id="file" class="text-center">
+                    <a href="http://www.allaboutcircuits.com/login/" data-entry-id="1087" class="btn btn-theme btn-assets "><i class="fa fa-download"></i> &nbsp; Download Code</a> &nbsp;
+                  </p><br><h2><b>Experiment 2</b></h2>
+
+ <p><b></b></p>
+
+ <p><span>In this experiment, we will learn how to create a file, write it, and then read it from SD card.</span></p>
+
+ <h4><b style="color: rgb(55, 68, 77);"><br>
+ </b></h4>
+
+ <h4><span>Hardware Required</span></h4>
+
+ <p><span>We will use the same hardware as the previous experiment</span></p>
+
+ <h4><b style="color: rgb(55, 68, 77);"><br>
+ </b></h4>
+
+ <h4><span>Code</span></h4>
+
+ <p>To write a file to the SD card and to read that file, we will again use the SD.h library.</p><pre>                    <code class="hljs cpp"><span class="hljs-preprocessor">#include </span><sd.h>
+
+File myfile;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+ 
+  Serial.begin(<span class="hljs-number">9600</span>);
+  
+  Serial.print(<span class="hljs-string">"Initializing card..."</span>);
+  
+  <span class="hljs-comment">// declare default CS pin as OUTPUT</span>
+   pinMode(<span class="hljs-number">53</span>, OUTPUT);
+   
+  <span class="hljs-keyword">if</span> (!SD.begin(<span class="hljs-number">4</span>)) {
+    Serial.println(<span class="hljs-string">"initialization of the SD card failed!"</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+  Serial.println(<span class="hljs-string">"initialization of the SDcard is done."</span>);
+  
+ 
+  myfile = SD.open(<span class="hljs-string">"textFile.txt"</span>, FILE_WRITE);
+  
+  
+  <span class="hljs-keyword">if</span> (myfile)
+  {
+    Serial.print(<span class="hljs-string">"Writing to the text file..."</span>);
+    myfile.println(<span class="hljs-string">"Congratulations! You have successfully wrote on the text file."</span>);
+	
+    myfile.close(); <span class="hljs-comment">// close the file:</span>
+    Serial.println(<span class="hljs-string">"done closing."</span>);
+  } <span class="hljs-keyword">else</span>
+  {
+    <span class="hljs-comment">// if the file didn't open, report an error:</span>
+    Serial.println(<span class="hljs-string">"error opening the text file!"</span>);
+  }
+  
+  <span class="hljs-comment">// re-open the text file for reading:</span>
+  myfile = SD.open(<span class="hljs-string">"textFile.txt"</span>);
+  <span class="hljs-keyword">if</span> (myfile)
+  {
+    Serial.println(<span class="hljs-string">"textFile.txt:"</span>);
+    
+    <span class="hljs-comment">// read all the text written on the file</span>
+    <span class="hljs-keyword">while</span> (myfile.available()) 
+    {
+    	Serial.write(myfile.read());
+    }
+    <span class="hljs-comment">// close the file:</span>
+    myfile.close();
+  } <span class="hljs-keyword">else</span> 
+  {
+  	<span class="hljs-comment">// if the file didn't open, report an error:</span>
+    Serial.println(<span class="hljs-string">"error opening the text file!"</span>);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+}
+</sd.h></code>
+                  </pre><br><p id="file" class="text-center">
+                    <a href="http://www.allaboutcircuits.com/login/" data-entry-id="1087" class="btn btn-theme btn-assets "><i class="fa fa-download"></i> &nbsp; Download Code</a> &nbsp;
+                  </p><br><h4>Video</h4><div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/preview.xhtml" height="480" width="640"></iframe>
+                  </div><br>
+              </div>
+            
+                            
+                            <!-- /62616433/main_leaderboard -->
+<!--  style='height:90px; width:728px;' -->
+<br>
+<div style="display: none;" id="div-gpt-ad-1430160961981-0" class="leaderboard_ad">
+	<script type="text/javascript">
+		googletag.cmd.push(function() {googletag.display('div-gpt-ad-1430160961981-0');});
+	</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/62616433/main_leaderboard_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/62616433/main_leaderboard_0" id="google_ads_iframe_/62616433/main_leaderboard_0" frameborder="0" height="50" width="320"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/62616433/main_leaderboard_0__hidden__" id="google_ads_iframe_/62616433/main_leaderboard_0__hidden__" frameborder="0" height="0" width="0"></iframe></div>
+<br>
+                            <div class="meta-tags">
+                                <h3 class="pull-left"><b>Tags:</b></h3>
+                                <div class="tags pull-left">
+                                    
+                                    <a href="#" class="tag">SD Card</a>
+
+                                    
+                                    <a href="#" class="tag">arduino</a>
+
+                                    
+                                </div>
+                                <div class="clearfix">&nbsp;</div>
+                            </div>
+                        </div>
+                         <div class="social-media-shares">
+	<div class="item">
+		<div class="facebook">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook">
+				<i class="fa fa-facebook"></i><span class="counter hidden-sm hidden-xs">Share</span>
+			</a>
+		</div>
+    </div>
+                             
+	<div class="item">
+		<div class="twitter">
+			<a href="https://twitter.com/share?url=http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino&amp;via=allaboutcircuit" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter">
+				<i class="fa fa-twitter"></i><span class="counter hidden-sm hidden-xs">Share</span>
+			</a>                                    
+       	</div>
+	</div>
+
+	<div class="item">
+    	<div class="google-plus">
+			<a href="https://plus.google.com/share?url=http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=480');return false;" target="_blank" title="Share on Google+">                                
+				<i class="fa fa-google-plus"></i><span class="counter hidden-sm hidden-xs">Share</span>
+			</a>                                   
+		</div>
+	</div>
+                            
+	<div class="item">
+		<div class="linkedin">
+			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Linkedin">                                
+				<i class="fa fa-linkedin"></i><span class="counter hidden-sm hidden-xs">Share</span>
+			</a>                                    
+		</div>
+	 </div>
+</div>
+
+
+
+
+
+
+
+                        <hr>
+                        <h3 id="comments-control"><a href="#"><b>Comments</b><i class="fa fa-chevron-up"></i></a></h3>
+<div id="comments-wrap" class="disqus-theme comments-box collapse in">
+ <h4><span><b>
+0 comments
+</b></span><a href="http://www.allaboutcircuits.com/login/" class="pull-right login"><i class="fa fa-comment"></i>Login</a></h4>
+  <hr>
+  
+  <div class="row">
+  <div id="comments" class="col-sm-12">
+    <form id="main-form" method="post" action="http://www.allaboutcircuits.com/">
+<div class="hiddenFields">
+<input name="ACT" value="25" type="hidden">
+<input name="RET" value="http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" type="hidden">
+<input name="URI" value="projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" type="hidden">
+<input name="entry_id" value="1087" type="hidden">
+<input name="parent_id" value="0" type="hidden">
+<input name="site_id" value="1" type="hidden">
+<input name="csrf_token" value="3e08da2c3540078fd93beaab88887bc99663ad35" type="hidden">
+</div>
+
+<div class="form-group">
+              <textarea placeholder="Please login before you can comment." readonly="readonly" name="comment" class="form-control comment-comment"></textarea>
+          </div></form>
+
+    
+
+    <form id="reply-form" class="hidden well" method="post" action="http://www.allaboutcircuits.com/">
+<div class="hiddenFields">
+<input name="ACT" value="25" type="hidden">
+<input name="RET" value="http://www.allaboutcircuits.com/projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" type="hidden">
+<input name="URI" value="projects/reading-and-writing-files-from-an-sd-card-with-an-arduino" type="hidden">
+<input name="entry_id" value="1087" type="hidden">
+<input name="parent_id" value="0" type="hidden">
+<input name="site_id" value="1" type="hidden">
+<input name="csrf_token" value="3e08da2c3540078fd93beaab88887bc99663ad35" type="hidden">
+</div>
+
+<div class="form-group">
+              <textarea placeholder="Please login before you can reply to this comment." readonly="readonly" name="comment" class="form-control comment-comment"></textarea>
+          </div></form>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  </div>
+  
+
+</div>
+                    </article>
+
+                    <div class="clearfix">&nbsp;</div>
+                </div><!-- main-content -->
+                <div style="height: 6171px;" class="col-lg-3 col-md-4 col-sm-5 col-xs-6 right-sidebar sidebar-offcanvas block-1" data-mh="block-1">
+                    <div class="widget forum-threads">
+
+    <div class="hidden-lg hidden-md hidden-sm col-xs-12 sidebar-link">
+        <br>
+        <a href="#" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Close</a>
+        <div class="clearfix"></div>
+    </div>
+
+     
+    <h3>Related Content</h3>
+    <ul class="sidebar-articles">
+        <li class="forum-item">
+            <a href="http://www.allaboutcircuits.com/projects/servo-control-with-arduino-through-matlab/"><div class="forum-link-container"><h5 class="forum-title">Servo Control with Arduino Through MATLAB</h5>
+            <span class="meta">Project</span>
+            </div></a>
+        </li><li class="forum-item">
+            <a href="http://www.allaboutcircuits.com/technical-articles/the-efm8-series-from-silicon-laboratories-a-powerful-new-embedded-developme/"><div class="forum-link-container"><h5 class="forum-title">The EFM8 Series from Silicon Laboratories: A Powerful New Embedded Development Platform</h5>
+            <span class="meta">Technical Article</span>
+            </div></a>
+        </li><li class="forum-item">
+            <a href="http://www.allaboutcircuits.com/news/intersils-new-buck-boost-regular-reimagines-efficiency/"><div class="forum-link-container"><h5 class="forum-title">Intersil’s New Buck-Boost Regulator Reinvents Efficiency</h5>
+            <span class="meta">News</span>
+            </div></a>
+        </li><li class="forum-item">
+            <a href="http://www.allaboutcircuits.com/worksheets/microphones/"><div class="forum-link-container"><h5 class="forum-title">Microphones</h5>
+            <span class="meta">Worksheet</span>
+            </div></a>
+        </li>
+        <li class="forum-item"><a href="http://www.allaboutcircuits.com/projects/"><div class="forum-link-container">← Projects Index</div></a></li>
+    </ul>
+    
+</div>
+                    
+                    <div style="position: fixed; top: 50px; width: 328px;" id="stick_column" class="widget ads sidepin leaderboard_ad is_stuck">
+	<!-- /62616433/main_sidebar -->
+	<div id="div-gpt-ad-1429623690593-0">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {googletag.display('div-gpt-ad-1429623690593-0');});
+		</script>
+	<div style="border: 0pt none;" id="google_ads_iframe_/62616433/main_sidebar_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/62616433/main_sidebar_0" id="google_ads_iframe_/62616433/main_sidebar_0" frameborder="0" height="249" width="298"></iframe></div></div>
+  
+</div><div style="position: static; width: 328px; height: 289px; display: block; vertical-align: baseline; float: none;"></div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+</main>
+  
+
+<footer>
+    <div class="widgets-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4  col-xs-12 widget-item">
+                    <h4>WHO WE ARE</h4>
+                    <p>
+                        <a class="logo-link" href="http://www.allaboutcircuits.com/"><img class="navLogo" alt="All About Circuits" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/aac_logo.png">
+                        </a>
+                    </p>
+                    <div class="description"> <a href="http://www.allaboutcircuits.com/contact-us/" class="see-more">More about us <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6 widget-item">
+                    <h4>Content</h4>
+                    <div class="col-md-6 col-sm-12 footer-links">
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.allaboutcircuits.com/news/">News</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/projects/">Projects</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/technical-articles/">Technical Articles</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/textbook/">Textbook</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-12 footer-links">
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.allaboutcircuits.com/downloads/">Downloads</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/video-lectures/">Video Lectures</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/worksheets/">Worksheets</a>
+                            </li>
+                            <li><a href="http://forum.allaboutcircuits.com/">Forum</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6 widget-item">
+                    <h4>Categories</h4>
+                    <div class="col-md-6 col-sm-12 footer-links">
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.allaboutcircuits.com/latest/">Latest</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/latest/arduino/">Arduino</a>
+                            </li>
+                            
+                            <li><a href="http://www.allaboutcircuits.com/latest/power/">Power</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/latest/embedded/">Embedded</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-12 footer-links">
+                        <ul class="list-unstyled">
+
+                            <li><a href="http://www.allaboutcircuits.com/latest/iot/">IoT</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/latest/sensors/">Sensors</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/latest/digital-ics/">Digital ICs</a>
+                            </li>
+                            <li><a href="http://www.allaboutcircuits.com/latest/test-and-measurement/">Test &amp; Measurement</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12 widget-item social-widget-box">
+                    <div class="row">
+                        <h4>Connect with Us</h4>
+                        <div class="col-md-6 col-sm-6 col-xs-6 footer-links">
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/allaboutcircuits" target="_blank">Facebook</a>
+                                </li>
+                                <li><a href="https://twitter.com/AllAboutCircuit" target="_blank">Twitter</a>
+                                </li>
+                                <li><a href="http://www.allaboutcircuits.com/contact-us/">Contact Us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 footer-links">
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.youtube.com/channel/UCYTq2bhe5pim45pAEU-gDjw" target="_blank">YouTube</a>
+                                </li>
+                                <li><a href="https://www.linkedin.com/company/all-about-circuits" target="_blank">LinkedIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm visible-xs">&nbsp;</div>
+                    
+                    <div class="row">
+                        <h4>Sign Up</h4>
+                        <div class="newsletter-box">
+                            <form class="form-inline" role="form">
+                                <div class="input-group">
+
+                                    <input id="signupemail" class="form-control" placeholder="Enter your email address" type="text">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn" onclick="window.location.href='//forum.allaboutcircuits.com/register?email='+$('#signupemail').val();">Register</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p>© <a href="http://eetech.com/" target="_blank">EETech Media, LLC</a>. All rights reserved</p>
+                </div>
+                <div class="col-md-6 col-sm-6 hidden-xs">
+                    <a href="http://www.allaboutcircuits.com/privacy-policy/">Privacy Policy</a> · <a href="http://forum.allaboutcircuits.com/help/terms">Terms of Service</a> · <a href="http://www.allaboutcircuits.com/user-agreement/">User Agreement</a>
+                    <div class="back-to-top pull-right sm-hidden"><img src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/btn-scrollUp.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/jquery_003.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/bootstrap.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/bootstrap-hover-dropdown.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/modernizr.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/sticky-kit.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/jquery.js"></script>
+
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/adpopup-pro.js"></script>
+
+
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/main.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/menu.js"></script>
+<script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/highlight.js"></script>
+  <script type="text/javascript" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/MathJax.js"></script>
+  <script type="text/javascript" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/articles.js"></script>
+
+
+
+<!-- /62616433/main_wallpaper -->
+<div style="display: none;" id="div-gpt-ad-1430235245447-0" class="wallpaperadpixel">
+	<script type="text/javascript">
+		googletag.cmd.push(function() {googletag.display('div-gpt-ad-1430235245447-0');});
+	</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/62616433/main_wallpaper_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/62616433/main_wallpaper_0" id="google_ads_iframe_/62616433/main_wallpaper_0" frameborder="0" height="1" width="1"></iframe></div></div>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+      var ads = {
+        'ad_1': {
+          'type': 'jquery',
+          'elem': '#div-gpt-ad-1430160889889-0'
+        }
+      };
+
+      $('body').adPopupPro({
+        ads: ads,
+        width: 640,
+        height: 480,
+        popup_color: 'dark',
+        overlay_close: false,
+        overlay_color: 'dark',
+        auto_close_after: 15000,
+        escape_close: true,
+        show_type: 'day',
+        cookie_id: 'aac_welcome'
+      });
+});
+
+$('#div-gpt-ad-1430160889889-0').bind('adready',function() {
+	$('.adpopup-overlay').show();
+	$('.adpopup').show();
+});
+</script>
+
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1454132-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script><script src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/check_359604.js" type="text/javascript" async=""></script><iframe style="visibility: hidden; display: none;" src="Reading%20and%20Writing%20Files%20from%20an%20SD%20Card%20with%20an%20Arduino_files/container.html"></iframe>
+
+
+<iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_9772037733122"></iframe></body></html>

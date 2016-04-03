@@ -1,0 +1,3785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+<title>
+        								  TinyGPS++&nbsp;|&nbsp;Arduiniana				        </title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/style.css" type="text/css" media="screen">
+    <link rel="icon" type="image/png" href="http://arduiniana.org/wp-content/themes/inuitypes/images/favicon.ico"> 
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://arduiniana.org/feed/">
+    <link rel="pingback" href="http://arduiniana.org/xmlrpc.php">
+		
+<link rel="alternate" type="application/rss+xml" title="Arduiniana » TinyGPS++ Comments Feed" href="http://arduiniana.org/libraries/tinygpsplus/feed/">
+<script src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/ca-pub-7419063236844482.js" type="text/javascript" async=""></script><script type="text/javascript" src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://arduiniana.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://arduiniana.org/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="IridiumSBD" href="http://arduiniana.org/libraries/iridiumsbd/">
+<meta name="generator" content="WordPress 3.3.1">
+<link rel="canonical" href="http://arduiniana.org/libraries/tinygpsplus/">
+		<link href="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/2-white-red.css" rel="stylesheet" type="text/css">
+<link href="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/shCore.css" type="text/css" rel="stylesheet"><link href="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/shThemeDefault.css" type="text/css" rel="stylesheet"><style type="text/css" id="syntaxhighlighteranchor"></style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="wrapper">
+	
+	<div class="top_menu">
+	
+	    <div class="fl">
+	
+            <ul id="pagenav" class="page-menu">
+			
+			    <li><a href="http://arduiniana.org/">Home</a></li>
+					            
+			    <li class="page_item page-item-235 current_page_ancestor current_page_parent"><a href="http://arduiniana.org/libraries/">Libraries</a>
+<ul class="children">
+	<li class="page_item page-item-5"><a href="http://arduiniana.org/libraries/tinygps/">TinyGPS</a></li>
+	<li class="page_item page-item-61"><a href="http://arduiniana.org/libraries/newsoftserial/">NewSoftSerial</a></li>
+	<li class="page_item page-item-119"><a href="http://arduiniana.org/libraries/streaming/">Streaming</a></li>
+	<li class="page_item page-item-154"><a href="http://arduiniana.org/libraries/pstring/">PString</a></li>
+	<li class="page_item page-item-221"><a href="http://arduiniana.org/libraries/flash/">Flash</a></li>
+	<li class="page_item page-item-856"><a href="http://arduiniana.org/libraries/pwmservo/">PWMServo</a></li>
+	<li class="page_item page-item-1170"><a href="http://arduiniana.org/libraries/iridiumsbd/">IridiumSBD</a></li>
+	<li class="page_item page-item-1241 current_page_item"><a href="http://arduiniana.org/libraries/tinygpsplus/">TinyGPS++</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4"><a href="http://arduiniana.org/about/">About</a></li>
+<li class="page_item page-item-363"><a href="http://arduiniana.org/projects/">Projects</a>
+<ul class="children">
+	<li class="page_item page-item-365"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/">The Reverse Geocache™ Puzzle</a>
+	<ul class="children">
+		<li class="page_item page-item-865"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/building/">Building a Puzzle Box</a></li>
+		<li class="page_item page-item-1143"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/buying-a-puzzle-box/">Buying a Puzzle Box</a></li>
+		<li class="page_item page-item-766"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/more-puzzle-box-tales/">More Puzzle Box Tales</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+			        
+		    </ul> 
+	   
+	    </div>
+
+	    <div class="fr">
+		    
+			<span class="subscribe">
+			
+
+
+<!-- Code inserted by Mikal Hart-->
+
+<form method="POST" action="//box.arduiniana.org/mailman/subscribe/puzzle_box.arduiniana.org">
+Email: <input name="email" size="10" type="Text"> <input name="email-button" value="Subscribe!" color="#0000FF" background="#0000FF" font="11px Verdana" type="Submit">
+
+<!-- End code inserted by Mikal Hart-->
+
+
+
+
+
+
+			<a class="admin-link" href="http://arduiniana.org/wp-admin/">Admin</a>			
+			<a href="http://arduiniana.org/feed/"><span class="rss-button">RSS</span></a> &nbsp;Subscribe:&nbsp;
+			
+			<!-- Feedburner: START -->
+			
+			<a href="http://arduiniana.org/feed/">RSS feed</a>			
+						
+			<!-- Feedburner: END -->
+			
+<!-- Code inserted by Mikal Hart-->
+ </form>
+<!-- End code inserted by Mikal Hart-->
+			</span>
+			
+	    </div>
+	
+	    </div>
+		
+		<!-- AdSense Top Single: START -->
+	
+	        	
+		
+        <!-- AdSense Top Single: END -->
+		
+		<div class="page">
+
+			<div class="content content_left">
+
+                <div id="header">
+				
+				    			
+			            <div class="blog-title"><a href="http://arduiniana.org/">Arduiniana</a></div>
+			
+		                <div class="blog-description">Arduino wisdom and gems by Mikal Hart</div>
+			
+			        	
+					
+				</div>
+				    
+  
+	        
+		<div class="post">
+		
+		    <div id="header-about">
+    
+	            <h2>TinyGPS++ </h2>
+			
+			</div>
+			          
+            <div class="entry">
+				
+			    <h3>A *NEW* Full-featured GPS/NMEA Parser for Arduino</h3>
+<p>TinyGPS++ is a new Arduino library for parsing NMEA data streams provided by GPS modules.</p>
+<p>Like its predecessor, TinyGPS, this library provides compact and 
+easy-to-use methods for extracting position, date, time, altitude, 
+speed, and course from consumer GPS devices.&nbsp; </p>
+<p>However, TinyGPS++’s programmer interface is considerably simpler to 
+use than TinyGPS, and the new library can extract arbitrary data from 
+any of the myriad NMEA sentences out there, even proprietary ones.</p>
+<h3>Download and Installation</h3>
+<p>To install this library, download here, unzip the archive into the 
+Arduino “libraries” folder, and restart Arduino.  You should rename the 
+folder “TinyGPSPlus”.<br>
+<a href="https://github.com/mikalhart/TinyGPSPlus/releases"><img src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/green-download-button-150x150.jpg" alt="Download" title="Download" class="aligncenter size-thumbnail wp-image-1357" height="150" width="150"></a><br>
+</p><h3>History</h3>
+<p>TinyGPS++ is the immediate inheritor of <a title="TinyGPS" href="http://arduiniana.org/libraries/tinygps/" target="_blank">TinyGPS</a>,
+ a popular compact parser that is used in Arduino installations around 
+the world. &nbsp;TinyGPS++ is not quite as ‘tiny’ as its older sibling, 
+but its powerful and extremely easy-to-use new object model and useful 
+new feature set make it an attractive alternative.</p>
+<h3>Usage</h3>
+<p>Let’s say you have an Arduino hooked to an off-the-shelf GPS device 
+and you want to display your altitude. &nbsp;You would simply create a 
+TinyGPS++ instance like this:</p>
+<div><div id="highlighter_465013" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp preprocessor">#include "TinyGPS++.h"</code></div><div class="line number2 index1 alt1"><code class="cpp plain">TinyGPSPlus gps;</code></div></div></td></tr></tbody></table></div></div>
+<p>Repeatedly feed it characters from your GPS device:</p>
+<div><div id="highlighter_960833" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">while</code> <code class="cpp plain">(ss.available() &gt; 0)</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">gps.encode(ss.read());</code></div></div></td></tr></tbody></table></div></div>
+<p>Then query it for the desired information:</p>
+<div><div id="highlighter_13540" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">if</code> <code class="cpp plain">(gps.altitude.isUpdated())</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">Serial.println(gps.altitude.meters());</code></div></div></td></tr></tbody></table></div></div>
+<h3>Differences from TinyGPS</h3>
+<p>Although TinyGPS++ shares much the same compact parsing engine with 
+TinyGPS, its programmer interface is somewhat more intuitive. &nbsp;As a
+ simple example, here’s how easy it is to print out the current 
+latitude, longitude, and altitude in TinyGPS++:</p>
+<div><div id="highlighter_455550" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"LAT="</code><code class="cpp plain">);&nbsp; Serial.println(gps.location.lat(), 6);</code></div><div class="line number2 index1 alt1"><code class="cpp plain">Serial.print(</code><code class="cpp string">"LONG="</code><code class="cpp plain">); Serial.println(gps.location.lng(), 6);</code></div><div class="line number3 index2 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"ALT="</code><code class="cpp plain">);&nbsp; Serial.println(gps.altitude.meters());</code></div></div></td></tr></tbody></table></div></div>
+<p>Both libraries extract basic position, altitude, course, time, and date, etc. from two common NMEA sentences,  <strong>$GPGGA</strong> and <strong>$GPRMC</strong>.
+  But there are a number of other interesting sentences out there, both 
+NMEA-defined and vendor-proprietary, just waiting to be harvested.</p>
+<p>Consider the obscure <strong><a title="GPRMB" href="http://aprs.gids.nl/nmea/#rmb" target="_blank">$GPRMB</a></strong>, for example, which provides “recommended minimum navigation information” if you have a destination waypoint defined.</p>
+<pre>$GPRMB,A,4.08,L,EGLL,EGLM,5130.02,N,00046.34,W,004.6,213.9,122.9,A*3D</pre>
+<p>With TinyGPS++ it is now possible to extract just the “L” in the third field (it means “steer <strong>L</strong>eft!”).  It’s easy with the new TinyGPSCustom watcher object:</p>
+<div><div id="highlighter_455362" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">TinyGPSCustom steerDirection(gps, </code><code class="cpp string">"GPRMB"</code><code class="cpp plain">, 3);</code></div><div class="line number2 index1 alt1"><code class="cpp plain">...</code></div><div class="line number3 index2 alt2"><code class="cpp plain">Serial.print(steerDirection.value()); </code><code class="cpp comments">// prints "L" or "R"</code></div></div></td></tr></tbody></table></div></div>
+<p>Naturally, this extra functionality comes at some cost.&nbsp; 
+TinyGPS++ consumes somewhat more memory than TinyGPS, and it’s interface
+ is incompatible.&nbsp; So how to decide whether to update?&nbsp; Here’s
+ a guide:</p>
+<p>Consider TinyGPS++ over TinyGPS if:</p>
+<ul>
+<li>Compatibility with existing code (using TinyGPS) isn’t necessary.</li>
+<li>Your sketch is not close to reaching RAM or flash resource limits.</li>
+<li>You are running on Due or processor which can take advantage of the higher precision of 64-bit “double” floating-point.</li>
+<li>You prefer the more intuitive object model.</li>
+<li>You need to query for NMEA data beyond the basic location, date, time, altitude, course, speed, satellites or hdop.</li>
+</ul>
+<h3>Feeding the Hungry Object</h3>
+<p>To get TinyGPS++ to work, you have to repeatedly funnel the characters to it from the GPS module using the <strong>encode()</strong> method. For example, if your GPS module is attached to pins 4(RX) and 3(TX), you might write code like this:</p>
+<div><div id="highlighter_127738" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">SoftwareSerial ss(4, 3);</code></div><div class="line number2 index1 alt1"><code class="cpp keyword bold">void</code> <code class="cpp plain">loop()</code></div><div class="line number3 index2 alt2"><code class="cpp plain">{</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">while</code> <code class="cpp plain">(ss.available() &gt; 0)</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps.encode(ss.read);</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">...</code></div></div></td></tr></tbody></table></div></div>
+<p>After the object has been “fed” you can query it to see if any data fields have been updated:</p>
+<div><div id="highlighter_839637" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(gps.location.isUpdated())</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Serial.print(</code><code class="cpp string">"LAT="</code><code class="cpp plain">); Serial.print(gps.location.lat(), 6);</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Serial.print(</code><code class="cpp string">"LNG="</code><code class="cpp plain">); Serial.println(gps.location.lng(), 6);</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number6 index5 alt1"><code class="cpp plain">} </code><code class="cpp comments">// end loop()</code></div></div></td></tr></tbody></table></div></div>
+<h3>The TinyGPS++ Object Model</h3>
+<p>The main TinyGPS++ object contains several core sub-objects:</p>
+<ul>
+<li><b>location</b> – the latest position fix</li>
+<li><b>date</b> – the latest date fix (UT)</li>
+<li><b>time</b> – the latest time fix (UT)</li>
+<li><b>speed</b> – current ground speed</li>
+<li><b>course</b> – current ground course</li>
+<li><b>altitude</b> – latest altitude fix</li>
+<li><b>satellites</b> – the number of visible, participating satellites</li>
+<li><b>hdop</b> – horizontal diminution of precision</li>
+</ul>
+<p>Each provides methods to examine its current value, sometimes in multiple formats and units. Here’s a complete list:</p>
+<div><div id="highlighter_710570" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">Serial.println(gps.location.lat(), 6); </code><code class="cpp comments">// Latitude in degrees (double)</code></div><div class="line number2 index1 alt1"><code class="cpp plain">Serial.println(gps.location.lng(), 6); </code><code class="cpp comments">// Longitude in degrees (double)</code></div><div class="line number3 index2 alt2"><code class="cpp plain">Serial.print(gps.location.rawLat().negative ? </code><code class="cpp string">"-"</code> <code class="cpp plain">: </code><code class="cpp string">"+"</code><code class="cpp plain">);</code></div><div class="line number4 index3 alt1"><code class="cpp plain">Serial.println(gps.location.rawLat().deg); </code><code class="cpp comments">// Raw latitude in whole degrees</code></div><div class="line number5 index4 alt2"><code class="cpp plain">Serial.println(gps.location.rawLat().billionths);</code><code class="cpp comments">// ... and billionths (u16/u32)</code></div><div class="line number6 index5 alt1"><code class="cpp plain">Serial.print(gps.location.rawLng().negative ? </code><code class="cpp string">"-"</code> <code class="cpp plain">: </code><code class="cpp string">"+"</code><code class="cpp plain">);</code></div><div class="line number7 index6 alt2"><code class="cpp plain">Serial.println(gps.location.rawLng().deg); </code><code class="cpp comments">// Raw longitude in whole degrees</code></div><div class="line number8 index7 alt1"><code class="cpp plain">Serial.println(gps.location.rawLng().billionths);</code><code class="cpp comments">// ... and billionths (u16/u32)</code></div><div class="line number9 index8 alt2"><code class="cpp plain">Serial.println(gps.date.value()); </code><code class="cpp comments">// Raw date in DDMMYY format (u32)</code></div><div class="line number10 index9 alt1"><code class="cpp plain">Serial.println(gps.date.year()); </code><code class="cpp comments">// Year (2000+) (u16)</code></div><div class="line number11 index10 alt2"><code class="cpp plain">Serial.println(gps.date.month()); </code><code class="cpp comments">// Month (1-12) (u8)</code></div><div class="line number12 index11 alt1"><code class="cpp plain">Serial.println(gps.date.day()); </code><code class="cpp comments">// Day (1-31) (u8)</code></div><div class="line number13 index12 alt2"><code class="cpp plain">Serial.println(gps.</code><code class="cpp functions bold">time</code><code class="cpp plain">.value()); </code><code class="cpp comments">// Raw time in HHMMSSCC format (u32)</code></div><div class="line number14 index13 alt1"><code class="cpp plain">Serial.println(gps.</code><code class="cpp functions bold">time</code><code class="cpp plain">.hour()); </code><code class="cpp comments">// Hour (0-23) (u8)</code></div><div class="line number15 index14 alt2"><code class="cpp plain">Serial.println(gps.</code><code class="cpp functions bold">time</code><code class="cpp plain">.minute()); </code><code class="cpp comments">// Minute (0-59) (u8)</code></div><div class="line number16 index15 alt1"><code class="cpp plain">Serial.println(gps.</code><code class="cpp functions bold">time</code><code class="cpp plain">.second()); </code><code class="cpp comments">// Second (0-59) (u8)</code></div><div class="line number17 index16 alt2"><code class="cpp plain">Serial.println(gps.</code><code class="cpp functions bold">time</code><code class="cpp plain">.centisecond()); </code><code class="cpp comments">// 100ths of a second (0-99) (u8)</code></div><div class="line number18 index17 alt1"><code class="cpp plain">Serial.println(gps.speed.value()); </code><code class="cpp comments">// Raw speed in 100ths of a knot (i32)</code></div><div class="line number19 index18 alt2"><code class="cpp plain">Serial.println(gps.speed.knots()); </code><code class="cpp comments">// Speed in knots (double)</code></div><div class="line number20 index19 alt1"><code class="cpp plain">Serial.println(gps.speed.mph()); </code><code class="cpp comments">// Speed in miles per hour (double)</code></div><div class="line number21 index20 alt2"><code class="cpp plain">Serial.println(gps.speed.mps()); </code><code class="cpp comments">// Speed in meters per second (double)</code></div><div class="line number22 index21 alt1"><code class="cpp plain">Serial.println(gps.speed.kmph()); </code><code class="cpp comments">// Speed in kilometers per hour (double)</code></div><div class="line number23 index22 alt2"><code class="cpp plain">Serial.println(gps.course.value()); </code><code class="cpp comments">// Raw course in 100ths of a degree (i32)</code></div><div class="line number24 index23 alt1"><code class="cpp plain">Serial.println(gps.course.deg()); </code><code class="cpp comments">// Course in degrees (double)</code></div><div class="line number25 index24 alt2"><code class="cpp plain">Serial.println(gps.altitude.value()); </code><code class="cpp comments">// Raw altitude in centimeters (i32)</code></div><div class="line number26 index25 alt1"><code class="cpp plain">Serial.println(gps.altitude.meters()); </code><code class="cpp comments">// Altitude in meters (double)</code></div><div class="line number27 index26 alt2"><code class="cpp plain">Serial.println(gps.altitude.miles()); </code><code class="cpp comments">// Altitude in miles (double)</code></div><div class="line number28 index27 alt1"><code class="cpp plain">Serial.println(gps.altitude.kilometers()); </code><code class="cpp comments">// Altitude in kilometers (double)</code></div><div class="line number29 index28 alt2"><code class="cpp plain">Serial.println(gps.altitude.feet()); </code><code class="cpp comments">// Altitude in feet (double)</code></div><div class="line number30 index29 alt1"><code class="cpp plain">Serial.println(gps.satellites.value()); </code><code class="cpp comments">// Number of satellites in use (u32)</code></div><div class="line number31 index30 alt2"><code class="cpp plain">Serial.println(gps.hdop.value()); </code><code class="cpp comments">// Horizontal Dim. of Precision (100ths-i32)</code></div></div></td></tr></tbody></table></div></div>
+<h3>Validity, Update status, and Age</h3>
+<p>You can examine an object’s value at any time, but unless TinyGPS++ 
+has recently been fed from the GPS, it should not be considered valid 
+and up-to-date.  The <b>isValid()</b> method will tell you whether the object contains any valid data and is safe to query.</p>
+<p>Similarly, <b>isUpdated()</b> indicates whether the object’s value has been updated (not necessarily <i>changed</i>) since the last time you queried it.</p>
+<p>Lastly, if you want to know how stale an object’s data is, call its <b>age()</b>
+ method, which returns the number of milliseconds since its last update.
+  If this returns a value greater than 1500 or so, it may be a sign of a
+ problem like a lost fix.</p>
+<h3>Debugging</h3>
+<p>When a TinyGPS++ sketch fails, it’s usually because the object received an incomplete NMEA stream, or perhaps none at all.</p>
+<p>Fortunately, it’s pretty easy to determine what’s going wrong using some built-in diagnostic methods:</p>
+<ul>
+<li><strong>charsProcessed()</strong> – the total number of characters received by the object</li>
+<li><strong>sentencesWithFix()</strong> – the number of $GPRMC or $GPGGA sentences that had a fix</li>
+<li><strong>failedChecksum()</strong> – the number of sentences of all types that failed the checksum test</li>
+<li><strong>passedChecksum()</strong> – the number of sentences of all types that passed the checksum test</li>
+</ul>
+<p>If your sketch has been running a while but charsProcessed() is 
+returning 0, you likely have a problem with your wiring or serial 
+connection.  (If data never arrives from the GPS unit, it stands to 
+reason it’s not getting to TinyGPS++.)  I often insert a little debug 
+clause into my GPS sketches detects this condition then prints out the 
+incoming stream:</p>
+<div><div id="highlighter_375814" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">// Debug: if we haven't seen lots of data in 5 seconds, something's wrong.</code></div><div class="line number2 index1 alt1"><code class="cpp keyword bold">if</code> <code class="cpp plain">(millis() &gt; 5000 &amp;&amp; gps.charsProcessed() &lt; 10) </code><code class="cpp comments">// uh oh</code></div><div class="line number3 index2 alt2"><code class="cpp plain">{</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">Serial.println(</code><code class="cpp string">"ERROR: not getting any GPS data!"</code><code class="cpp plain">);</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp comments">// dump the stream to Serial</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">Serial.println(</code><code class="cpp string">"GPS stream dump:"</code><code class="cpp plain">);</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">while</code> <code class="cpp plain">(</code><code class="cpp keyword bold">true</code><code class="cpp plain">) </code><code class="cpp comments">// infinite loop</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(ss.available() &gt; 0) </code><code class="cpp comments">// any data coming in?</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Serial.write(ss.read());</code></div><div class="line number10 index9 alt1"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Another common failure is when the sentences sent to TinyGPS++ are 
+incomplete.  This usually happens when you retrieve the characters from 
+the GPS so slowly or infrequently that some are lost.  The symptom is 
+easy to spot: <strong>checksum failure</strong>.</p>
+<p>Explanation: Every NMEA sentence ends with a numeric field that 
+represents a mathematical summing of all the characters in the sentence.
+  It’s there to ensure data integrity.  If this number doesn’t match the
+ actual sum (perhaps because some characters went awry), TinyGPS++ 
+simply discards the entire sentence and increments an internal “checksum
+ failed” counter.  You can read this counter with:</p>
+<div><div id="highlighter_119648" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"Sentences that failed checksum="</code><code class="cpp plain">);</code></div><div class="line number2 index1 alt1"><code class="cpp plain">Serial.println(gps.failedChecksum());</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="cpp comments">// Testing overflow in SoftwareSerial is sometimes useful too.</code></div><div class="line number5 index4 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"Soft Serial device overflowed? "</code><code class="cpp plain">);</code></div><div class="line number6 index5 alt1"><code class="cpp plain">Serial.println(ss.overflow() ? </code><code class="cpp string">"YES!"</code> <code class="cpp plain">: </code><code class="cpp string">"No"</code><code class="cpp plain">);</code></div></div></td></tr></tbody></table></div></div>
+<p>If the checksum counter is continually incrementing, you have a problem.  (Hint: don’t use <strong>delay()</strong> in your sketch.)</p>
+<h3>Custom NMEA Sentence Extraction</h3>
+<p>One of the great new features of TinyGPS++ is the ability to extract arbitrary data from <i>any</i> NMEA or NMEA-like sentence.  Read up on some of the <a href="http://aprs.gids.nl/nmea/" title="NMEA sentences" target="_blank">interesting sentences</a> there are out there, then check to make sure that your GPS receiver can generate them.</p>
+<p>The idea behind custom extraction is that you tell TinyGPS++ the 
+sentence name and the field number you are interested in, like this:</p>
+<div><div id="highlighter_31109" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">TinyGPSCustom magneticVariation(gps, </code><code class="cpp string">"GPRMC"</code><code class="cpp plain">, 10)</code></div></div></td></tr></tbody></table></div></div>
+<p>This instructs TinyGPS++ to keep an eye out for $GPRMC sentences, and
+ extract the 10th comma-separated field each time one flows by.  At this
+ point, magneticVariation is a new object just like the built-in ones.  
+You can query it just like the others:</p>
+<div><div id="highlighter_229315" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">if</code> <code class="cpp plain">(magneticVariation.isUpdated())</code></div><div class="line number2 index1 alt1"><code class="cpp plain">{</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">Serial.print(</code><code class="cpp string">"Magnetic variation is "</code><code class="cpp plain">);</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">Serial.println(magneticVariation.value());</code></div><div class="line number5 index4 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<h3>Establishing a fix</h3>
+<p>TinyGPS++ objects depend on their host sketch to feed them valid and 
+current NMEA GPS data. To ensure their world-view is continually 
+up-to-date, three things must happen:</p>
+<ol>
+<li>You must continually feed the object serial NMEA data with <strong>encode()</strong>.</li>
+<li>The NMEA sentences must pass the checksum test.</li>
+<li>For built-in (non-custom) objects, the NMEA sentences must 
+self-report themselves as valid. That is, if the $GPRMC sentence reports
+ a validity of “V” (void) instead of “A” (active), or if the $GPGGA 
+sentence reports fix type “0″ (no fix), then the position and altitude 
+information is discarded (though time and date are retained).</li>
+</ol>
+<p>It may take several minutes for a device to establish a fix, 
+especially it has traveled some distance or a long time has elapsed 
+since its last use.</p>
+<h3>Distance and Course</h3>
+<p>If your application has some notion of a “waypoint” or destination, 
+it is sometimes useful to be able to calculate the distance to that 
+waypoint and the direction, or “course”, you must travel to get there.  
+TinyGPS++ provides two methods to get this information, and a third (<strong>cardinal()</strong>) to display the course in friendly, human-readable compass directions.</p>
+<div><div id="highlighter_536283" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">const</code> <code class="cpp color1 bold">double</code> <code class="cpp plain">EIFFEL_TOWER_LAT = 48.85826;</code></div><div class="line number2 index1 alt1"><code class="cpp keyword bold">const</code> <code class="cpp color1 bold">double</code> <code class="cpp plain">EIFFEL_TOWER_LNG = 2.294516;</code></div><div class="line number3 index2 alt2"><code class="cpp color1 bold">double</code> <code class="cpp plain">distanceKm =</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">TinyGPSPlus.distanceBetween(</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps.location.lat(),</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps.location.lng(),</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">EIFFEL_TOWER_LAT,</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">EIFFEL_TOWER_LNG) / 1000.0;</code></div><div class="line number9 index8 alt2"><code class="cpp color1 bold">double</code> <code class="cpp plain">courseTo =</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">TinyGPSPlus.courseTo(</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps.location.lat(),</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps.location.lng(),</code></div><div class="line number13 index12 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">EIFFEL_TOWER_LAT,</code></div><div class="line number14 index13 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">EIFFEL_TOWER_LNG);</code></div><div class="line number15 index14 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"Distance (km) to Eiffel Tower: "</code><code class="cpp plain">);</code></div><div class="line number16 index15 alt1"><code class="cpp plain">Serial.println(distanceKm);</code></div><div class="line number17 index16 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"Course to Eiffel Tower: "</code><code class="cpp plain">);</code></div><div class="line number18 index17 alt1"><code class="cpp plain">Serial.println(courseTo);</code></div><div class="line number19 index18 alt2"><code class="cpp plain">Serial.print(</code><code class="cpp string">"Human directions: "</code><code class="cpp plain">);</code></div><div class="line number20 index19 alt1"><code class="cpp plain">Serial.println(TinyGPSPlus.cardinal(courseTo));</code></div></div></td></tr></tbody></table></div></div>
+<h3>Library Version</h3>
+<p>You can retrieve the version of the TinyGPS++ library by calling the static member <strong>libraryVersion()</strong>.</p>
+<div><div id="highlighter_379223" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">Serial.println(TinyGPSPlus::libraryVersion());</code></div></div></td></tr></tbody></table></div></div>
+<h3>Sample Sketches</h3>
+<p>TinyGPS++ ships with several sample sketch which range from the simple to the more elaborate.  Start with <strong>BasicExample</strong>, which demonstrates library basics without even requiring a GPS device, then move onto <strong>FullExample</strong> and <strong>KitchenSink</strong>.  Later, see if you can understand how to do custom extractions with some of the other examples.</p>
+<h3>Acknowledgements</h3>
+<p>Thanks go out to the many Arduino forum users for outstanding help in
+ testing and popularizing TinyGPS, this library’s predecessor. Thanks 
+especially to Maarten Lamers, who wrote the <a href="http://www.maartenlamers.com/nmea/">wiring library</a> that originally gave me the idea of how to organize TinyGPS++. </p>
+<p>All input is appreciated.</p>
+<p>Mikal Hart</p>
+					
+            </div>
+			
+			<div class="last-updated">
+						
+		        Page last updated on September 28, 2014 at 11:35 am							
+		    </div>
+                
+		</div>
+
+<div id="comments">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- You can start editing here. -->
+
+
+	
+	
+	<div class="commh2">311 Responses → “TinyGPS++”</div>
+		
+	<div class="navigation">
+	
+		<div class="alignleft"><a href="http://arduiniana.org/libraries/tinygpsplus/comment-page-6/#comments">« Older Comments</a></div>
+		
+		<div class="alignright"></div>
+		
+	</div>
+
+	<ol>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191663">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Gilles, the accuracy of the built-in data types float and double
+ is a function of the processor.  There’s nothing that SW can do to 
+alleviate that I’m afraid.  If you need higher precision, you might 
+check out processors which use 64-bit doubles instead of 32, like the 
+Due…?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191668">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@TommiP,</p>
+<p>Yes, you should copy the files to a new folder called TinyGPSPlus in 
+the Arduino/libraries folder.  Then make sure you exit and re-enter the 
+Arduino IDE before running the examples.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191680">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Pete B, thanks for the nice words.  I believe the Adafruit 
+library uses the fact that the Adafruit Ultimate GPS module (great 
+module by the way!) has an asynchronous “FIX” output.  You could simply 
+watch that signal.  I don’t want TinyGPS++ to depend on a feature that 
+isn’t present in all GPS devices, but there’s no reason you can watch it
+ asynchronously.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191689">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@flydr2, Thanks!  Very cool.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191697">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Costin, a trick to reset the GPS object is:</p>
+<div><div id="highlighter_824149" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">TinyGPSPlus gps;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="cpp plain">...</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp plain">...</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">gps = TinyGPSPlus(); </code><code class="cpp comments">// reset with new object.</code></div><div class="line number8 index7 alt1"><code class="cpp plain">...</code></div><div class="line number9 index8 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191700">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Jay Be, are you running the examples?  What is the refresh rate of the GPS?  10Hz?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-191773">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Jay Be<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>yes, i’m running the “FullExample” and just changed this two lines:</p>
+<p>static const int RXPin = 10, TXPin = 9;<br>
+static const uint32_t GPSBaud = 9600;</p>
+<p>refresh rate is 1hz.<br>
+i also get checksum errors between 1 and 6…<br>
+thanks!</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-192177">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Makis<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hi is it posible to use the GPS++ To Serial.println only the $GPRMC sentence? in raw format as it came from GPS.</p>
+<p>Thanks in advance!</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-193490">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Diego<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>How can I can do to get into a string frame the entire $ GPRMC 
+frame , ie complete. I do not want to get only one field , I want to get
+ the full frame and store it in a string variable . Thank you very much .</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-193785">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Makis, no the library (purposefully) does not store complete 
+sentences.  But you know, you are completely in control of the byte 
+stream before you send it to TinyGPS++’s encode() method.  Why not 
+simply look for that yourself?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-193791">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Diego, since you control the stream of data before it gets sent 
+to TinyGPS++, just capture all the characters up until the newline 
+terminator, beginning each time you see the characters “$GPRMC”.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194017">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Brian<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hi!</p>
+<p>The isValid() test seems a little odd if all the NMEA strings are 
+checksum-verified.  Does isValid() check for usable data versus empty 
+fields?</p>
+<p>Also, I need to save some of the NMEA data to an SD card, are the 
+currently validated NMEA strings stored anywhere so I don’t need to 
+recreate them from the object data?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194021">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Ron Koval<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>I have run your example program which extracts R and L from the 
+$GPRMB sentence and it works just fine.  I have tried to work with 
+conditional statements with steerDirection.value() without any success. 
+ I have added a few lines to your example and tried to assign 
+steerDirection.value() to an integer variable, it compiles fine, but all
+ I get is R575 or L575 for the program below.  Can you direct me as how 
+to get the steerDirection.value to work with other functions than 
+Serial.print ? Thanks.</p>
+<p>Here is the section of code with // added for the 3 lines I have added</p>
+<p>void loop()<br>
+{<br>
+  int dir; // added declaration of integer called dir<br>
+  {<br>
+    Serial.print(steerDirection.value());<br>
+    dir = int(steerDirection.value()); // added<br>
+    Serial.print(dir); // added, prints 575 no matter if L or R<br>
+  Serial.println();<br>
+  }</p>
+<p>  while (ss.available() &gt; 0)<br>
+    gps.encode(ss.read());<br>
+}</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194073">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Brian, it possibly could have been better named, but isValid 
+simply means that at least one sentence has set the value correctly.  
+Initially all values are NOT valid, but as soon as the first legal 
+sentence sets it, that value is valid forever.  It does not currently 
+sense empty fields.</p>
+<p>It’s one of TinyGPS++’s design goals to be very stingy with memory 
+consumption, and accordingly, complete NMEA sentences are never stored. 
+ If you want to store complete sentences you will have to do it 
+yourself.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194075">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Ron, the line beginning “dir = …” converts a character pointer 
+into an int.  That’s not what you want for dir.  Either directly use the
+ string</p>
+<div><div id="highlighter_175237" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">Serial.println(steerDirection.value());</code></div></div></td></tr></tbody></table></div></div>
+<p>or calculate dir correctly</p>
+<div><div id="highlighter_759132" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">dir = </code><code class="cpp functions bold">strcmp</code><code class="cpp plain">(steerDirection.value(), </code><code class="cpp string">"L"</code><code class="cpp plain">) == 0 ? -1 : 1; </code><code class="cpp comments">// -1 for L, 1 for R</code></div></div></td></tr></tbody></table></div></div>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194200">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Brian<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Good to know that the “validated” NMEA strings are not available,
+ but for others to note, it is quite easy to simply re-create the 
+strings by using custom objects.  </p>
+<p>You probably would not want to re-create a lot of them, but the basic
+ GPRMC and GPGGA (Google Earth basics) share a lot of the same data, and
+ could be easily re-assembled from custom strings, then have a valid 
+checksum calculated and appended to the end.</p>
+<p>I’m in the midst of testing, but I have my doubts that the 
+isUpdated() function works properly on custom objects.  It seems to be 
+firing about 10x as often as possible (1Hz uBlox update rate).  More to 
+follow…</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-194228">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Brian<br></p>
+					
+					<p><small>5 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>FYI, HDOP is Horizontal -Dilution- of Position, you use “diminution” which is the French equivalent, and not really correct.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-195402">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Brian<br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Solved the “issue” of rapid updates, my fault!  ;)</p>
+<p>I’ve got the “re-assembly” of a GPRMC string going fine, with a 
+recalculated checksum added to the end (some unused parameters are dummy
+ data, so it will be different), but I’ve run into an issue in GPGGA 
+where a custom object can be a variable length, like altitude.</p>
+<p>I use this technique to utilize the custom object (display on LCD, 
+write to SD, etc): (Not in the order below. just the concept, which 
+works fine…)</p>
+<p>- TinyGPSCustom GGAalt(gps, “GPGGA”, 9);<br>
+- strncpy(GPSaltArrayText,GGAalt.value(),4);</p>
+<p>The issue is with altitude, I can’t predict how many bytes the custom
+ object will contain, and something like: arraySize = sizeof(GGAalt); 
+seems to crash the AVR</p>
+<p>1) Is there a better way to move the contents of a custom object into a char array?</p>
+<p>2) Is there some way to determine how many bytes a custom object contains?</p>
+<p>Thanks!</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-195977">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Brian, are you familiar with the strcpy() function?  The value()
+ method of TinyGPSCustom returns a true C-style string, so you should be
+ able to simply:</p>
+<div><div id="highlighter_564678" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp functions bold">strcpy</code><code class="cpp plain">(GPSaltArrayText, GGAalt.value());</code></div></div></td></tr></tbody></table></div></div>
+<p>Alternatively, if you want to make sure it fits before you copy:</p>
+<div><div id="highlighter_301398" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">len = </code><code class="cpp functions bold">strlen</code><code class="cpp plain">(GGAalt.value());</code></div><div class="line number2 index1 alt1"><code class="cpp keyword bold">if</code> <code class="cpp plain">(len &lt; </code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">(GPSaltArrayText))</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">strcpy</code><code class="cpp plain">(GPSaltArrayText, GGAalt.value());</code></div></div></td></tr></tbody></table></div></div>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-196462">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Brian<br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Still a little fuzzy on “isValid()”…</p>
+<p>This is a completely “valid” NMEA string:</p>
+<p>$GPGGA,033219.00,,,,,0,00,99.99,,,,,,*6C</p>
+<p>It’s essentially what you get before the GPS has a fix, but is 
+tracking satellites (thus the time is correct, valid, and incrementing; 
+therefore “updating”).</p>
+<p>Would TinyGPS++ consider the above sentence “valid” and “updating”?  If so, I need to do a lot more field validations!</p>
+<p>Thanks.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-198020">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Daniel C<br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Mikal,</p>
+<p>Great Library, thanks for the great work.  I have been using it with 
+Hardware Serial and a Mega, but I have found that the hardware serial 
+only works with the older versions of the Arduino IDE, and now I need to
+ be able to use the later version.  I have the GPS chip (Adafruit) 
+hooked up properly and I launch the 1.0.5 IDE and use your DeviceExample
+ script, replacing the software serial with hardware serial, change BAUS
+ to 9600 and it works great.  I then close that and open the 1.6.0 IDE 
+and and do the same thing and get “No GPS data received: check wiring”. 
+ Any thoughts on why I might be seeing this?  </p>
+<p>Thanks.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-198227">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Ronaldo<br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Dear Mikal,<br>
+How do I record only $GPRMC on the memory card?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-199087">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Shelley<br></p>
+					
+					<p><small>4 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>I have gps and openlog attached to the hardware serial pins and 
+16×2 lcd on other pins. Everything is running at baud rate of 57600 (I 
+need a 5 Hz updated speed readings). Data is coming through ok but there
+ is duplicate data showing up…for every 1/5 sec I get the same reading 
+20x’s. Is this a baud rate issue?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-200166">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">W1BMW<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Thanks for all your hard work on the libraries offered here! I’m 
+using TinyGPS++ and an Argent Data radio shield for an APRS tracker. 
+Your library made coding a snap!</p>
+<p>I had some problems initially that turned out to be a baud rate 
+issue. The default value of 4800 baud must be changed to 9600 for the 
+Adafruit Ultimate GPS Breakout Board, but the code worked right out of 
+the box!</p>
+<p>73 de W1BMW</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201186">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Georges Payne<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hello Mikal,</p>
+<p>Noob here, in dire need of help!</p>
+<p>I have a Arduino Uno rev.3 and a Garmin 72 GPS unit. I familiarized 
+myself with the Arduino environment by playing around with a few 
+examples and by writing my own (simple) code also. Now I am trying to 
+run the TinyGPSPlus DeviceExample code in order to grab data from the 
+GPS. I have connected the Tx line from the GPS to pin #3 on the Arduino 
+and the ground wire from the GPS to the GND pin next to pin 13. The GPS 
+is correctly setup and using a terminal program on my PC, I can read the
+ sentences just fine at 4800 baud. </p>
+<p>With the GPS unit connected to the Arduino, and without any 
+modifications in the code, The program seems to hang after the credits 
+in the beginning, right after “By Mikal Hart”. It does not say “No GPS, 
+check wiring…” but it doesn’t proceed to the DisplayInfo loop either, 
+because it doesn’t print “Location: “. </p>
+<p>The while loop doesn’t seem to be working, because if I disconnect the GPS it doesn’t go to “No GPS”.</p>
+<p>If I reset the Arduino with the GPS disconnected, it says “No GPS…” 
+but if I reconnect the GPS without resetting the Arduino, nothing 
+happens. </p>
+<p>I tried the debugging lines of code you provided in this page and I 
+can see waves after waves of gibberish characters on the serial monitor.</p>
+<p>I also tried the checksum line, but wasn’t able to get any results with it. </p>
+<p>I have banged my head against this four nights in a row, but I am 
+stuck. I live in a somewhat remote location, and I tried to see if there
+ are any robotics clubs around, but couldn’t find anything.</p>
+<p>So I’m desperate. Any help, any help at all, would be greatly appreciated.</p>
+<p>Cheers!<br>
+Georges</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201631">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Georges Payne<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hello Mikal,</p>
+<p>Never mind. A noob mistake, the Garmin GPS 72 output is Serial RS232,
+ and the Arduino serial is TTL. I bought a 7$ RS232-TTL converter, and 
+now I can read the phrases all right. </p>
+<p>Thanks anyway, your page was a tremendous help. </p>
+<p>Cheers!<br>
+Georges</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201852">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Daniel C, are you sure the program you’re compiling is identical when you make the transition to 1.6.0?  And all the libraries?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201853">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Ronaldo, I think I would do that outside of TinyGPS.  You are capturing the raw stream: just write what you need to SD.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201855">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Shelley, depending on which sample app you’re running, it may 
+print data every time a new sentence is parsed.  But not every sentence 
+brings fresh instances of the data you’re looking for.  It’s not an 
+error really, just a quirk.  You could modify the sample to print only 
+when the datum you seek actually changes.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-201858">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@W1BMW, hey, thanks!</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202030">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Lespaul<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hello Mikal (Sorry, not good at English)<br>
+I have used gr83 mudule gps with mega1280.<br>
+I have taken from gr83 NEMA codes to enter the gps stream.</p>
+<p>const char * gpsStream =<br>
+&nbsp; “$ GPRMC, 000118.050, V, 1335.5938, N, 10044.9498, E ,,, 160406 ,,, N * 70 \ r \ n”.<br>
+&nbsp; “$ GPGGA, 000118.050,1335.5938, N, 10044.9498, E, 0,00 ,, – 25.9, M, -27.0, M ,, 0000 * 4B \ r \ n”;</p>
+<p>But the result is</p>
+<p>BasicExample.ino<br>
+Basic demonstration of TinyGPS ++ (no device needed).<br>
+Testing TinyGPS ++ library v. 0.92.<br>
+by Mikal Hart</p>
+<p>Location: INVALID Date / Time: 4/16/2006 00: 01: 18.05.<br>
+Location: INVALID Date / Time: 4/16/2006 00: 01: 18.05.</p>
+<p>Done.</p>
+<p>Help me please.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202157">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">KP<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>I want to just take some time to thank you for the great library!
+ I’ve been using this library to parse  non standard (custom) NMEA data 
+from a weather station sensor (also includes a GPS in it).</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202170">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">kostas stefani<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hello, i want to build a project that will have an arduino gps 
+module on it, propably a shield that would also log the gps data. I 
+would like to ask about the accuracy of the gps,is it a matter of 
+hardware or software?? I mean if i use this library with a gps module 
+that says it has an accuracy of 3m or an accuracy of 10m, will i get a 
+much better accuracy with this library and a help of a magnetometer?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202218">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@KP, hey, thanks for that!  So glad it’s useful for you.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202220">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>Hi @Lespaul,</p>
+<p>The problem is that your two NMEA sentences indicate that you don’t have a good fix.</p>
+<p>The ‘V’ in field 3 of $GPRMC means “invalid”.<br>
+The ’0′ in field 7 of $GPGGA means “no fix”.</p>
+<p>In this case TinyGPS++ discards all position, speed, course, or altitude data.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202221">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@kostas stefani,</p>
+<p>The software neither adds or subtracts accuracy.  It reports exactly 
+what the GPS module is reporting, only in a more convenient form.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202398">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">KP<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Mikal,</p>
+<p>Is there already a built in function to get gps data (lat and lng) 
+with 6 decimal as unsigned number? such as 90.123111 to 90123111?</p>
+<p>Thanks.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-202463">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@KP, no, but you could synthesize it pretty closely with</p>
+<p>Serial.print(gps.location.rawLat().negative ? “-” : “+”);<br>
+Serial.println(gps.location.rawLat().deg); // Raw latitude in whole degrees<br>
+Serial.println(gps.location.rawLat().billionths);// … and billionths (u16/u32)</p>
+<p>This won’t be exactly correct, because small billionths” values won’t
+ be left padded with zeros, but you could create this pretty easily.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-203056">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">KP<br></p>
+					
+					<p><small>3 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hey Mikal, </p>
+<p>Thanks for the information.</p>
+<p>This is what I ended up doing.  </p>
+<p> latitudeUINT = (gps.location.rawLat().deg * pow(10, 6)) + 
+(round((gps.location.rawLat().billionths) / 1000.000)) ; // combine 
+degree and decimal<br>
+longitudeUINT = (gps.location.rawLng().deg * pow(10, 6)) + (round((gps.location.rawLng().billionths) / 1000.000));</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-203720">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">artem<br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hi.<br>
+Try to use your library.<br>
+I receive from GPS:<br>
+5245.94146 —- 05548.84800<br>
+but your library converts it to:<br>
+52.765663 —- 55.814132</p>
+<p>I need original GPS strings. How to get it? Make example please.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-203816">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@artem,</p>
+<p>The original strings contain the latitude and longitude in 
+degrees/minutes form, or more precisely, DDMM.MMMMM.  The library 
+converts the values to decimal degrees.</p>
+<p>Always remember that you control the GPS strings before you send them
+ to TinyGPS++.  If you want the raw GPS string, just save it yourself 
+before you send it on to TinyGPS.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-203830">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@KP.  Perfect.  Although I would use the integral constant 
+1000000UL instead of the function pow(10, 6), which is a floating point 
+number.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-204145">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Ron Koval<br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Mikal,</p>
+<p>I have been trying to use TinyGPSCustom steerDirection(gps, “GPRMB, 
+3); to get the R and L from my Garmin GPS.  Indeed R and L are read, but
+ the GPS seems extremely slow to update, indicate a necessary change 
+from R to L or L to R.</p>
+<p>I see I can extract “course” (which I assume is the equivalent to 
+“Track” on the Garmin display, but is there a way to extract “Bearing” 
+which is the goto heading?  I would hope that these would update very 
+quickly as I notice on the Garmin display.</p>
+<p>Thanks in advance to your reply.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-204153">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Ron Koval<br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Mikal,</p>
+<p>I asked too quickly.  Bearing is the 11th field of the $GPRMB 
+sentence. So using Bearing and Course, I can determine R and L and 
+hopefully much quicker than my Garmin analyzes and updates it.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-204201">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">KP<br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Mikal, </p>
+<p>Is there any specific reason I should avoid using the pow other than 
+it is a floating point? What does 1000000UL do and why declare as such?</p>
+<p>Also if it is better or more effective, could I replace all my pow usage to XXXUL?</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-205866">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Sergey<br></p>
+					
+					<p><small>2 months ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hello Help me pls i made sketch to extract depth value from nmea sentence:</p>
+<p>#include<br>
+#include<br>
+#include “TM1637.h”<br>
+#define CLK 2<br>
+#define DIO 3<br>
+TM1637 disp(CLK,DIO);</p>
+<p>static const int RXPin = 10, TXPin = 11;<br>
+static const uint32_t GPSBaud = 4800;</p>
+<p>// The TinyGPS++ object<br>
+TinyGPSPlus gps;</p>
+<p>// The serial connection to the GPS device<br>
+SoftwareSerial ss(RXPin, TXPin);</p>
+<p>TinyGPSCustom SDDPT(gps, “SDDPT”, 1); // $SDDPT sentence, 1 element</p>
+<p>void setup()<br>
+{<br>
+  Serial.begin(4800);<br>
+  ss.begin(GPSBaud);</p>
+<p>  disp.set(5);<br>
+  disp.init(D4056A);</p>
+<p>}</p>
+<p>void loop()<br>
+{</p>
+<p>Serial.println(SDDPT.value());<br>
+while (ss.available() &gt; 0)<br>
+gps.encode(ss.read());</p>
+<p> delay(20);<br>
+}</p>
+<p>everything work fine but how  can i extract numerical value of depth inside program to operate with it (i’m making downrigger)</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-207194">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">AlexTadeo<br></p>
+					
+					<p><small>1 month ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Hi mikal.<br>
+I would like to know if ur library works with the gps A2235-H.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-209529">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>1 month ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@Sergey, you should be able to add:</p>
+<div><div id="highlighter_117448" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp color1 bold">long</code> <code class="cpp plain">depth = </code><code class="cpp functions bold">atol</code><code class="cpp plain">(SDDPT.value());</code></div></div></td></tr></tbody></table></div></div>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-209532">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment"><a href="http://arduiniana.org/" rel="external nofollow" class="url">Mikal</a><br></p>
+					
+					<p><small>1 month ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right authcomment">
+				
+				<p>@AlexTadeo,<br>
+If that device uses the NMEA protocol, specifically GPGLL and GPRMC, I think it will work.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <li class="comment wrap" id="div-comment-209816">
+		
+		    <div class="meta-left">
+			
+				<div class="meta-wrap">
+					
+					<br>
+					
+					<p class="authorcomment">Mitch<br></p>
+					
+					<p><small>1 month ago</small></p>
+				
+				</div>
+				
+			</div>
+			    
+			<div class="text-right ">
+				
+				<p>Thanks for this great library. It has saved countless hours on my
+ Arduino based seven digit Nixie clock project.  Timing is an issue 
+here, I’m “feeding” for about 50ms for each loop. Then isValid() is 
+checked until valid date and time data is available and if not, more 
+feeding on the next loop. Baud rate for the GPS is 9600. The display is 
+updated every 100ms now, but when I implement crossfading, display 
+updating frequency will have to increase. Occasionally the display is 
+interrupted by GPS data gathering. Is there a better way to do this?  
+Thanks in advance.</p>
+					
+								
+			</div>
+		
+
+		<span class="comm-reply">
+		
+				
+				
+		</span>
+
+		<div class="fix"></div>
+		
+	    </li>
+ 
+
+	
+	</ol>
+	
+	<div class="navigation">
+	
+		<div class="alignleft"><a href="http://arduiniana.org/libraries/tinygpsplus/comment-page-5/#comments">« Older Comments</a></div>
+		
+		<div class="alignright"></div>
+		
+	</div>
+
+	
+	<div class="commh2">11 Trackbacks For This Post</div>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt " id="comment-93608">
+
+			<cite><a href="http://www.mirmak.com/blogs/tech/?p=196" rel="external nofollow" class="url">TinyGPS++ to the Rescue | Stainless Steelhead</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-93608" title="">September 11th, 2013 → 1:59 pm</a> </small>
+
+			<p>[...] to the brains behind Arduiniana, Mikal Hart, Poolbot has 
+moved to the brand-new GPS library set, TinyGPS++.&nbsp; This saved 
+enormous time in developing custom code to process and check the 
+validity of NMEA [...]</p>
+
+		</li>
+
+	
+	
+		<li class=" " id="comment-156956">
+
+			<cite><a href="http://kolins.cz/antenna-tracker-first-steps/" rel="external nofollow" class="url">Antenna tracker, first steps | kolin's</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-156956" title="">March 15th, 2014 → 10:00 am</a> </small>
+
+			<p>[...] or none, I made simple arduino program for parsing NMEA crap
+ and encoding it in LTM packets. I used TinyGPS++ library for parsing 
+NMEA and few lines from TauLabs [...]</p>
+
+		</li>
+
+	
+	
+		<li class="alt " id="comment-163268">
+
+			<cite><a href="http://arduhobby.wordpress.com/2014/05/14/gps-ublox-neo-6m-cu-arduino-uno/" rel="external nofollow" class="url">GPS Ublox Neo-6M cu Arduino Uno | ArduHobby</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-163268" title="">May 14th, 2014 → 11:31 am</a> </small>
+
+			<p>[...] Descarcati biblioteca tinyGPS sau tinyGPS++. [...]</p>
+
+		</li>
+
+	
+	
+		<li class=" " id="comment-163716">
+
+			<cite><a href="http://blog.koenig-pascal.de/?p=10" rel="external nofollow" class="url">GPS-Logger | Pascal's Königreich</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-163716" title="">May 25th, 2014 → 8:55 am</a> </small>
+
+			<p>[...] Card Breakout Board gibt’s bei Adafruit, um mit dem GPS Modul zu sprechen wurde die Library TinyGPS++ [...]</p>
+
+		</li>
+
+	
+	
+		<li class="alt " id="comment-164493">
+
+			<cite><a href="http://duino4projects.com/gps-distance-calculator-golf/" rel="external nofollow" class="url">GPS Distance Calculator (for golf) -Use Arduino for Projects</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-164493" title="">June 12th, 2014 → 11:19 pm</a> </small>
+
+			<p>[...] Tiny GPS++ [...]</p>
+
+		</li>
+
+	
+	
+		<li class=" " id="comment-169454">
+
+			<cite><a href="http://benty.org/?p=244" rel="external nofollow" class="url">Arduino GPS with OLED Display | Home of Benty</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-169454" title="">September 10th, 2014 → 9:54 pm</a> </small>
+
+			<p>[...] OLED from Adafruit. It’s still a work in progress just 
+squishing together code from the TinyGPS++ library and using the 
+Adafruit GFX [...]</p>
+
+		</li>
+
+	
+	
+		<li class="alt " id="comment-170013">
+
+			<cite><a href="http://spainlabs.com/blog/mantener-tus-proyectos-en-hora/" rel="external nofollow" class="url">SpainLabs - Mantener tus proyectos en hora</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-170013" title="">September 20th, 2014 → 3:57 am</a> </small>
+
+			<p>[...] Con Arduino puedes usar la librería tyniGPS++. [...]</p>
+
+		</li>
+
+	
+	
+		<li class=" " id="comment-172159">
+
+			<cite><a href="http://www.ameancenter.com/2014/10/27/prototype-1-gps-module/" rel="external nofollow" class="url">Prototype 1 – GPS Module | A Mean Center</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-172159" title="">October 27th, 2014 → 1:11 pm</a> </small>
+
+			<p>[...] something useful with it. This isn’t due to any competence 
+on my part, but because of &nbsp;the&nbsp;TinyGPS++ 
+library&nbsp;by&nbsp;Mikal Hart which is just amazing. There are many 
+examples included with the library, so it is [...]</p>
+
+		</li>
+
+	
+	
+		<li class="alt " id="comment-179574">
+
+			<cite><a href="http://cluat.com/question/unexpected-behavior-of-sprintf-with-i32u32/" rel="external nofollow" class="url">Unexpected behavior of sprintf with i32/u32 | CL-UAT</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-179574" title="">December 25th, 2014 → 12:54 am</a> </small>
+
+			<p>[...] trying to build a string of characters from several elements given by the TinyGPS++ library with the use of [...]</p>
+
+		</li>
+
+	
+	
+		<li class=" " id="comment-183267">
+
+			<cite><a href="https://bigdanzblog.wordpress.com/2015/01/15/connecting-u-blox-neo-6m-gps-to-arduino/" rel="external nofollow" class="url">Connecting u-blox NEO-6M GPS to Arduino | Big Dan the Blogging Man</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-183267" title="">January 15th, 2015 → 3:43 pm</a> </small>
+
+			<p>[...] <a href="http://arduiniana.org/libraries/tinygpsplus/" rel="nofollow">http://arduiniana.org/libraries/tinygpsplus/</a> [...]</p>
+
+		</li>
+
+	
+	
+		<li class="alt " id="comment-193205">
+
+			<cite><a href="https://arcranda.wordpress.com/2015/03/01/latlong-to-xy/" rel="external nofollow" class="url">LatLong to XY | Rocket Project</a></cite> →
+						<br>
+
+			<small class="commentmetadata"><a href="#comment-193205" title="">March 1st, 2015 → 3:47 pm</a> </small>
+
+			<p>[...] the same.&nbsp;latlon2xy&nbsp;is the doc with the Arduino 
+code. Since I last looked at GPS, Mikal Hart has an updated GPS library 
+that computes distanceBetween() and courseTo(). It might be worth 
+pursuing. Share [...]</p>
+
+		</li>
+
+	
+	
+	</ol>
+
+	
+ 
+
+
+<div id="respond">
+
+<div class="cancel-comment-reply">
+
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://arduiniana.org/libraries/tinygpsplus/#respond" style="display:none;">Click here to cancel reply.</a></small>
+	
+</div>
+
+<div class="commh2">Leave a Reply</div>
+
+
+<form action="http://arduiniana.org/wp-comments-post.php" method="post" id="commentform">
+
+
+<p class="commpadd"><input name="author" id="author" size="22" tabindex="1" type="text">
+<label for="author"><small>Name *</small></label></p>
+
+<p class="commpadd"><input name="email" id="email" size="22" tabindex="2" type="text">
+<label for="email"><small>Mail *</small></label></p>
+
+<p class="commpadd"><input name="url" id="url" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p class="commpadd"><textarea name="comment" id="comment" style="width:100%;" rows="10" tabindex="4"></textarea></p>
+
+<p style="padding:10px 0px 10px 0px;"><input name="submit" id="submit" tabindex="5" value="Add Comment" type="submit">
+<input name="comment_post_ID" value="1241" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="7787365335" type="hidden"></p>
+</form>
+
+</div>
+
+</div>
+	
+	
+</div>
+
+<div class="sidebar sidebar_right">
+    
+    	<div class="widget"><h3 class="hl">Pages</h3>		<ul>
+			<li class="page_item page-item-4"><a href="http://arduiniana.org/about/">About</a></li>
+<li class="page_item page-item-235 current_page_ancestor current_page_parent"><a href="http://arduiniana.org/libraries/">Libraries</a>
+<ul class="children">
+	<li class="page_item page-item-221"><a href="http://arduiniana.org/libraries/flash/">Flash</a></li>
+	<li class="page_item page-item-1170"><a href="http://arduiniana.org/libraries/iridiumsbd/">IridiumSBD</a></li>
+	<li class="page_item page-item-61"><a href="http://arduiniana.org/libraries/newsoftserial/">NewSoftSerial</a></li>
+	<li class="page_item page-item-154"><a href="http://arduiniana.org/libraries/pstring/">PString</a></li>
+	<li class="page_item page-item-856"><a href="http://arduiniana.org/libraries/pwmservo/">PWMServo</a></li>
+	<li class="page_item page-item-119"><a href="http://arduiniana.org/libraries/streaming/">Streaming</a></li>
+	<li class="page_item page-item-5"><a href="http://arduiniana.org/libraries/tinygps/">TinyGPS</a></li>
+	<li class="page_item page-item-1241 current_page_item"><a href="http://arduiniana.org/libraries/tinygpsplus/">TinyGPS++</a></li>
+</ul>
+</li>
+<li class="page_item page-item-363"><a href="http://arduiniana.org/projects/">Projects</a>
+<ul class="children">
+	<li class="page_item page-item-365"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/">The Reverse Geocache™ Puzzle</a>
+	<ul class="children">
+		<li class="page_item page-item-865"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/building/">Building a Puzzle Box</a></li>
+		<li class="page_item page-item-1143"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/buying-a-puzzle-box/">Buying a Puzzle Box</a></li>
+		<li class="page_item page-item-766"><a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/more-puzzle-box-tales/">More Puzzle Box Tales</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+		</ul>
+		</div><!--/widget--><div class="widget"><h3 class="hl">Sundial.com</h3>			<div class="textwidget"><p>The evolution of the Reverse Geocache™</p>
+<p><a href="http://sundial.com/"><img class=" wp-image-1132 alignleft" title="The Sundial Group: new Reverse Geocache™ website" src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/sundial-300x159.png" alt="sundial.com" height="119" width="225"></a></p>
+</div>
+		</div><!--/widget-->		<div class="widget">		<h3 class="hl">Recent Posts</h3>		<ul>
+				<li><a href="http://arduiniana.org/2013/09/tinygps-a-new-view-of-global-positioning/" title="TinyGPS++: A New View of Global Positioning">TinyGPS++: A New View of Global Positioning</a></li>
+				<li><a href="http://arduiniana.org/2013/09/greater-accuracy-with-tinygps-13/" title="Greater Accuracy with TinyGPS 13">Greater Accuracy with TinyGPS 13</a></li>
+				<li><a href="http://arduiniana.org/2013/06/talking-to-satellites/" title="Talking to Satellites!">Talking to Satellites!</a></li>
+				<li><a href="http://arduiniana.org/2013/03/the-evolution-of-the-reverse-geocache/" title="The Evolution of the Reverse Geocache™">The Evolution of the Reverse Geocache™</a></li>
+				<li><a href="http://arduiniana.org/2012/01/puzzle-box-the-poetry-of-the-quest/" title="Puzzle Box: The Poetry of the Quest">Puzzle Box: The Poetry of the Quest</a></li>
+				</ul>
+		</div><!--/widget--><div class="widget"><h3 class="hl">Archives</h3>		<ul>
+			<li><a href="http://arduiniana.org/2013/09/" title="September 2013">September 2013</a></li>
+	<li><a href="http://arduiniana.org/2013/06/" title="June 2013">June 2013</a></li>
+	<li><a href="http://arduiniana.org/2013/03/" title="March 2013">March 2013</a></li>
+	<li><a href="http://arduiniana.org/2012/01/" title="January 2012">January 2012</a></li>
+	<li><a href="http://arduiniana.org/2011/01/" title="January 2011">January 2011</a></li>
+	<li><a href="http://arduiniana.org/2010/10/" title="October 2010">October 2010</a></li>
+	<li><a href="http://arduiniana.org/2010/08/" title="August 2010">August 2010</a></li>
+	<li><a href="http://arduiniana.org/2010/07/" title="July 2010">July 2010</a></li>
+	<li><a href="http://arduiniana.org/2010/02/" title="February 2010">February 2010</a></li>
+	<li><a href="http://arduiniana.org/2010/01/" title="January 2010">January 2010</a></li>
+	<li><a href="http://arduiniana.org/2009/11/" title="November 2009">November 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/10/" title="October 2009">October 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/05/" title="May 2009">May 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/04/" title="April 2009">April 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/03/" title="March 2009">March 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/02/" title="February 2009">February 2009</a></li>
+	<li><a href="http://arduiniana.org/2009/01/" title="January 2009">January 2009</a></li>
+		</ul>
+</div><!--/widget--><script type="text/javascript"><!--
+google_ad_client = "pub-7419063236844482";
+/* 200x90, created 10/22/09 */
+google_ad_slot = "2007274074";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="200"></iframe></ins></ins>    
+</div>    	    
+            
+			<div class="footer footer_left">
+            
+<!-- Code modified by Mikal Hart   <div class="fl">&copy; 2015 Arduiniana.</div> -->
+                <div class="fl">© 2015 Mikal Hart.</div>
+				
+<!-- Inuittypes link removed by Mikal Hart <div class="fr"><a href="http://bizzartic.com/bizzthemes/inuitypes/"><em>Inuitypes</em></a> by <a href="http://bizzartic.com"><em>B<span><b>i</b></span>zzArtic</em></a></div> -->
+				
+                <div class="fix"><!----></div>
+			
+            </div>
+
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/shCore.js"></script>
+<script type="text/javascript" src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/shBrushCpp.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://arduiniana.org/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://arduiniana.org/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+<!-- removed by Mikal Hart    <script type="text/javascript" src="http://arduiniana.org/wp-content/themes/inuitypes/library/js/suckerfish.js"></script> -->
+
+	<!--[if lt IE 7]>
+           <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+           <![endif]-->
+
+    
+<!-- Code below added by Mikal Hart for Google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="TinyGPS++%C2%A0%7C%C2%A0Arduiniana_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11204229-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- **** end Mikal Hart addition **** -->
+
+</body></html>

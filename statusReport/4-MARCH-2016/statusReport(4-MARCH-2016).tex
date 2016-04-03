@@ -1,0 +1,130 @@
+
+% !TEX program = pdflatex
+
+\documentclass[9pt]{IEEEtran}
+%\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} % for therefore implies
+\usepackage{afterpage} % for leavingg blank pages
+\usepackage{color}
+\usepackage{listings} % for source code
+\usepackage[hidelinks]{hyperref} % for creating hyperlinks
+\usepackage{graphicx} % for images
+\graphicspath{ {images/} } % the folder in which the images are kept
+
+% Define the colors required for the source code typeset
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\title{\textbf{Bharath Balloon Satellite status report on 4 March 2016}}
+
+
+
+\author{Sayan Bhattacharjee \\
+				\emph{Bharath University} \\
+				\emph{Aeronautical Department} \\
+				\emph{2 $^{ nd}$ year BTECH stduent} \\
+				\emph{Chennai 600073}}
+\maketitle{}
+
+\emph{\textbf{Abstract----}}\textbf{ This document contains the status report for the development of \emph{Bharath Balloon Satellite}
+																		 	and plans of development for the future
+													 }\\
+\textbf{\emph{Keywords----}}\textbf{[Status report , Bharath Balloon Satellite]}
+\\
+%\tableofcontents
+\section{INTRODUCTION}
+With the permission of Dr.M Sundararaj (Head of Department of Aeronautical Engineering ,Bharath University,Chennai) the Bharath Balloon satellite
+project has been started and after preliminary preparation the project is in a stage of fabrication. In this document the overview of the subsystems of the
+balloon satellite and the tentative deadlines for each subsystem has been given with a few proposals for a better experiment success.
+
+\section{SUBSYSTEMS}
+
+\subsubsection{PAYLOAD}
+	The payload will be a radiation detection kit which will contain a geiger muller tube as it's main component.
+	However it will be difficult to get a valid reading using only one geiger muller tube because the flux of the radiation
+	is small and the probability of an ionizing particle hitting a single geiger mmuller tube of low test section area is very low.
+	The probability will continue decreasing as the balloon satellite climbs higher because the flux of the radiation particles
+	is highest at the sea level.\\
+	\emph{\textbf{Hence it is proposed that multiple geiger muller tubes are connected in parallel to increase the surface area of the
+	radiation test section. The increase of the probability of an ionizing particle hitting the test section will not be very high
+	but during a flight time of approximately 3 to 4 hours higher count of radiation detection is expected for a test section of
+	higher surface area. For best results a square test section area will be required and by using a square test section area we can
+	verify the radiation flux at the sea level to verify our experiment and if the experimental flux values are similar to the values
+	calculated by other scientists we can state that the radiation flux calculated at different heigths will also be correct.}}
+\\
+\subsubsection{ONBOARD COMPUTING AND DATA HANDLING}
+	The onboard computing and data handling will be managed using an \textbf{\emph{Arduino Mega 2560 R3}} as it's computing unit.
+	The Arduino Mega 2560 R3 is selected because it has a total of 100 pins havinng both digital and analog types of  data pins to use.
+	It has 3 Tx and 3 Rx pins which can be used for connecting the GPS and the required UHF transmitter.
+	Different analog and data pins are available which will be required for different sensors that are to be used.
+	\\
+\subsubsection{COMMUNICATION SYSTEM AND SYNCHRONIZATION}
+	The communication system will be based on UHF band for long distance radio connection and live data transfer.
+	However professional help is required for this subsystem.
+	The balloon satellite will only contain a simplex type connection where a single UHF transmitter will be placed on the
+	satellite and only used for transmitting an un-encrypted data stream to the ground station.
+	The data packets will be arranged to allow the GPS co-ordinates to be transmitted at an interval of every 5 seconds ,with the
+	corresponding pressure and temperature data. If any radiation is detected by the geiger muller tubes a bit corresponding to the
+	number given to that particular geiger muller tube will be transmitted along with the time of detection and the atmospheric height
+	at which the detection took place.
+	Dipole or patch antennas may be used.
+\subsubsection{STRUCTURAL INTEGRITY AND THERMAL CONTROL}
+	The structural housing of the balloon satellite will be required to be heat insulated,water proof,airtight,having high impact strength
+	and lightweight. Hence the preliminary design of the structure is made up of one internal styrofoam housing and external carbon fibre/glass fibre
+	housing.
+	There will be a certain air gap between the external and internal housing to insulate the internal heat and prevent it from bleeding to the
+	cold atmosphere. Thin styrofoam plates will be placed on the interior of the carbon fibre/glass fibre external housing to increase the insulation
+	property of the structure.
+	A bleed patch will be given to allow heat ventialtion into the cold atmosphere in case of overheating.
+
+
+\section{TIME REQUIRED FOR PROTOTYPE CREATION}
+\subsection{PAYLOAD}
+Time required = 10 days where ,
+\\ 3 days for initial study and procuring materials.
+\\ 3 days for building test model on bread board and testing.
+\\ 4 days for making computer model and validation if the circuit board is to
+		be made on a PCB.
+
+\subsection{ONBOARD COMPUTING AND DATA HANDLING}
+Time required = 5 days where,
+\\ 1 day for initial study and procuring materials.
+\\ 2 days for writing the required computer code.
+\\ 2 days for testing.
+\subsection{COMMUNICATION SYSTEM AND SYNCHRONIZATION}
+Time required = 25 days where,
+\\ 10 days for initial study and procuring materials.
+\\ 10 days for building the equipment.
+\\ 5 days for testing.
+\subsection{STRUCTURAL INTEGRITY AND THERMAL CONTROL}
+Time required = 5 days where,
+\\ 1 day for initial study and procuring materials.
+\\ 2 days for building the parts.
+\\ 1 day for assembly.
+\\ 1 day for thermal and airtight testing.
+
+
+
+\section{CONCLUSION}
+45 days are required for the successfull completion of the project if all the materials required are available in market .
+\end{document}
